@@ -56,7 +56,7 @@ public void escogeTipoEmpleado() {//Metodos para evitar que el usuario escriba,y
 	
 public String toString() {
 		String text="";
-		return text+= super.toString() + "Anos de jubilacion: " + getAnosjubilado() + "\n" + "Tipo de empleado: " + getTipoEmpleado();
+		return text+= super.toString() + "Años de jubilacion: " + getAnosjubilado() + "\n" + "Tipo de empleado: " + getTipoEmpleado();
 	}
 	
 }
