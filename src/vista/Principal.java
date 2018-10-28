@@ -24,6 +24,8 @@ public class Principal {
 		*/
 		Anual Anual = new Anual();
 		Anual.IngresarAnual();
+		
+		JOptionPane.showMessageDialog(null, "ola esta es una prueba con github");
 	
 	
 	}
