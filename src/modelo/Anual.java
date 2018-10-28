@@ -44,7 +44,7 @@ public void IngresarAnual() {
 	public String toString() {
 		
 		String text="";
-		return text += "Porcentaje sobre el salario: " + getPorcentanje();
+		return text += super.toString()+"Porcentaje sobre el salario: " + getPorcentanje();
 	}
 	
 

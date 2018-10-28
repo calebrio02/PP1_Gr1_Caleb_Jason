@@ -54,8 +54,8 @@ public void IngresarALaVista() {
 	
 public String toString() {
 		
-		String text;
-		return text = "Porcentaje del Cliente sobre el salario: " + getPorcentajeCliente() + "\n" 
+		String text="";
+		return text += super.toString()+"Porcentaje del Cliente sobre el salario: " + getPorcentajeCliente() + "\n" 
 					+ "Porcentaje del Patrono sobre el salario: " + getPorcentajePatrono();
 	}
 	

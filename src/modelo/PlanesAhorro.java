@@ -5,9 +5,7 @@ import javax.swing.JOptionPane;
 public class PlanesAhorro extends Servcios{
 	
 	double saldo, cuotaAhorro;
-	int mesesCancelados;
-	Anual Anual = new Anual();
-	
+	int mesesCancelados;	
 	Clientes c;
 	
 public PlanesAhorro() {}
@@ -20,10 +18,12 @@ public void SeleccionarPlanAhorro() {
 				{ "Selecciona","Anual", "A la vista"}, "Selecciona")).toString() ;
 		
 		if(tipoAhorro.equalsIgnoreCase("Anual")) {
-			Clientes.Docentes.IngresaDocente();
+			Anual Anual = new Anual();
+			Anual.IngresarAnual();
 			
 		}else if(tipoAhorro.equalsIgnoreCase("A la vista")) {
-			
+			ALaVista ALaVista = new ALaVista();
+			ALaVista.IngresarALaVista();
 			
 		}else {
 			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
@@ -58,7 +58,7 @@ public void setMesesCancelados(int mesesCancelados) {
 public String toString() {
 	
 	String text="";
-	return text += "Saldo: " + getSaldo() + "\n"
+	return text +=super.toString()+ "Saldo: " + getSaldo() + "\n"
 				+"Cuota de ahorro: " + getCuotaAhorro() + "\n"
 				+"Meses Cancelados: " + getMesesCancelados() + "\n";
 }
