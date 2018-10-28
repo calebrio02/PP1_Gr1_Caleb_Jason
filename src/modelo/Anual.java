@@ -11,7 +11,9 @@ public class Anual extends PlanesAhorro{
 	setPorcentanje(Double.parseDouble(JOptionPane.showInputDialog("Ingresa el porcentaje de + " + c.getNombre() + " sobre su salario" )));
 	
 	}
-
+public void ingresarAnual() {
+	
+}
 	public double getPorcentanje() {
 		return porcentaje;
 	}

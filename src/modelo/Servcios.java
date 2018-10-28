@@ -10,12 +10,12 @@ public void IngresarPensionados() {
 public void IngresarDocentes() {
 	Clientes.IngresarDocentes();
 }
-public void IngresarAdministrativos() {
+/*public void IngresarAdministrativos() {
 	Clientes.IngresarAdministrativos();
 }
 public TiposClientes getClientes() {
 		return Clientes;
-	}
+	}*/
 
 public void setClientes(TiposClientes clientes) {
 		Clientes = clientes;
