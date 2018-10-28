@@ -2,29 +2,29 @@ package modelo;
 
 public class TiposClientes {
 	
-	Pensionados P = new Pensionados();
-	Docentes D = new Docentes();
-	Administrativos A = new Administrativos();
+	Pensionados Pensionados = new Pensionados();
+	Docentes Docentes = new Docentes();
+	Administrativos Administrativos = new Administrativos();
 	
+	
+	public Pensionados getPensionados() {
+		return Pensionados;
+	}
+	public void setPensionados(Pensionados pensionados) {
+		Pensionados = pensionados;
+	}
+	public Docentes getDocentes() {
+		return Docentes;
+	}
+	public void setDocentes(Docentes docentes) {
+		Docentes = docentes;
+	}
+	public Administrativos getAdministrativos() {
+		return Administrativos;
+	}
+	public void setAdministrativos(Administrativos administrativos) {
+		Administrativos = administrativos;
+	}
 
-
-public Pensionados getP() {
-		return P;
-	}
-public void setP(Pensionados p) {
-		P = p;
-	}
-public Docentes getD() {
-		return D;
-	}
-public void setD(Docentes d) {
-		D = d;
-	}
-public Administrativos getA() {
-		return A;
-	}
-public void setA(Administrativos a) {
-		A = a;
-	}
 
 }

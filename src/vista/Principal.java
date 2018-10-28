@@ -3,6 +3,7 @@ import javax.swing.JOptionPane;
 
 import controlador.ArrayObjetos;
 import modelo.Administrativos;
+import modelo.Anual;
 import modelo.Docentes;
 import modelo.Pensionados;
 
@@ -21,9 +22,8 @@ public class Principal {
 		Pensionados j = new Pensionados();
 		JOptionPane.showMessageDialog(null,j.toString());
 		*/
-		Pensionados j = new Pensionados();
-		j.IngresaPensionado();
-		JOptionPane.showMessageDialog(null,j.toString());
+		Anual A = new Anual();
+		A.IngresarAnual();
 	}
 	
 	
