@@ -26,7 +26,8 @@ public class Principal {
 		Anual.IngresarAnual();
 		
 		JOptionPane.showMessageDialog(null, "ola esta es una prueba con github");
-	
+		JOptionPane.showMessageDialog(null, "ola esta es una prueba con github");
+
 	
 	}
 }
