@@ -22,8 +22,8 @@ public class Anual extends PlanesAhorro{
 	
 	public String toString() {
 		
-		String text;
-		return text = "Porcentaje sobre el salario: " + getPorcentanje();
+		String text="";
+		return text += "Porcentaje sobre el salario: " + getPorcentanje();
 	}
 	
 

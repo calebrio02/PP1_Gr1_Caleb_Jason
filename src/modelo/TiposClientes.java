@@ -6,7 +6,17 @@ public class TiposClientes {
 	Docentes D = new Docentes();
 	Administrativos A = new Administrativos();
 	
-	
+
+public void IngresarPensionados() {
+	P.IngresaPensionado();
+}
+
+public void IngresarDocentes() {
+	D.IngresaDocenete();
+}
+public void IngresarAdministrativos() {
+	A.ingresarAdministrativos();
+}
 public Pensionados getP() {
 		return P;
 	}

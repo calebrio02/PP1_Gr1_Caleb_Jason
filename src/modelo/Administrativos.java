@@ -32,7 +32,7 @@ public class Administrativos extends Clientes {
 	 
 	public String toString() {
 		
-		String text;
-		return text= super.toString()+ "Puesto: " + getPuesto()+"\n"+"Lugar de trabajo: " + getLugarTrabajo();
+		String text="";
+		return text+= super.toString()+ "Puesto: " + getPuesto()+"\n"+"Lugar de trabajo: " + getLugarTrabajo();
 	}
 }

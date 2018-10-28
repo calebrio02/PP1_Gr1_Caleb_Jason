@@ -1,14 +1,17 @@
 package modelo;
 
 public class PlanesAhorro extends Servcios{
-double saldo, cuotaAhorro;
-int mesesCancelados;
-Clientes c;
-public PlanesAhorro() {
-
 	
-}
+	double saldo, cuotaAhorro;
+	int mesesCancelados;
+	Clientes c;
+	
+public PlanesAhorro() {}
 
+public void SeleccionarPlanAhorro() {
+	
+
+}
 public double getSaldo() {
 	return saldo;
 }
@@ -33,12 +36,10 @@ public void setMesesCancelados(int mesesCancelados) {
 	this.mesesCancelados = mesesCancelados;
 }
 
-
-
 public String toString() {
 	
-	String text;
-	return text = "Saldo: " + getSaldo() + "\n"
+	String text="";
+	return text += "Saldo: " + getSaldo() + "\n"
 				+"Cuota de ahorro: " + getCuotaAhorro() + "\n"
 				+"Meses Cancelados: " + getMesesCancelados() + "\n";
 }
