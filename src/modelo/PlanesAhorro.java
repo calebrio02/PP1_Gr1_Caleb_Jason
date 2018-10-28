@@ -1,6 +1,6 @@
 package modelo;
 
-public class PlanesAhorro {
+public class PlanesAhorro extends Servcios{
 double saldo, cuotaAhorro;
 int mesesCancelados;
 Clientes c;
