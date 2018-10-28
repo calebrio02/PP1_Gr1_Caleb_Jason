@@ -6,6 +6,7 @@ import modelo.Administrativos;
 import modelo.Anual;
 import modelo.Docentes;
 import modelo.Pensionados;
+import modelo.PlanesAhorro;
 
 public class Principal {
 
@@ -22,10 +23,8 @@ public class Principal {
 		Pensionados j = new Pensionados();
 		JOptionPane.showMessageDialog(null,j.toString());
 		*/
-		Anual Anual = new Anual();
-		Anual.IngresarAnual();
-		
-		JOptionPane.showMessageDialog(null, Anual.getClass().toString());
+		PlanesAhorro Planes = new PlanesAhorro();
+		Planes.SeleccionarPlanAhorro();
 		
 
 	

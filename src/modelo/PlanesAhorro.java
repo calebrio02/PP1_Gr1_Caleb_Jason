@@ -14,7 +14,7 @@ public void SeleccionarPlanAhorro() {
 	String tipoAhorro="";
 	do {
 		
-		tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+		tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el tipo de Plan de Ahorro", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
 				{ "Selecciona","Anual", "A la vista"}, "Selecciona")).toString() ;
 		
 		if(tipoAhorro.equalsIgnoreCase("Anual")) {
@@ -31,6 +31,7 @@ public void SeleccionarPlanAhorro() {
 	} while (tipoAhorro=="Selecciona"||tipoAhorro==null);
 	
 }
+
 public double getSaldo() {
 	return saldo;
 }
