@@ -18,7 +18,7 @@ public void IngresarAnual() {
 				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
 		
 		if(tipoCliente.equalsIgnoreCase("Docente")) {
-			Clientes.Docentes.IngresaDocenete();
+			Clientes.Docentes.IngresaDocente();
 			
 		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
 			Clientes.Pensionados.IngresaPensionado();

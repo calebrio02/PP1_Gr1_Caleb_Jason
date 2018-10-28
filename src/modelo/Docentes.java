@@ -26,7 +26,7 @@ public void setLugartrabajo(String lugartrabajo) {
 	this.lugartrabajo = lugartrabajo;
 }
 
-public void IngresaDocenete () {
+public void IngresaDocente () {
 	
 	ingresarCliente();
 	
