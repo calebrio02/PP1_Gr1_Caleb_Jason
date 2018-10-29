@@ -49,7 +49,7 @@ public void escogerTipoCredito() {
 			{ "Selecciona","Corriente", "Vivienda", "Especial"}, "Selecciona")).toString() ;
 	
 	if(tipoCredito.equalsIgnoreCase("Corriente")) {
-		 creditoCorriente.Ad.ingresarCliente();
+		ingresaTipoCliente();
 	}
 }
 

@@ -4,6 +4,8 @@ import javax.swing.JOptionPane;
 
 public class PlanesAhorro extends Servcios{
 	
+	Anual Anual = new Anual();
+	ALaVista ALaVista = new ALaVista();
 	double saldo, cuotaAhorro;
 	int mesesCancelados;	
 	
@@ -14,15 +16,15 @@ public void SeleccionarPlanAhorro() {
 	String tipoAhorro="";
 	do {
 		
-		tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el tipo de Plan de Ahorro", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+		tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el Plan de Ahorro", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
 				{ "Selecciona","Anual", "A la vista"}, "Selecciona")).toString() ;
 		
 		if(tipoAhorro.equalsIgnoreCase("Anual")) {
-			Anual Anual = new Anual();
-			Anual.IngresarAnual();
+			ingresaTipoCliente();
+			Anual.setPorcentanje(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el porcentaje que desea ahorrar de su salario")));
 			
 		}else if(tipoAhorro.equalsIgnoreCase("A la vista")) {
-			ALaVista ALaVista = new ALaVista();
+			
 			ALaVista.IngresarALaVista();
 			
 		}else {
@@ -31,7 +33,29 @@ public void SeleccionarPlanAhorro() {
 	} while (tipoAhorro=="Selecciona"||tipoAhorro==null);
 	
 }
-
+public void ingresaTipoCliente() {
+	
+	String tipoCliente="";
+	do {
+		
+		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
+		
+		if(tipoCliente.equalsIgnoreCase("Docente")) {
+			Clientes.Docentes.IngresaDocente();
+			
+		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
+			Clientes.Pensionados.IngresaPensionado();
+			
+		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
+			Clientes.Administrativos.ingresarAdministrativos();
+			
+		}else {
+			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
+		}
+	} while (tipoCliente=="Selecciona"||tipoCliente==null);
+	
+}
 public double getSaldo() {
 	return saldo;
 }
