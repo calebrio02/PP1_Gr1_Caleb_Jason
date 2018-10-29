@@ -2,7 +2,7 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class ALaVista extends PlanesAhorro{
+public class ALaVista{
 
 	double porcentajeCliente, porcentajePatrono;
 	
@@ -10,26 +10,6 @@ public class ALaVista extends PlanesAhorro{
 	
 	
 public void IngresarALaVista() {
-	
-	String tipoCliente="";
-	do {
-		
-		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
-		
-		if(tipoCliente.equalsIgnoreCase("Docente")) {
-			Clientes.Docentes.IngresaDocente();
-			
-		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
-			Clientes.Pensionados.IngresaPensionado();
-			
-		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
-			Clientes.Administrativos.ingresarAdministrativos();
-			
-		}else {
-			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
-		}
-	} while (tipoCliente=="Selecciona"||tipoCliente==null);
 	
 	setPorcentajeCliente(Double.parseDouble(JOptionPane.showInputDialog("Ingresa el porcentaje  sobre salario de ")));
 	setPorcentajePatrono(Double.parseDouble(JOptionPane.showInputDialog("Ingresa el porcentaje del patrono sobre salario de ")));

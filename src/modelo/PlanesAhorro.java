@@ -2,16 +2,22 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class PlanesAhorro extends Servcios{
+public class PlanesAhorro extends Servicios{
 	
 	Anual Anual = new Anual();
 	ALaVista ALaVista = new ALaVista();
-	double saldo, cuotaAhorro;
+	double saldo;
+	double cuotaAhorro;
 	int mesesCancelados;	
 	
 	
 public PlanesAhorro() {}
 
+/*
+public void ingresarPlanAhorro() {
+	setMesesCancelados(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de meses cancelados")));
+	
+}
 public void SeleccionarPlanAhorro() {
 	String tipoAhorro="";
 	do {
@@ -21,10 +27,9 @@ public void SeleccionarPlanAhorro() {
 		
 		if(tipoAhorro.equalsIgnoreCase("Anual")) {
 			ingresaTipoCliente();
-			Anual.setPorcentanje(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el porcentaje que desea ahorrar de su salario")));
-			
+			Anual.setPorcentanje(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el porcentaje de " + escogeCliente().c
 		}else if(tipoAhorro.equalsIgnoreCase("A la vista")) {
-			
+			ingresaTipoCliente();
 			ALaVista.IngresarALaVista();
 			
 		}else {
@@ -35,6 +40,7 @@ public void SeleccionarPlanAhorro() {
 }
 public void ingresaTipoCliente() {
 	
+	
 	String tipoCliente="";
 	do {
 		
@@ -42,7 +48,8 @@ public void ingresaTipoCliente() {
 				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
 		
 		if(tipoCliente.equalsIgnoreCase("Docente")) {
-			Clientes.Docentes.IngresaDocente();
+			 Clientes.Docentes.IngresaDocente();
+		
 			
 		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
 			Clientes.Pensionados.IngresaPensionado();
@@ -55,7 +62,10 @@ public void ingresaTipoCliente() {
 		}
 	} while (tipoCliente=="Selecciona"||tipoCliente==null);
 	
+	
 }
+
+*/
 public double getSaldo() {
 	return saldo;
 }

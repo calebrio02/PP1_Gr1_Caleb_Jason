@@ -2,7 +2,7 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class Anual{
+public class Anual {
 
 	double porcentaje;
 	
@@ -16,6 +16,14 @@ public class Anual{
 
 	public void setPorcentanje(double porcentanje) {
 		this.porcentaje = porcentanje;
+	}
+	
+	public double calculoCuotaAhorro(double porcentaje) {
+		double operacion=0;
+		
+		
+		
+		return operacion;
 	}
 	
 	public String toString() {

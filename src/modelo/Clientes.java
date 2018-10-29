@@ -1,6 +1,6 @@
 package modelo;
 import javax.swing.*;
-public abstract class  Clientes  {
+public  class  Clientes  {
 	
 String nombre, dni;
 double salario;
@@ -33,7 +33,17 @@ public void ingresarCliente() {
 	int cambio=0;
 			
 	setNombre(JOptionPane.showInputDialog("Introduce el nombre"));
-	setDni(JOptionPane.showInputDialog("Introduce el DNI de " + getNombre()+"."));
+	do {
+		
+		setDni(JOptionPane.showInputDialog("Introduce el DNI de " + getNombre()+"."));
+		if(getDni().length()<7||getDni().length()>7) {
+			JOptionPane.showMessageDialog(null, "El DNI debe contener 7 numeros!");
+		}else {
+			
+		}
+		
+		
+	}while(getDni().length()<7||getDni().length()>7);
 	
 	
 	do {

@@ -2,7 +2,7 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class Creditos extends Servcios{
+public class Creditos extends Servicios{
 	
 	Corriente creditoCorriente = new Corriente();
 	Vivienda creditoVivienda = new Vivienda();
@@ -13,44 +13,12 @@ int plazo;
 
 public Creditos() { //esta parte hay que distribuirla de forma diferente ya que todos los creditos tienen un monto especifico
 	//no se puede crear un ingresar en el constructor de la misma manera que lo hice en Cliente. hay que pensarla haha
-	setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingresa el monto del credito")));
 	
 	
 }
 
-public void ingresaTipoCliente() { //Metodo copiado de PlanesAhorro
+public void ingresaDatosCredito() {
 	
-	String tipoCliente="";
-	do {
-		
-		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
-		
-		if(tipoCliente.equalsIgnoreCase("Docente")) {
-			Clientes.Docentes.IngresaDocente();
-			
-		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
-			Clientes.Pensionados.IngresaPensionado();
-			
-		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
-			Clientes.Administrativos.ingresarAdministrativos();
-			
-		}else {
-			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
-		}
-	} while (tipoCliente=="Selecciona"||tipoCliente==null);
-	
-}
-
-
-
-public void escogerTipoCredito() {
-	String tipoCredito = (JOptionPane.showInputDialog(null, "Selecciona la categoria de docente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-			{ "Selecciona","Corriente", "Vivienda", "Especial"}, "Selecciona")).toString() ;
-	
-	if(tipoCredito.equalsIgnoreCase("Corriente")) {
-		ingresaTipoCliente();
-	}
 }
 
 public Corriente getCreditoCorriente() {

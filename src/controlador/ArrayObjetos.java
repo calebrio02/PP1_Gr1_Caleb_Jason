@@ -1,5 +1,5 @@
 package controlador;
-
+import modelo.Servicios;
 import java.math.BigInteger;
 
 import javax.swing.JOptionPane;
@@ -13,12 +13,13 @@ import modelo.Creditos;
 import modelo.Docentes;
 import modelo.Pensionados;
 import modelo.PlanesAhorro;
+import modelo.Servicios;
 import modelo.Vivienda;
 
 public class ArrayObjetos {
 
 	int contUser=0, cod=1; //variable para llevar control usuarios ingresados
-    Clientes usuario [] = new Clientes[5]; //creando el arreglo de objetos (clase userBanc)
+    Servicios usuario [] = new Servicios[5]; //creando el arreglo de objetos (clase userBanc)
  
     public ArrayObjetos(){ //constructor de la clase ArrObj/ en el construcutor kenneth hizo el menu. 
  
@@ -67,15 +68,15 @@ public class ArrayObjetos {
     	
     
    	if(tipoCredito.equalsIgnoreCase("Corriente")) {
-   		Corriente Co = new	 Corriente();
+   			
    		String tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de Cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
     			{ "Selecciona","Administrativo", "Docentes", "Pensionado"}, "Selecciona")).toString() ;
    			if(tipoCliente.equalsIgnoreCase("Administrativo")) {
-   				Co.ingresarAd();
+   			
    			}else if(tipoCliente.equalsIgnoreCase("Docentes")) {
-   				Co.ingresarDo();
+   			
    			}else {
-   				Co.ingresarPe();
+   				
    			}
    		
    		

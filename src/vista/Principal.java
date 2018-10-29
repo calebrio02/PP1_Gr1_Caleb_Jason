@@ -22,11 +22,11 @@ public class Principal {
 		
 		Pensionados j = new Pensionados();
 		JOptionPane.showMessageDialog(null,j.toString());
-		*/
+		
 		PlanesAhorro Planes = new PlanesAhorro();
 		Planes.SeleccionarPlanAhorro();
 		
 
-	
+	*/
 	}
 }
