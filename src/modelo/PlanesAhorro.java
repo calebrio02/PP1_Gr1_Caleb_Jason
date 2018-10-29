@@ -93,8 +93,26 @@ public void setMesesCancelados(int mesesCancelados) {
 public String toString() {
 	
 	String text="";
-	return text +=super.toString()+ "Saldo: " + getSaldo() + "\n"
+	return text +="Saldo: " + getSaldo() + "\n"     //Aca hice un cambio, elimine el super.toString por si las moscas
 				+"Cuota de ahorro: " + getCuotaAhorro() + "\n"
 				+"Meses Cancelados: " + getMesesCancelados() + "\n";
+}
+
+@Override
+public String Total() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public void Ingresar() {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public String SoloNombre() {
+	// TODO Auto-generated method stub
+	return null;
 }
 }

@@ -87,10 +87,40 @@ public void setPlazo(int plazo) {
 }
 
 
-public void ingresAdministrativoCreditoCorriente() {
+public void ingresaAdministrativoCreditoCorriente() {
 	setMontoCredito(calculoMontoCreditoAdministrativo());
 	setInteres(22);
-	setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese")));
+	do {
+	setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Plazo(de 24 a 72 maximo)")));
+	if(getPlazo()<24||getPlazo()>72) {
+		JOptionPane.showMessageDialog(null, "Los plazos van desde los 24 a los 72 meses maximo");
+	}
+	}while(getPlazo()<24||getPlazo()>72);
+	
+}
+
+public void ingresaDocenteCreditoCorriente() {
+	setMontoCredito(calculoMontoCreditoDocente());
+	setInteres(22);
+	do {
+	setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Plazo(de 24 a 72 maximo)")));
+	if(getPlazo()<24||getPlazo()>72) {
+		JOptionPane.showMessageDialog(null, "Los plazos van desde los 24 a los 72 meses maximo");
+	}
+	}while(getPlazo()<24||getPlazo()>72);
+	
+}
+
+public void ingresaPensionadoCreditoCorriente() {
+	setMontoCredito(calculoMontoCreditoPensionado());
+	setInteres(22);
+	do {
+	setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Plazo(de 24 a 72 maximo)")));
+	if(getPlazo()<24||getPlazo()>72) {
+		JOptionPane.showMessageDialog(null, "Los plazos van desde los 24 a los 72 meses maximo");
+	}
+	}while(getPlazo()<24||getPlazo()>72);
+	
 }
 
 
