@@ -4,33 +4,19 @@ import javax.swing.JOptionPane;
 
 public class Anual {
 
-	double porcentaje;
+	double porcentajeCliente;
 	
 	public Anual() {}
-	
-	
 
-	public double getPorcentanje() {
-		return porcentaje;
+public double getPorcentajeCliente() {
+		return porcentajeCliente;
 	}
 
-	public void setPorcentanje(double porcentanje) {
-		this.porcentaje = porcentanje;
+public void setPorcentajeCliente(double porcentajeCliente) {
+		this.porcentajeCliente = porcentajeCliente;
 	}
+public void IngresarAnual() {
+	setPorcentajeCliente(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el porcentaje que desea rebajar de su salario")));
+}
 	
-	public double calculoCuotaAhorro(double porcentaje) {
-		double operacion=0;
-		
-		
-		
-		return operacion;
-	}
-	
-	public String toString() {
-		
-		String text="";
-		return text += super.toString()+"Porcentaje sobre el salario: " + getPorcentanje();
-	}
-	
-
 }
