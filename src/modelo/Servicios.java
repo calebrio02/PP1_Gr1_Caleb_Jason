@@ -39,7 +39,13 @@ public abstract class Servicios {
 		this.clientePe = clientePe;
 	}
 
+public abstract String toString();//metodo abstracto para correr en el arreglo
 
+public abstract String Total();//metodo abstracto para mostrar el total que debe pagar el cliente de todos los servicios 
+
+public abstract void Ingresar();//metodo abstracto para ingresar datos
+
+public abstract String SoloNombre() ;//metodo abstracto para mostrar solo el nombre del cliente
 
 
 }

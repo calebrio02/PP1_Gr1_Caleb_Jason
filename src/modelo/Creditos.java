@@ -143,6 +143,34 @@ return resultado;
 ///////////////////////////////////////////////////////////////////////
 
 
+@Override
+public String toString() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+@Override
+public String Total() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+@Override
+public void Ingresar() {
+	// TODO Auto-generated method stub
+	
+}
+
+
+@Override
+public String SoloNombre() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
 
 
 
