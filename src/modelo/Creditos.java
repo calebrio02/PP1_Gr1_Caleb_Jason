@@ -3,6 +3,11 @@ package modelo;
 import javax.swing.JOptionPane;
 
 public class Creditos {
+	
+	Corriente creditoCorriente = new Corriente();
+	Vivienda creditoVivienda = new Vivienda();
+	Especial creditoEspecial = new Especial ();
+	
 double montoCredito, cuotaPagar, interes;
 int plazo;
 
@@ -12,6 +17,51 @@ public Creditos() { //esta parte hay que distribuirla de forma diferente ya que 
 	
 	
 }
+
+public void escogerTipoCredito() {
+	String tipoCredito = (JOptionPane.showInputDialog(null, "Selecciona la categoria de docente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+			{ "Selecciona","Corriente", "Vivienda", "Especial"}, "Selecciona")).toString() ;
+	
+	if(tipoCredito.equalsIgnoreCase("Corriente")) {
+	
+	}
+}
+
+public Corriente getCreditoCorriente() {
+	return creditoCorriente;
+}
+
+
+
+public void setCreditoCorriente(Corriente creditoCorriente) {
+	this.creditoCorriente = creditoCorriente;
+}
+
+
+
+public Vivienda getCreditoVivienda() {
+	return creditoVivienda;
+}
+
+
+
+public void setCreditoVivienda(Vivienda creditoVivienda) {
+	this.creditoVivienda = creditoVivienda;
+}
+
+
+
+public Especial getCreditoEspecial() {
+	return creditoEspecial;
+}
+
+
+
+public void setCreditoEspecial(Especial creditoEspecial) {
+	this.creditoEspecial = creditoEspecial;
+}
+
+
 
 public double getMontoCredito() {
 	return montoCredito;
