@@ -6,7 +6,7 @@ public class PlanesAhorro extends Servcios{
 	
 	double saldo, cuotaAhorro;
 	int mesesCancelados;	
-	Clientes c;
+	
 	
 public PlanesAhorro() {}
 

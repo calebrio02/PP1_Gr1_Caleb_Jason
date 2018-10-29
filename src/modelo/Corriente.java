@@ -1,6 +1,6 @@
 package modelo;
 
-public class Corriente extends Creditos {
+public class Corriente {
 double montoPCredito, hipoteca;
 Administrativos Ad;
 Docentes Do;
