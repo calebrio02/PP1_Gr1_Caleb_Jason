@@ -90,7 +90,6 @@ public void setMesesCancelados(int mesesCancelados) {
 	this.mesesCancelados = mesesCancelados;
 }
 
-@Override
 public String Total() {
 	// TODO Auto-generated method stub
 	return null;
