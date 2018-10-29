@@ -54,9 +54,17 @@ public void escogeTipoEmpleado() {//Metodos para evitar que el usuario escriba,y
 	}
 	
 	
-public String toString() {
-		String text="";
-		return text+= super.toString() + "Años de jubilacion: " + getAnosjubilado() + "\n" + "Tipo de empleado: " + getTipoEmpleado();
-	}
+public String RespuestaPensionado() {
+	String Respuesta="";
 	
+	Respuesta+=RespuestaCliente()+"Tipo de Cliente: Pensionado\n"
+	+"Anos jubilado: "+getAnosjubilado()+"\n"
+			+ "Area en la que se desempenaba: "+getTipoEmpleado()+"\n\n";
+	
+	return Respuesta;
+}
+public void RespuestaPensioando() {
+	
+	JOptionPane.showMessageDialog(null, RespuestaPensionado());
+}
 }

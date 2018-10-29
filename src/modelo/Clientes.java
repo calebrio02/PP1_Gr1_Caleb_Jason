@@ -57,10 +57,21 @@ public void ingresarCliente() {
 	} while (cambio==0);
 	
 }
-public String toString() {
+public String RespuestaCliente()
+{	String Muestra="";
 	
-	String text="";
-	return text+= "Nombre: " + getNombre()+"\n"+"DNI: " + getDni()+"\n"+"Salario: $" + getSalario() + "\n";
+	Muestra+="DATOS DEL CLIENTE\n"
+			+ "Nombre: "+getNombre()+"\n"
+			+ "DNI: "+getDni()+"\n"
+			+ "Salario: "+getSalario()+"\n\n";
+	
+	return Muestra;
+	
+	}
+public void MuestraCliente() {
+
+	JOptionPane.showMessageDialog(null, RespuestaCliente());
+
 }
 
 }

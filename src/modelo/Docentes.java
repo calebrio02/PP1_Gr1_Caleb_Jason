@@ -84,10 +84,20 @@ public void escogeEstado() {//Metodos para evitar que el usuario escriba,ya que 
 		
 }
 
-public String toString() { //Caleb es asi que se  implementa el metodo toString ?
-	String text="";
-	return text+= super.toString() + "Categoria: " + getCategoria() + "\n"+ "Estado: " + getEstado() + "\n" + "Lugar de trabajo: " + getLugartrabajo();
+public String RespuestaDocente() {
+	
+	String Respuesta="";
+	
+	Respuesta+=RespuestaCliente()+"Tipo de cliente: Docente\n"
+			+ "Catrgoria: "+getCategoria()+"\n"
+					+ "Estado: "+getEstado()+"\n"
+							+ "Lugar de Trabajo: "+getLugartrabajo()+"\n\n";
+	
+	return Respuesta;
 }
 
-
+public void MuestraDocente() {
+	
+	JOptionPane.showMessageDialog(null, RespuestaDocente());
+}
 }

@@ -23,16 +23,26 @@ public class Administrativos extends Clientes {
 		this.lugarTrabajo = lugarTrabajo;
 	}
 	
-	public void ingresarAdministrativos() {
+public void ingresarAdministrativos() {
 		
 		ingresarCliente();
 		setPuesto(JOptionPane.showInputDialog("Ingresa el puesto de " + getNombre()));
 		setLugarTrabajo(JOptionPane.showInputDialog("Ingresa el lugar de trabajo de " + getNombre()));
 	}
-	 
-	public String toString() {
+
+public String RespuestaAdministrativos() {
+	String Respuesta="";
+	
+	Respuesta+=RespuestaCliente()+"Tipo de cliente: Administrativo\n"
+			+ "Puesto: "+getPuesto()+"\n"
+			+ "Lugar de trabajo: "+getLugarTrabajo()+"\n\n";
+	
+	return Respuesta;
+}
+public void MuestraAdministrativo() {
+	
+	JOptionPane.showMessageDialog(null, RespuestaAdministrativos());
+	
 		
-		String text="";
-		return text+= super.toString()+ "Puesto: " + getPuesto()+"\n"+"Lugar de trabajo: " + getLugarTrabajo();
 	}
 }
