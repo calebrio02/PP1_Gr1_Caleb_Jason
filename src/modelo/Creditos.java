@@ -17,9 +17,6 @@ public Creditos() { //esta parte hay que distribuirla de forma diferente ya que 
 	
 }
 
-public void ingresaDatosCredito() {
-	
-}
 
 public Corriente getCreditoCorriente() {
 	return creditoCorriente;
@@ -88,6 +85,93 @@ public int getPlazo() {
 public void setPlazo(int plazo) {
 	this.plazo = plazo;
 }
+
+
+public void ingresAdministrativoCreditoCorriente() {
+	setMontoCredito(calculoMontoCreditoAdministrativo());
+	setInteres(22);
+	setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese")));
+}
+
+
+
+
+
+//Calculo del monto total y cuota del credito-- ADMINISTRATIVOS 
+public double calculoMontoCreditoAdministrativo() {
+	double resultado =0;
+	
+resultado = clienteAd.getSalario()+(clienteAd.getSalario()*0.90);
+return resultado;
+	
+}
+
+public double calculoCoutaAdministrativo() {
+	double resultado =0;
+	resultado = getMontoCredito()+(getMontoCredito()*getInteres()/100);
+	return resultado;
+}
+///////////////////////////////////////////////////////////////////////
+
+
+
+//Calculo del monto total y cuota del credito-- DOCENTES
+public double calculoMontoCreditoDocente() {
+	double resultado =0;
+	
+resultado = clienteDo.getSalario()+(clienteDo.getSalario()*0.90);
+return resultado;
+	
+}
+
+public double calculoCoutaPensionados() {
+	double resultado =0;
+	resultado = getMontoCredito()+(getMontoCredito()*getInteres()/100);
+	return resultado;
+}
+///////////////////////////////////////////////////////////////////////
+
+
+//Calculo del monto total y cuota del credito-- PENSIONADOS 
+public double calculoMontoCreditoPensionado() {
+	double resultado =0;
+	
+resultado = clientePe.getSalario()+(clientePe.getSalario()*0.90);
+return resultado;
+	
+}
+///////////////////////////////////////////////////////////////////////
+
+
+@Override
+public String toString() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+@Override
+public String Total() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+@Override
+public void Ingresar() {
+	// TODO Auto-generated method stub
+	
+}
+
+
+@Override
+public String SoloNombre() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
+
 
 
 }
