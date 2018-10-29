@@ -2,7 +2,7 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class Creditos {
+public class Creditos extends TiposClientes {
 	
 	Corriente creditoCorriente = new Corriente();
 	Vivienda creditoVivienda = new Vivienda();
@@ -23,7 +23,7 @@ public void escogerTipoCredito() {
 			{ "Selecciona","Corriente", "Vivienda", "Especial"}, "Selecciona")).toString() ;
 	
 	if(tipoCredito.equalsIgnoreCase("Corriente")) {
-	
+		 creditoCorriente.Ad.ingresarCliente();
 	}
 }
 
