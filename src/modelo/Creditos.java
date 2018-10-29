@@ -2,7 +2,7 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class Creditos extends TiposClientes {
+public class Creditos extends Servcios{
 	
 	Corriente creditoCorriente = new Corriente();
 	Vivienda creditoVivienda = new Vivienda();
@@ -17,6 +17,32 @@ public Creditos() { //esta parte hay que distribuirla de forma diferente ya que 
 	
 	
 }
+
+public void ingresaTipoCliente() { //Metodo copiado de PlanesAhorro
+	
+	String tipoCliente="";
+	do {
+		
+		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
+		
+		if(tipoCliente.equalsIgnoreCase("Docente")) {
+			Clientes.Docentes.IngresaDocente();
+			
+		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
+			Clientes.Pensionados.IngresaPensionado();
+			
+		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
+			Clientes.Administrativos.ingresarAdministrativos();
+			
+		}else {
+			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
+		}
+	} while (tipoCliente=="Selecciona"||tipoCliente==null);
+	
+}
+
+
 
 public void escogerTipoCredito() {
 	String tipoCredito = (JOptionPane.showInputDialog(null, "Selecciona la categoria de docente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
