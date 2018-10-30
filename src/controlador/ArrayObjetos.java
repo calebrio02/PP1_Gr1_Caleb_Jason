@@ -30,7 +30,7 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 														  + "4-Eliminar\n"
 														  + "5-Salir"));
 		switch (e) {
-		case 1://Ingresar();
+		case 1:Ingresar();
 			break;
 		case 2://Mostrar();
 			break;
@@ -50,61 +50,33 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 		}
 		
 }
-/*
+
 public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
+	String tipoServicio = "";
 	if(ContUser==s.length){//estrucutura de control para inidicar si el arreglo esta lleno o no sino, se ejecuta el ingresar normalmente
 		JOptionPane.showMessageDialog(null,"El m�ximo de Usuarios que puedes agregar es de " + s.length, null,JOptionPane.WARNING_MESSAGE);
         JOptionPane.showMessageDialog(null, "Si deseas agregar, debes eliminar alguno de los usuarios ya guardados.");
 	}else{
 	int n=0;
+	tipoServicio = (JOptionPane.showInputDialog(null, "Selecciona el tipo de servicio", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+			{ "Selecciona","Creditos", "Planes Ahorro"}, "Selecciona")).toString() ;
 	
-	do {
+	if(tipoServicio.equalsIgnoreCase("Creditos")) {
+		c.devuelveTipoCredito();
+		c.escogeTipoCreditoClientefinal();
+	
 		
-		try {	
+	}else if(tipoServicio.equalsIgnoreCase("Planes Ahorro")) {
 		
 		
-		n=Integer.parseInt(JOptionPane.showInputDialog("Seleccione una oferta\n"
-				+ "1-Rural Economico\n"
-				+ "2-Rural Estandar\n"
-				+ "3-Rural Oro"));
-		
-		if(n<1||n>3) {
-			JOptionPane.showMessageDialog(null, "Opcion invalida, seleccione alguna de las opciones disponibles");
-		}
-		
-		if(n==1) {
-			
-			EC.setCod(Cod);
-			EC.Ingresar();
-			O[ContUser]=EC; 
-			Cod++;
-			ContUser++;
-			}
-		else
-		if(n==2){
-			
-				RE.setCod(Cod);
-				RE.Ingresar();
-				O[ContUser]=RE;
-				Cod++;
-				ContUser++;	
-			}
-		else
-		if(n==3) {
-			
-				RO.setCod(Cod);
-				RO.Ingresar();
-				O[ContUser]=RO;
-				Cod++;
-				ContUser++;
-		}
-		} catch (Exception e2) {
-			JOptionPane.showMessageDialog(null, "Ingrese unicamente numeros");
-		}
-	}while(n<1||n>3);
+	}else  {
+	
+		JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
 	}
-}
+} while (tipoServicio=="Selecciona"||tipoServicio==null);
+	}
 
+/*
 public void Mostrar() {//metodo para recorrer el arreglo de objetos y mostrar todos los clientes que se encuentren ingresados hasta el momento
 	if(!O[0].equals(null)){
 	

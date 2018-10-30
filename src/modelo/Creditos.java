@@ -1,6 +1,7 @@
 package modelo;
 import modelo.*;
 import javax.swing.JOptionPane;
+import javax.tools.ToolProvider;
 
 public class Creditos extends Servicios{
 	
@@ -87,6 +88,39 @@ public void setPlazo(int plazo) {
 }
 
 
+
+
+public void escogeTipoCreditoClientefinal() {
+	if(devuelveTipoCredito()==1) {
+		
+		String tipoCliente;
+		tipoCliente= (JOptionPane.showInputDialog(null, "Selecciona el tipo de Cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+				{ "Selecciona","Administrativo", "Docente", "Pensionado"}, "Selecciona")).toString() ;
+		if(tipoCliente.equalsIgnoreCase("Administrativo")) {
+			ingresaAdministrativoCreditoCorriente();
+		}else if(tipoCliente.equalsIgnoreCase("Docente")) {
+			ingresaDocenteCreditoCorriente();
+		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
+			ingresaPensionadoCreditoCorriente();
+		}
+		
+	}
+}
+public int devuelveTipoCredito() {
+	int credito=0;
+	String tipoCredito ="";
+	tipoCredito = (JOptionPane.showInputDialog(null, "Selecciona el tipo de credito", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+			{ "Selecciona","Corriente", "Vivienda", "Especial"}, "Selecciona")).toString() ;
+	
+	if(tipoCredito.equalsIgnoreCase("Corriente")) {
+		credito = 1;
+	}else if(tipoCredito.equalsIgnoreCase("Vivienda")){
+		credito = 2;
+	}else if(tipoCredito.equalsIgnoreCase("Especial")) {
+		credito = 3;
+	}
+	return credito;
+}
 
 
 //INGRESA DE LOS TRES TIPOS DE CLIENTES PARA CREDITO CORRIENTE//
