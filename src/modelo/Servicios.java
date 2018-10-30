@@ -57,6 +57,6 @@ public abstract String Total();//metodo abstracto para mostrar el total que debe
 
 public abstract void Ingresar();//metodo abstracto para ingresar datos
 
-public abstract String SoloNombre() ;//metodo abstracto para mostrar solo el nombre del cliente
+public abstract String Muestra() ;//metodo abstracto para mostrar solo el nombre del cliente
 
 }

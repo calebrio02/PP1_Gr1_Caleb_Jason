@@ -167,6 +167,10 @@ public double CalculoALavistaAdministrativo() {
 																			///
 ////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+//////////////////////// mostar anual de cada tipo de cliente///////////////////
 public String MuestraDocenteAnual() {
 	String Muestra="";
 	
@@ -199,7 +203,12 @@ public String MuestraAdministrativoAnual() {
 	
 	return Muestra;
 }
+///////////////////////////////////////////////////////////////////////////////
 
+
+
+
+///////////////////////////////////// muestra a la vista de cada tipo de cliente//////////////////
 public String MuestraDocenteALaVista() {
 	
 	String muestra="";
@@ -229,6 +238,9 @@ public String MuestraAdministrativoALaVista() {
 					+ "Total de ahorros: "+CalculoALavistaAdministrativo();
 	return muestra;
 }
+////////////////////////////////////////////////////////////////////////////
+
+
 
 public double getSaldo() {
 	return saldo;
@@ -284,11 +296,11 @@ public String Total() {
 @Override
 public void Ingresar() {
 	// TODO Auto-generated method stub
-	
+	SeleccionarPlanAhorro();
 }
 
 @Override
-public String SoloNombre() {
+public String Muestra() {
 	// TODO Auto-generated method stub
 	return getMuestra();
 }

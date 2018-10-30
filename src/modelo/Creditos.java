@@ -395,7 +395,7 @@ public void Ingresar() {
 
 
 @Override
-public String SoloNombre() {
+public String Muestra() {
 	// TODO Auto-generated method stub
 	return null;
 }
