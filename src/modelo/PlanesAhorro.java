@@ -55,6 +55,8 @@ public void TipoClienteAnual() {
 			setMuestra(MuestraDocenteAnual());
 			
 			
+			
+			
 		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
 			EstableceDatosPensionado();
 			Anual.IngresarAnual();
@@ -175,7 +177,7 @@ public String MuestraDocenteAnual() {
 	String Muestra="";
 	
 	Muestra+=clienteDo.RespuestaDocente() +"Tipo de plan de ahorro: Anual\n"
-			+ "Porcentaje sobre salario: "+Anual.getPorcentajeCliente()+"%\n"
+			+ "Porcentaj e sobre salario: "+Anual.getPorcentajeCliente()+"%\n"
 					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
 							+ "Total de ahorro: $"+CalculoAnualDocente()+"\n\n";
 	
@@ -240,8 +242,10 @@ public String MuestraAdministrativoALaVista() {
 }
 ////////////////////////////////////////////////////////////////////////////
 
-
-
+public String Muestraualquiera(String dato)
+{
+	return dato;
+}
 public double getSaldo() {
 	return saldo;
 }

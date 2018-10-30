@@ -90,8 +90,9 @@ public void setPlazo(int plazo) {
 
 
 
-public void escogeTipoCreditoClientefinal() {
-	if(devuelveTipoCredito()==1) {
+public void escogeTipoCreditoClientefinal(int tipoCredito) {
+	int escogeCredito = tipoCredito;
+	if(escogeCredito==1) {
 		
 		String tipoCliente;
 		tipoCliente= (JOptionPane.showInputDialog(null, "Selecciona el tipo de Cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
@@ -122,6 +123,13 @@ public int devuelveTipoCredito() {
 	return credito;
 }
 
+
+
+public String muestraAdministrativoCreditoCorriente() {
+return	MuestraDatosAdministrativos();
+	
+	
+}
 
 //INGRESA DE LOS TRES TIPOS DE CLIENTES PARA CREDITO CORRIENTE//
 public void ingresaAdministrativoCreditoCorriente() {//Le hace falta lo que compete a hipoteca
@@ -397,7 +405,7 @@ public void Ingresar() {
 @Override
 public String Muestra() {
 	// TODO Auto-generated method stub
-	return null;
+	return muestraAdministrativoCreditoCorriente();
 }
 
 

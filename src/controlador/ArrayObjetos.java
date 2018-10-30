@@ -32,7 +32,7 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 		switch (e) {
 		case 1:Ingresar();
 			break;
-		case 2://Mostrar();
+		case 2:Mostrar();
 			break;
 		case 3://Buscar();
 			break;
@@ -62,12 +62,14 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 			{ "Selecciona","Creditos", "Planes Ahorro"}, "Selecciona")).toString() ;
 	
 	if(tipoServicio.equalsIgnoreCase("Creditos")) {
-		c.devuelveTipoCredito();
-		c.escogeTipoCreditoClientefinal();
-	
+		
+	c.escogeTipoCreditoClientefinal(c.devuelveTipoCredito());
+	s[ContUser]= c;
+	JOptionPane.showMessageDialog(null, c.Muestra());
 		
 	}else if(tipoServicio.equalsIgnoreCase("Planes Ahorro")) {
 		p.Ingresar();
+		s[ContUser]= p;
 		JOptionPane.showMessageDialog(null, p.Muestra());
 		
 		
@@ -76,20 +78,25 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 		JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
 	}
 } while (tipoServicio=="Selecciona"||tipoServicio==null);
-	}
 
-/*
+	
+ContUser ++;
+}
+
+
 public void Mostrar() {//metodo para recorrer el arreglo de objetos y mostrar todos los clientes que se encuentren ingresados hasta el momento
-	if(!O[0].equals(null)){
+	if(!s[0].equals(null)){
 	
 	for (int i = 0; i < ContUser; i++) {
 		
 		
-		JOptionPane.showMessageDialog(null, O[i].toString());
+		JOptionPane.showMessageDialog(null, s[i].Muestra());
 	}
 	}
 }
 
+
+/*
 public void Buscar(){//metodo para buscar y mostrar a un solo cliente
 	
 	String t,m="";
