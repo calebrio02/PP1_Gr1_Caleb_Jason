@@ -1,27 +1,12 @@
 package modelo;
 
-public class Vivienda extends Creditos {
+import javax.swing.JOptionPane;
+
+public class Vivienda  {
 String direccionPropiedad;
 double tamano, peritaje;
-Administrativos Ad;
-Docentes Do;
-Pensionados Pe;
 
-public void ingresarAd(){
-	Administrativos ad = new Administrativos();
-}
 
-public void ingresarDo() {
-	Docentes Do = new Docentes();
-}
-
-public void ingresarPe() {
-	Pensionados Pe = new Pensionados();
-}
-
-public Vivienda() {
-		
-}
 
 public String getDireccionPropiedad() {
 	return direccionPropiedad;
@@ -47,5 +32,11 @@ public void setPeritaje(double peritaje) {
 	this.peritaje = peritaje;
 }
 
+public void estableceVivienda() {
+	
+setDireccionPropiedad(JOptionPane.showInputDialog("Ingrese la direccion de la propiedad"));
+setTamano(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el tamano de la propiedad en mts cuadrados")));
+setPeritaje(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor de peritaje de la propiedad")));
+}
 
 }

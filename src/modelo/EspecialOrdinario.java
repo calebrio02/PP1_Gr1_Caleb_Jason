@@ -1,19 +1,11 @@
 package modelo;
 
-public class EspecialOrdinario extends Especial{
+import javax.swing.JOptionPane;
+
+public class EspecialOrdinario {
 int anoIngresoLabores;
 String puestoEspecifico;
-Administrativos Ad;
-Docentes Do;
 
-
-public void ingresarAd(){
-	Administrativos ad = new Administrativos();
-}
-
-public void ingresarDo() {
-	Docentes Do = new Docentes();
-}
 public EspecialOrdinario() {
 	
 }
@@ -35,4 +27,8 @@ public void setPuestoEspecifico(String puestoEspecifico) {
 }
 
 
+public void estableceEspecialOrdinario() {  //Corregir ano y desempena haha 
+	setAnoIngresoLabores(Integer.parseInt(JOptionPane.showInputDialog("Indique el ano de ingreso a laboral")));
+	setPuestoEspecifico("Escriba el nombre del puesto especifico que desempena");
+}
 }

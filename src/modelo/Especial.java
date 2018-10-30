@@ -1,6 +1,6 @@
 package modelo;
 
-public class Especial extends Creditos{
+public class Especial {
 	EquipoComputo EC = new EquipoComputo();
 	EspecialOrdinario EO =new EspecialOrdinario();
 	public Especial() {

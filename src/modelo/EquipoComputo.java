@@ -1,18 +1,10 @@
 package modelo;
 
-public class EquipoComputo extends Especial{
+import javax.swing.JOptionPane;
+
+public class EquipoComputo {
 String dispositivo, comercio;
-Administrativos Ad;
-Docentes Do;
 
-
-public void ingresarAd(){
-	Administrativos ad = new Administrativos();
-}
-
-public void ingresarDo() {
-	Docentes Do = new Docentes();
-}
 public EquipoComputo() {
 	
 }
@@ -33,5 +25,8 @@ public void setComercio(String comercio) {
 	this.comercio = comercio;
 }
 
-
+public void estableceEquipoComputo() {
+	setDispositivo(JOptionPane.showInputDialog("Ingrese el nombre del dispositivo a adquirir"));
+	setComercio("Ingrese el nombre del comercio donde lo comprara");
+}
 }
