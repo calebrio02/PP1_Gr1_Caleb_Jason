@@ -9,7 +9,7 @@ public class PlanesAhorro extends Servicios{
 	
 	double saldo;
 	int mesesCancelados;	
-	
+	String Muestra;
 	
 public PlanesAhorro() {}
 
@@ -52,20 +52,20 @@ public void TipoClienteAnual() {
 			EstableceDatosDocente();
 			Anual.IngresarAnual();
 			ingresarMesesCancelados();
-			CalculoAnualDocente();
+			setMuestra(MuestraDocenteAnual());
 			
 			
 		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
 			EstableceDatosPensionado();
 			Anual.IngresarAnual();
 			ingresarMesesCancelados();
-			CalculoAnualPensionado();
+			setMuestra(MuestraPensionadoAnual());
 			
 		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
 			EstableceDatosAdministrativos();
 			Anual.IngresarAnual();
 			ingresarMesesCancelados();
-			CalculoAnualAdministrativo();
+			setMuestra(MuestraAdministrativoAnual());
 			
 		}else {
 			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
@@ -87,17 +87,17 @@ public void TipoClienteALaVista() {
 		if(tipoCliente.equalsIgnoreCase("Docente")) {
 			EstableceDatosDocente();
 			ingresarMesesCancelados();
-			CalculoALavistaDocente();
+			setMuestra(MuestraDocenteALaVista());
 			
 		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
 			EstableceDatosPensionado();
 			ingresarMesesCancelados();
-			CalculoALavistaPensionado();
+			setMuestra(MuestraPensionadoALaVista());
 			
 		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
 			EstableceDatosAdministrativos();
 			ingresarMesesCancelados();
-			CalculoALavistaAdministrativo();
+			setMuestra(MuestraAdministrativoALaVista());
 		}else {
 			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
 		}
@@ -166,6 +166,70 @@ public double CalculoALavistaAdministrativo() {
 }																			///
 																			///
 ////////////////////////////////////////////////////////////////////////////////
+
+public String MuestraDocenteAnual() {
+	String Muestra="";
+	
+	Muestra+=clienteDo.RespuestaDocente() +"Tipo de plan de ahorro: Anual\n"
+			+ "Porcentaje sobre salario: "+Anual.getPorcentajeCliente()+"%\n"
+					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
+							+ "Total de ahorro: $"+CalculoAnualDocente()+"\n\n";
+	
+	return Muestra;
+}
+
+public String MuestraPensionadoAnual() {
+	String Muestra="";
+	
+	Muestra+=clientePe.RespuestaPensionado()+"Tipo de plan de ahorro: Anual\n"
+			+ "Porcentaje sobre salario: "+Anual.getPorcentajeCliente()+"%\n"
+					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
+							+ "Total de ahorro: $"+CalculoAnualPensionado()+"\n\n";
+	
+	return Muestra;
+}
+
+public String MuestraAdministrativoAnual() {
+	String Muestra="";
+	
+	Muestra+=clienteAd.RespuestaAdministrativos()+"Tipo de plan de ahorro: Anual\n"
+			+ "Porcentaje sobre salario: "+Anual.getPorcentajeCliente()+"%\n"
+					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
+							+ "Total de ahorro: $"+CalculoAnualAdministrativo()+"\n\n";
+	
+	return Muestra;
+}
+
+public String MuestraDocenteALaVista() {
+	
+	String muestra="";
+	
+	muestra+=clienteDo.RespuestaDocente()+"Tipo de plan de ahorro: A la Vista\n"
+			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
+					+ "Total de ahorros: "+CalculoALavistaDocente();
+	return muestra;
+}
+
+public String MuestraPensionadoALaVista() {
+	
+	String muestra="";
+	
+	muestra+=clientePe.RespuestaPensionado()+"Tipo de plan de ahorro: A la Vista\n"
+			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
+					+ "Total de ahorros: "+CalculoALavistaPensionado();
+	return muestra;
+}
+
+public String MuestraAdministrativoALaVista() {
+	
+	String muestra="";
+	
+	muestra+=clienteAd.RespuestaAdministrativos()+"Tipo de plan de ahorro: A la Vista\n"
+			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
+					+ "Total de ahorros: "+CalculoALavistaAdministrativo();
+	return muestra;
+}
+
 public double getSaldo() {
 	return saldo;
 }
@@ -182,6 +246,36 @@ public void setMesesCancelados(int mesesCancelados) {
 	this.mesesCancelados = mesesCancelados;
 }
 
+public Anual getAnual() {
+	return Anual;
+}
+
+
+public void setAnual(Anual anual) {
+	Anual = anual;
+}
+
+
+public ALaVista getALaVista() {
+	return ALaVista;
+}
+
+
+public void setALaVista(ALaVista aLaVista) {
+	ALaVista = aLaVista;
+}
+
+
+public String getMuestra() {
+	return Muestra;
+}
+
+
+public void setMuestra(String muestra) {
+	Muestra = muestra;
+}
+
+
 public String Total() {
 	// TODO Auto-generated method stub
 	return null;
@@ -196,7 +290,7 @@ public void Ingresar() {
 @Override
 public String SoloNombre() {
 	// TODO Auto-generated method stub
-	return null;
+	return getMuestra();
 }
 
 }
