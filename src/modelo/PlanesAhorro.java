@@ -215,7 +215,7 @@ public String MuestraDocenteALaVista() {
 	
 	muestra+=clienteDo.RespuestaDocente()+"Tipo de plan de ahorro: A la Vista\n"
 			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-					+ "Total de ahorros: "+CalculoALavistaDocente();
+					+ "Total de ahorros: $"+CalculoALavistaDocente();
 	return muestra;
 }
 
@@ -225,7 +225,7 @@ public String MuestraPensionadoALaVista() {
 	
 	muestra+=clientePe.RespuestaPensionado()+"Tipo de plan de ahorro: A la Vista\n"
 			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-					+ "Total de ahorros: "+CalculoALavistaPensionado();
+					+ "Total de ahorros: $"+CalculoALavistaPensionado();
 	return muestra;
 }
 
@@ -235,7 +235,7 @@ public String MuestraAdministrativoALaVista() {
 	
 	muestra+=clienteAd.RespuestaAdministrativos()+"Tipo de plan de ahorro: A la Vista\n"
 			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-					+ "Total de ahorros: "+CalculoALavistaAdministrativo();
+					+ "Total de ahorros: $"+CalculoALavistaAdministrativo();
 	return muestra;
 }
 ////////////////////////////////////////////////////////////////////////////

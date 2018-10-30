@@ -67,6 +67,8 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 	
 		
 	}else if(tipoServicio.equalsIgnoreCase("Planes Ahorro")) {
+		p.Ingresar();
+		JOptionPane.showMessageDialog(null, p.Muestra());
 		
 		
 	}else  {
