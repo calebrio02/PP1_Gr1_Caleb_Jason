@@ -129,6 +129,8 @@ public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINIS
 	return Muestra;
 	
 }//FIN DE MUESTRAS ESPECIFICOS
+
+
 ////////////MUESTRAS GENERICOS/////////////////////////////////
 public String MuestraCualquiera() {//PARA MOSTRAR CUALQUIER TIPO DE CLIENTE
 String Muestra="";
