@@ -42,7 +42,7 @@ public void TipoCliente() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFIC
 	do {
 		
 		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
+				{ "Selecciona","Docente", "Administrativo"}, "Selecciona")).toString() ;
 		
 		if(tipoCliente.equalsIgnoreCase("Docente")) {
 			ingresaDocente();
