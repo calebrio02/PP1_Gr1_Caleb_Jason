@@ -4,313 +4,43 @@ import javax.swing.JOptionPane;
 
 public class PlanesAhorro extends Servicios{
 	
-
 	double saldo;
 	int mesesCancelados;
-
 	
-	
-public PlanesAhorro() {}
-
-
-public void ingresarMesesCancelados() {
-	setMesesCancelados(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de meses cancelados")));
-}
-/*
-public void SeleccionarPlanAhorro() {
-	String tipoAhorro="";
-	do {
-		
-		tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el Plan de Ahorro", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Anual", "A la vista"}, "Selecciona")).toString() ;
-		
-		if(tipoAhorro.equalsIgnoreCase("Anual")) {
-			TipoClienteAnual();
-
-		}else if(tipoAhorro.equalsIgnoreCase("A la vista")) {
-			TipoClienteALaVista();
-
-			
-		}else {
-			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
-		}
-	} while (tipoAhorro=="Selecciona"||tipoAhorro==null);
-	
-}
-
-public void TipoClienteAnual() {
-	
-	
-	String tipoCliente="";
-	do {
-		
-		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
-		
-		if(tipoCliente.equalsIgnoreCase("Docente")) {
-			EstableceDatosDocente();
-			Anual.IngresarAnual();
-			ingresarMesesCancelados();
-			setTipoCliente("Docente");
-			setServicioSeleccionado("Anual");
-			//setMuestra(MuestraDocenteAnual());
-			
-			
-			
-			
-		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
-			EstableceDatosPensionado();
-			Anual.IngresarAnual();
-			ingresarMesesCancelados();
-			setTipoCliente("Pensionado");
-			setServicioSeleccionado("Anual");
-			//setMuestra(MuestraPensionadoAnual());
-			
-		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
-			EstableceDatosAdministrativos();
-			Anual.IngresarAnual();
-			ingresarMesesCancelados();
-			setTipoCliente("Administrativo");
-			setServicioSeleccionado("Anual");
-			//setMuestra(MuestraAdministrativoAnual());
-			
-		}else {
-			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
-		}
-	} while (tipoCliente=="Selecciona"||tipoCliente==null);
-	
-	
-}
-
-public void TipoClienteALaVista() {
-	
-	
-	String tipoCliente="";
-	do {
-		
-		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
-		
-		if(tipoCliente.equalsIgnoreCase("Docente")) {
-			EstableceDatosDocente();
-			ingresarMesesCancelados();
-			setTipoCliente("Docente");
-			setServicioSeleccionado("A la vista");
-			//setMuestra(MuestraDocenteALaVista());
-			
-		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
-			EstableceDatosPensionado();
-			ingresarMesesCancelados();
-			setTipoCliente("Pensionado");
-			setServicioSeleccionado("A la vista");
-			//setMuestra(MuestraPensionadoALaVista());
-			
-		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
-			EstableceDatosAdministrativos();
-			ingresarMesesCancelados();
-			setTipoCliente("Administrativo");
-			setServicioSeleccionado("A la vista ");
-			//setMuestra(MuestraAdministrativoALaVista());
-		}else {
-			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
-		}
-	} while (tipoCliente=="Selecciona"||tipoCliente==null);
-	
-	
+public PlanesAhorro() {	
 }
 
 
-
-
-
-
-//////calculos anuales de cada tipo de clieente///////////////////////////
-public double CalculoAnualDocente() {
-	double cuota=0;
-	cuota=(clienteDo.getSalario()*Anual.getPorcentajeCliente());
-	cuota=cuota*getMesesCancelados();
-	setSaldo(cuota);
-	return getSaldo();
-}
-
-public double CalculoAnualPensionado() {
-	double cuota=0;
-	cuota=(clientePe.getSalario()*Anual.getPorcentajeCliente());
-	cuota=cuota*getMesesCancelados();
-	setSaldo(cuota);
-	return getSaldo();
-}
-
-public double CalculoAnualAdministrativo() {
-	double cuota=0;
-	cuota=(clienteAd.getSalario()*Anual.getPorcentajeCliente());
-	cuota=cuota*getMesesCancelados();
-	setSaldo(cuota);
-	return getSaldo();														//
-}																			//
-//////////////////////////////////////////////////////////////////////////////
-
-
-
-
-////// calculos a la vista de cliente///////////////////////////////////////////
-public double CalculoALavistaDocente() {
-	double cuota=0;
-	cuota=(clienteDo.getSalario()*ALaVista.getPorcentajeCliente())+(clienteDo.getSalario()*ALaVista.getPorcentajePatrono());
-	cuota=cuota*getMesesCancelados();
-	setSaldo(cuota);
-	return getSaldo();
-}
-
-public double CalculoALavistaPensionado() {
-	double cuota=0;
-	cuota=(clienteDo.getSalario()*ALaVista.getPorcentajeCliente())+(clienteDo.getSalario()*ALaVista.getPorcentajePatrono());
-	cuota=cuota*getMesesCancelados();
-	setSaldo(cuota);
-	return getSaldo();
-}
-
-public double CalculoALavistaAdministrativo() {
-	double cuota=0;
-	cuota=(clienteDo.getSalario()*ALaVista.getPorcentajeCliente())+(clienteDo.getSalario()*ALaVista.getPorcentajePatrono());
-	cuota=cuota*getMesesCancelados();
-	setSaldo(cuota);
-	return getSaldo();
-}																			///
-																			///
-////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-//////////////////////// mostar anual de cada tipo de cliente///////////////////
-public String MuestraDocenteAnual() {
-	String Muestra="";
-	
-	Muestra+=clienteDo.RespuestaDocente() +"Tipo de plan de ahorro: Anual\n"
-			+ "Porcentaj e sobre salario: "+Anual.getPorcentajeCliente()+"%\n"
-					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-							+ "Total de ahorro: $"+CalculoAnualDocente()+"\n\n";
-	
-	return Muestra;
-}
-
-public String MuestraPensionadoAnual() {
-	String Muestra="";
-	
-	Muestra+=clientePe.RespuestaPensionado()+"Tipo de plan de ahorro: Anual\n"
-			+ "Porcentaje sobre salario: "+Anual.getPorcentajeCliente()+"%\n"
-					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-							+ "Total de ahorro: $"+CalculoAnualPensionado()+"\n\n";
-	
-	return Muestra;
-}
-
-public String MuestraAdministrativoAnual() {
-	String Muestra="";
-	
-	Muestra+=clienteAd.RespuestaAdministrativos()+"Tipo de plan de ahorro: Anual\n"
-			+ "Porcentaje sobre salario: "+Anual.getPorcentajeCliente()+"%\n"
-					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-							+ "Total de ahorro: $"+CalculoAnualAdministrativo()+"\n\n";
-	
-	return Muestra;
-}
-///////////////////////////////////////////////////////////////////////////////
-
-
-
-
-///////////////////////////////////// muestra a la vista de cada tipo de cliente//////////////////
-public String MuestraDocenteALaVista() {
-	
-	String muestra="";
-	
-	muestra+=clienteDo.RespuestaDocente()+"Tipo de plan de ahorro: A la Vista\n"
-			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-					+ "Total de ahorros: $"+CalculoALavistaDocente();
-	return muestra;
-}
-
-public String MuestraPensionadoALaVista() {
-	
-	String muestra="";
-	
-	muestra+=clientePe.RespuestaPensionado()+"Tipo de plan de ahorro: A la Vista\n"
-			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-					+ "Total de ahorros: $"+CalculoALavistaPensionado();
-	return muestra;
-}
-
-public String MuestraAdministrativoALaVista() {
-	
-	String muestra="";
-	
-	muestra+=clienteAd.RespuestaAdministrativos()+"Tipo de plan de ahorro: A la Vista\n"
-			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-					+ "Total de ahorros: $"+CalculoALavistaAdministrativo();
-	return muestra;
-}
-////////////////////////////////////////////////////////////////////////////
-
-public String MuestraCualquiera()
-{
-	String respuesta="";
-	////////////// si el plan seleccionado es ANUAL/////////////////////
-	if(getServicioSeleccionado().equalsIgnoreCase("Anual")) {
-		if(getTipoCliente().equals("Docente")) {
-			respuesta=MuestraDocenteAnual();
-		}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {
-			respuesta=MuestraPensionadoAnual();
-		}else if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
-			respuesta=MuestraAdministrativoAnual();
-		}
-	///////////////// si el plan seleccionado es A LA VISTA///////////////
-	}else if(getServicioSeleccionado().equalsIgnoreCase("A la vista")) {
-		if(getTipoCliente().equals("Docente")) {
-			respuesta=MuestraDocenteALaVista();
-		}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {
-			respuesta=MuestraPensionadoALaVista();
-		}else if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
-			respuesta=MuestraAdministrativoALaVista();
-		}
-	};
-	return respuesta;
-}
-
-*/
+//////////SETS Y GETS DE ESTA CLASE
 public double getSaldo() {
 	return saldo;
 }
-
 public void setSaldo(double saldo) {
 	this.saldo = saldo;
 }
-
 public int getMesesCancelados() {
 	return mesesCancelados;
 }
-
 public void setMesesCancelados(int mesesCancelados) {
 	this.mesesCancelados = mesesCancelados;
+}//FIN DE SETS Y GETS////////////////////
+
+
+public void ingresarMesesCancelados() {//INGRESA DE ESTA CLASE
+	setMesesCancelados(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de meses cancelados")));
 }
-
-
 public String SoloDNI() {
 	// TODO Auto-generated method stub
 	return null;
 }
-
 @Override
 public void Ingresar() {
-	// TODO Auto-generated method stub
-	
+	// TODO Auto-generated method stub	
 }
-
 @Override
 public String Muestra() {
 	// TODO Auto-generated method stub
 	return null;
 }
 
-}
+}//FIN DE ESTA CLASE
