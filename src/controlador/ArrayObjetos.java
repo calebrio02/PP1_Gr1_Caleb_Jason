@@ -30,9 +30,9 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 														  + "4-Eliminar\n"
 														  + "5-Salir"));
 		switch (e) {
-		case 1:Ingresar();
+		case 1://Ingresar();
 			break;
-		case 2:Mostrar();
+		case 2://Mostrar();  //cuidado aca
 			break;
 		case 3://Buscar();
 			break;
@@ -50,7 +50,7 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 		}
 		
 }
-
+/*
 public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 	String tipoServicio = "";
 	if(ContUser==s.length){//estrucutura de control para inidicar si el arreglo esta lleno o no sino, se ejecuta el ingresar normalmente
