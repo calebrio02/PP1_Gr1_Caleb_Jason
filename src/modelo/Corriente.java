@@ -2,10 +2,13 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class Corriente extends Creditos {
+public class Corriente extends Creditos{
 	
 	
 double montoPCredito, hipoteca;
+String tipoCliente;
+
+
 
 public Corriente() {
 	
@@ -27,7 +30,38 @@ public void setHipoteca(double hipoteca) {
 	this.hipoteca = hipoteca;
 }
 
+public void setTipoCliente(String tipoCliente) {
+	this.tipoCliente = tipoCliente;
+}
 
+
+
+public String getTipoCliente() {
+	return tipoCliente;
+}
+
+
+
+public void EscogeIngresaCliente() {
+	
+
+	
+	String elCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+			{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
+	
+	if(elCliente.equalsIgnoreCase("Docente")) {
+		setTipoCliente("Docente");
+		ingresaDocenteCreditoCorriente();
+	}else if(elCliente.equalsIgnoreCase("Pensionado")) {
+		setTipoCliente("Pensionado"); 
+		ingresaPensionadoCreditoCorriente();
+	}else if(elCliente.equalsIgnoreCase("Administrativo")) {
+		setTipoCliente("Administrativo");
+		ingresaAdministrativoCreditoCorriente();
+	}
+	
+
+}
 
 //INGRESA DE LOS TRES TIPOS DE CLIENTES PARA CREDITO CORRIENTE//
 public void ingresaAdministrativoCreditoCorriente() {//Le hace falta lo que compete a hipoteca
@@ -43,7 +77,15 @@ public void ingresaAdministrativoCreditoCorriente() {//Le hace falta lo que comp
 	}while(getPlazo()<24||getPlazo()>72);
 	setCuotaPagar(calculoCoutaCorriente());
 }
-
+public String muestraDatosAdministrativosCorriente() {
+	String mensaje = "";
+	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: " + "\n"
+	+ "Interes: " + getInteres() + "\n"
+	+ "Plazo: " + getPlazo() + "\n"
+	+ "Cuota a pagar: " + getCuotaPagar();
+			
+	return mensaje;
+}
 public void ingresaDocenteCreditoCorriente() {
 	
 	EstableceDatosDocente();
@@ -58,6 +100,16 @@ public void ingresaDocenteCreditoCorriente() {
 	setCuotaPagar(calculoCoutaCorriente());
 }
 
+public String muestraDatosDocentesCorriente() {
+	String mensaje = "";
+	mensaje += MuestraDatosDocentes()+ "Monto del Credito: " + "\n"
+	+ "Interes: " + getInteres() + "\n"
+	+ "Plazo: " + getPlazo() + "\n"
+	+ "Cuota a pagar: " + getCuotaPagar();
+			
+	return mensaje;
+}
+
 public void ingresaPensionadoCreditoCorriente() {
 	
 	EstableceDatosPensionado();
@@ -70,6 +122,16 @@ public void ingresaPensionadoCreditoCorriente() {
 	}
 	}while(getPlazo()<24||getPlazo()>72);
 	setCuotaPagar(calculoCoutaCorriente());
+}
+
+public String muestraDatosPensionadosCorriente() {
+	String mensaje = "";
+	mensaje += MuestraDatosPensionados() + "Monto del Credito: " + "\n"
+	+ "Interes: " + getInteres() + "\n"
+	+ "Plazo: " + getPlazo() + "\n"
+	+ "Cuota a pagar: " + getCuotaPagar();
+			
+	return mensaje;
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -120,4 +182,49 @@ public double calculoCoutaCorriente() {
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+public String muestraDni() {
+	String mensaje = "";
+	
+	if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
+		mensaje = clienteAd.getDni();
+	}else if(getTipoCliente().equalsIgnoreCase("Docente")) {
+		mensaje = clienteDo.getDni();
+	}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {
+		mensaje = clientePe.getDni();
+	}
+	return mensaje;
+}
+
+public String muestraCualquiera() {
+	
+	String mensaje = "";
+	if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
+		mensaje = muestraDatosAdministrativosCorriente();
+	}else if(getTipoCliente().equalsIgnoreCase("Docente")) {
+		mensaje = muestraDatosDocentesCorriente();
+	}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {
+		mensaje = muestraDatosPensionadosCorriente();
+	}
+	
+	return mensaje;
+}
+
+@Override
+public String SoloDNI() {
+	// TODO Auto-generated method stub
+	return muestraDni();
+}
+
+@Override
+public void Ingresar() {
+	EscogeIngresaCliente();
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public String Muestra() {
+	// TODO Auto-generated method stub
+	return muestraCualquiera();
+}
 }

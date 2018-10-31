@@ -5,8 +5,16 @@ import javax.swing.JOptionPane;
 public class Vivienda extends Creditos  {
 String direccionPropiedad;
 double tamano, peritaje;
+String tipoCliente;
 
 
+public String getTipoCliente() {
+	return tipoCliente;
+}
+
+public void setTipoCliente(String tipoCliente) {
+	this.tipoCliente = tipoCliente;
+}
 
 public String getDireccionPropiedad() {
 	return direccionPropiedad;
@@ -39,6 +47,26 @@ public void estableceVivienda() {
 
 
 
+public void EscogeIngresaCliente() {
+	
+
+	
+	String elCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+			{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
+	
+	if(elCliente.equalsIgnoreCase("Docente")) {
+		setTipoCliente("Docente");
+		ingresaDocenteCreditoVivienda();;
+	}else if(elCliente.equalsIgnoreCase("Pensionado")) {
+		setTipoCliente("Pensionado"); 
+		ingresaPensionadoCreditoVivienda();;
+	}else if(elCliente.equalsIgnoreCase("Administrativo")) {
+		setTipoCliente("Administrativo");
+		ingresaAdministrativoCreditoVivienda();
+	}
+	
+
+}
 
 //INGRESA DE LOS TIPOS DE CLIENTES PARA CREDITO VIVIENDA//
 public void ingresaAdministrativoCreditoVivienda() {
@@ -103,5 +131,36 @@ public double calculoCuotaVivienda() {
 	double resultado=0;
 	resultado = (getMontoCredito()+(getMontoCredito()*getInteres()/100)+(getMontoCredito()*10/100))/getPlazo();
 	return resultado;
+}
+public String muestraDni() {
+	String mensaje = "";
+	
+	if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
+		mensaje = clienteAd.getDni();
+	}else if(getTipoCliente().equalsIgnoreCase("Docente")) {
+		mensaje = clienteDo.getDni();
+	}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {
+		mensaje = clientePe.getDni();
+	}
+	return mensaje;
+}
+
+
+@Override
+public String SoloDNI() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public void Ingresar() {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public String Muestra() {
+	// TODO Auto-generated method stub
+	return null;
 }
 }

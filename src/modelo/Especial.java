@@ -2,13 +2,23 @@ package modelo;
 
 public class Especial extends Creditos{
 	
-	public Especial() {
+
+	
+	@Override
+	public String SoloDNI() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void Ingresar() {
+		// TODO Auto-generated method stub
 		
 	}
-	
-	public double calculoCuotaPagar() {
-		double resultado = 0;
-		
-		return resultado;
+
+	@Override
+	public String Muestra() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
