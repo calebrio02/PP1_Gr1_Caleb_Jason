@@ -4,11 +4,16 @@ import javax.swing.JOptionPane;
 
 public class EquipoComputo extends Especial{
 String dispositivo, comercio, TipoCliente;
+int Cod=1;
 
-public EquipoComputo() {
-	
+public EquipoComputo() {	
 }
-
+public int getCod() {
+	return Cod;
+}
+public void setCod(int cod) {
+	Cod = cod;
+}
 public String getTipoCliente() {
 	return TipoCliente;
 }
