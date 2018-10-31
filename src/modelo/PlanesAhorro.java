@@ -278,7 +278,7 @@ public String MuestraCualquiera()
 	return respuesta;
 }
 
-
+*/
 public double getSaldo() {
 	return saldo;
 }
@@ -286,7 +286,7 @@ public double getSaldo() {
 public void setSaldo(double saldo) {
 	this.saldo = saldo;
 }
-*/
+
 public int getMesesCancelados() {
 	return mesesCancelados;
 }
