@@ -5,9 +5,9 @@ public abstract class Servicios {
 	Administrativos clienteAd = new Administrativos();
 	Docentes clienteDo = new Docentes();
 	Pensionados clientePe = new Pensionados();
-	String tipoCliente;
-	String servicioSeleccionado;
-
+	//String tipoCliente;
+	//String servicioSeleccionado;
+	/*
 public String getServicioSeleccionado() {
 		return servicioSeleccionado;
 	}
@@ -26,7 +26,7 @@ public String getTipoCliente() {
 	public void setTipoCliente(String tipoCliente) {
 		this.tipoCliente = tipoCliente;
 	}
-
+*/
 
 public Administrativos getClienteAd() {
 		return clienteAd;

@@ -8,7 +8,9 @@ public class PlanesAhorro extends Servicios{
 	ALaVista ALaVista = new ALaVista();
 	
 	double saldo;
-	int mesesCancelados;	
+	int mesesCancelados;
+	String tipoCliente;
+	String servicioSeleccionado;
 	//String Muestra;
 	
 public PlanesAhorro() {}
@@ -278,6 +280,27 @@ public String MuestraCualquiera()
 	};
 	return respuesta;
 }
+
+public String getTipoCliente() {
+	return tipoCliente;
+}
+
+
+public void setTipoCliente(String tipoCliente) {
+	this.tipoCliente = tipoCliente;
+}
+
+
+public String getServicioSeleccionado() {
+	return servicioSeleccionado;
+}
+
+
+public void setServicioSeleccionado(String servicioSeleccionado) {
+	this.servicioSeleccionado = servicioSeleccionado;
+}
+
+
 public double getSaldo() {
 	return saldo;
 }
