@@ -4,14 +4,11 @@ import javax.swing.JOptionPane;
 
 public class PlanesAhorro extends Servicios{
 	
-	Anual Anual = new Anual();
-	ALaVista ALaVista = new ALaVista();
-	
+
 	double saldo;
 	int mesesCancelados;
-	String tipoCliente;
-	String servicioSeleccionado;
-	//String Muestra;
+
+	
 	
 public PlanesAhorro() {}
 
@@ -19,7 +16,7 @@ public PlanesAhorro() {}
 public void ingresarMesesCancelados() {
 	setMesesCancelados(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de meses cancelados")));
 }
-
+/*
 public void SeleccionarPlanAhorro() {
 	String tipoAhorro="";
 	do {
@@ -281,25 +278,6 @@ public String MuestraCualquiera()
 	return respuesta;
 }
 
-public String getTipoCliente() {
-	return tipoCliente;
-}
-
-
-public void setTipoCliente(String tipoCliente) {
-	this.tipoCliente = tipoCliente;
-}
-
-
-public String getServicioSeleccionado() {
-	return servicioSeleccionado;
-}
-
-
-public void setServicioSeleccionado(String servicioSeleccionado) {
-	this.servicioSeleccionado = servicioSeleccionado;
-}
-
 
 public double getSaldo() {
 	return saldo;
@@ -308,7 +286,7 @@ public double getSaldo() {
 public void setSaldo(double saldo) {
 	this.saldo = saldo;
 }
-
+*/
 public int getMesesCancelados() {
 	return mesesCancelados;
 }
@@ -317,37 +295,8 @@ public void setMesesCancelados(int mesesCancelados) {
 	this.mesesCancelados = mesesCancelados;
 }
 
-public Anual getAnual() {
-	return Anual;
-}
 
-
-public void setAnual(Anual anual) {
-	Anual = anual;
-}
-
-
-public ALaVista getALaVista() {
-	return ALaVista;
-}
-
-
-public void setALaVista(ALaVista aLaVista) {
-	ALaVista = aLaVista;
-}
-
-
-/*public String getMuestra() {
-	return Muestra;
-}
-
-
-public void setMuestra(String muestra) {
-	Muestra = muestra;
-}
-*/
-
-public String Total() {
+public String SoloDNI() {
 	// TODO Auto-generated method stub
 	return null;
 }
@@ -355,13 +304,13 @@ public String Total() {
 @Override
 public void Ingresar() {
 	// TODO Auto-generated method stub
-	SeleccionarPlanAhorro();
+	
 }
 
 @Override
 public String Muestra() {
 	// TODO Auto-generated method stub
-	return MuestraCualquiera();
+	return null;
 }
 
 }

@@ -74,7 +74,7 @@ public String MuestraDatosPensionados() {
 	return clientePe.RespuestaPensionado();
 }
 
-public abstract String Total();//metodo abstracto para mostrar el total que debe pagar el cliente de todos los servicios 
+public abstract String SoloDNI();//metodo abstracto para mostrar el total que debe pagar el cliente de todos los servicios 
 
 public abstract void Ingresar();//metodo abstracto para ingresar datos
 

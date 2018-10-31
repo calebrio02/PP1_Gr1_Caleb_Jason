@@ -389,7 +389,7 @@ public String toString() {
 
 
 @Override
-public String Total() {
+public String SoloDNI() {
 	// TODO Auto-generated method stub
 	return null;
 }
