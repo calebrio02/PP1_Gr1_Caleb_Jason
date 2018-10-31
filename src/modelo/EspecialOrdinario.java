@@ -102,10 +102,12 @@ public double calculoCuotaEspecialOrdinario() {
 public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String Muestra="";
 	
-	Muestra+=clienteDo.RespuestaDocente() +"Tipo de credito especial: Computo\n"
+	Muestra+=clienteDo.RespuestaDocente() +"Tipo de credito especial: Ordinario\n"
 			+ "Monto solicitado: $"+getMontoCredito()+"\n"
-				+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
-					+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
+				+ "Puesto especifico: "+getPuestoEspecifico()+"\n"
+					+ "Ano de ingreso a labores: "+getAnoIngresoLabores()+"\n"
+						+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
+							+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
 	
 	return Muestra;
 }
@@ -114,7 +116,7 @@ public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINIS
 	
 	String Muestra="";
 	
-	Muestra+=clienteAd.RespuestaAdministrativos() +"Tipo de credito especial: Computo\n"
+	Muestra+=clienteAd.RespuestaAdministrativos() +"Tipo de credito especial: Ordniario\n"
 			+ "Monto solicitado: $"+getMontoCredito()+"\n"
 				+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
 					+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
