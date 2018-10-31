@@ -9,7 +9,7 @@ public class PlanesAhorro extends Servicios{
 	
 	double saldo;
 	int mesesCancelados;	
-	String Muestra;
+	//String Muestra;
 	
 public PlanesAhorro() {}
 
@@ -54,7 +54,7 @@ public void TipoClienteAnual() {
 			ingresarMesesCancelados();
 			setTipoCliente("Docente");
 			setServicioSeleccionado("Anual");
-			setMuestra(MuestraDocenteAnual());
+			//setMuestra(MuestraDocenteAnual());
 			
 			
 			
@@ -65,7 +65,7 @@ public void TipoClienteAnual() {
 			ingresarMesesCancelados();
 			setTipoCliente("Pensionado");
 			setServicioSeleccionado("Anual");
-			setMuestra(MuestraPensionadoAnual());
+			//setMuestra(MuestraPensionadoAnual());
 			
 		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
 			EstableceDatosAdministrativos();
@@ -73,7 +73,7 @@ public void TipoClienteAnual() {
 			ingresarMesesCancelados();
 			setTipoCliente("Administrativo");
 			setServicioSeleccionado("Anual");
-			setMuestra(MuestraAdministrativoAnual());
+			//setMuestra(MuestraAdministrativoAnual());
 			
 		}else {
 			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
@@ -97,21 +97,21 @@ public void TipoClienteALaVista() {
 			ingresarMesesCancelados();
 			setTipoCliente("Docente");
 			setServicioSeleccionado("A la vista");
-			setMuestra(MuestraDocenteALaVista());
+			//setMuestra(MuestraDocenteALaVista());
 			
 		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
 			EstableceDatosPensionado();
 			ingresarMesesCancelados();
 			setTipoCliente("Pensionado");
 			setServicioSeleccionado("A la vista");
-			setMuestra(MuestraPensionadoALaVista());
+			//setMuestra(MuestraPensionadoALaVista());
 			
 		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
 			EstableceDatosAdministrativos();
 			ingresarMesesCancelados();
 			setTipoCliente("Administrativo");
 			setServicioSeleccionado("A la vista ");
-			setMuestra(MuestraAdministrativoALaVista());
+			//setMuestra(MuestraAdministrativoALaVista());
 		}else {
 			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
 		}
@@ -257,7 +257,7 @@ public String MuestraAdministrativoALaVista() {
 public String MuestraCualquiera()
 {
 	String respuesta="";
-	
+	////////////// si el plan seleccionado es ANUAL/////////////////////
 	if(getServicioSeleccionado().equalsIgnoreCase("Anual")) {
 		if(getTipoCliente().equals("Docente")) {
 			respuesta=MuestraDocenteAnual();
@@ -265,6 +265,15 @@ public String MuestraCualquiera()
 			respuesta=MuestraPensionadoAnual();
 		}else if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
 			respuesta=MuestraAdministrativoAnual();
+		}
+	///////////////// si el plan seleccionado es A LA VISTA///////////////
+	}else if(getServicioSeleccionado().equalsIgnoreCase("A la vista")) {
+		if(getTipoCliente().equals("Docente")) {
+			respuesta=MuestraDocenteALaVista();
+		}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {
+			respuesta=MuestraPensionadoALaVista();
+		}else if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
+			respuesta=MuestraAdministrativoALaVista();
 		}
 	};
 	return respuesta;
@@ -305,7 +314,7 @@ public void setALaVista(ALaVista aLaVista) {
 }
 
 
-public String getMuestra() {
+/*public String getMuestra() {
 	return Muestra;
 }
 
@@ -313,7 +322,7 @@ public String getMuestra() {
 public void setMuestra(String muestra) {
 	Muestra = muestra;
 }
-
+*/
 
 public String Total() {
 	// TODO Auto-generated method stub
