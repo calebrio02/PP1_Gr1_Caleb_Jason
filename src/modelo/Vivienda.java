@@ -42,7 +42,9 @@ public void setPeritaje(double peritaje) {
 
 public void estableceVivienda() {
 	
-
+  setDireccionPropiedad(JOptionPane.showInputDialog("Ingrese la direccion de la propiedad"));
+  setTamano(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el tamano de la propiedad")));
+  setPeritaje(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el peritaje de la propiedad (valor de propiedad)")));
 }
 
 
@@ -88,6 +90,19 @@ public void ingresaAdministrativoCreditoVivienda() {
 	estableceVivienda();
 }
 
+public String muestraDatosAdministrativoVivienda() {
+	String mensaje = "";
+	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: " + "\n"
+	+ "Interes: " + getInteres() + "\n"
+	+ "Plazo: " + getPlazo() + "\n"
+	+ "Cuota a pagar: " + getCuotaPagar() + "\n"
+	+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
+	+ "Tamano de la propiedad: " + getTamano() + "\n" 
+	+ "Peritaje: " + getPeritaje();
+			
+	return mensaje;
+}
+
 
 public void ingresaDocenteCreditoVivienda() {
 	EstableceDatosDocente();
@@ -108,7 +123,18 @@ public void ingresaDocenteCreditoVivienda() {
 	estableceVivienda();
 }
 
-
+public String muestraDatosDocenteVivienda() {
+	String mensaje = "";
+	mensaje += MuestraDatosDocentes() + "Monto del Credito: " + "\n"
+	+ "Interes: " + getInteres() + "\n"
+	+ "Plazo: " + getPlazo() + "\n"
+	+ "Cuota a pagar: " + getCuotaPagar() + "\n"
+	+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
+	+ "Tamano de la propiedad: " + getTamano() + "\n" 
+	+ "Peritaje: " + getPeritaje();
+			
+	return mensaje;
+}
 public void ingresaPensionadoCreditoVivienda() {
 	EstableceDatosPensionado();
 	do {
@@ -127,6 +153,21 @@ public void ingresaPensionadoCreditoVivienda() {
 	setCuotaPagar(calculoCuotaVivienda());
 	estableceVivienda();
 }
+
+public String muestraDatosPensionadovivienda() {
+	String mensaje = "";
+	mensaje += MuestraDatosPensionados()+ "Monto del Credito: " + "\n"
+	+ "Interes: " + getInteres() + "\n"
+	+ "Plazo: " + getPlazo() + "\n"
+	+ "Cuota a pagar: " + getCuotaPagar() + "\n"
+	+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
+	+ "Tamano de la propiedad: " + getTamano() + "\n" 
+	+ "Peritaje: " + getPeritaje();
+			
+	return mensaje;
+}
+
+
 public double calculoCuotaVivienda() {
 	double resultado=0;
 	resultado = (getMontoCredito()+(getMontoCredito()*getInteres()/100)+(getMontoCredito()*10/100))/getPlazo();
@@ -146,14 +187,30 @@ public String muestraDni() {
 }
 
 
+
+public String muestraCualquiera() {
+	
+	String mensaje = "";
+	if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
+		mensaje = muestraDatosAdministrativoVivienda();
+	}else if(getTipoCliente().equalsIgnoreCase("Docente")) {
+		mensaje = muestraDatosDocenteVivienda();
+	}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {
+		mensaje = muestraDatosPensionadovivienda();
+	}
+	
+	return mensaje;
+}
+
 @Override
 public String SoloDNI() {
 	// TODO Auto-generated method stub
-	return null;
+	return muestraDni();
 }
 
 @Override
 public void Ingresar() {
+	EscogeIngresaCliente();
 	// TODO Auto-generated method stub
 	
 }
@@ -161,6 +218,6 @@ public void Ingresar() {
 @Override
 public String Muestra() {
 	// TODO Auto-generated method stub
-	return null;
+	return muestraCualquiera();
 }
 }
