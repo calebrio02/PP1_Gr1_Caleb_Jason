@@ -52,6 +52,8 @@ public void TipoClienteAnual() {
 			EstableceDatosDocente();
 			Anual.IngresarAnual();
 			ingresarMesesCancelados();
+			setTipoCliente("Docente");
+			setServicioSeleccionado("Anual");
 			setMuestra(MuestraDocenteAnual());
 			
 			
@@ -61,12 +63,16 @@ public void TipoClienteAnual() {
 			EstableceDatosPensionado();
 			Anual.IngresarAnual();
 			ingresarMesesCancelados();
+			setTipoCliente("Pensionado");
+			setServicioSeleccionado("Anual");
 			setMuestra(MuestraPensionadoAnual());
 			
 		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
 			EstableceDatosAdministrativos();
 			Anual.IngresarAnual();
 			ingresarMesesCancelados();
+			setTipoCliente("Administrativo");
+			setServicioSeleccionado("Anual");
 			setMuestra(MuestraAdministrativoAnual());
 			
 		}else {
@@ -89,16 +95,22 @@ public void TipoClienteALaVista() {
 		if(tipoCliente.equalsIgnoreCase("Docente")) {
 			EstableceDatosDocente();
 			ingresarMesesCancelados();
+			setTipoCliente("Docente");
+			setServicioSeleccionado("A la vista");
 			setMuestra(MuestraDocenteALaVista());
 			
 		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
 			EstableceDatosPensionado();
 			ingresarMesesCancelados();
+			setTipoCliente("Pensionado");
+			setServicioSeleccionado("A la vista");
 			setMuestra(MuestraPensionadoALaVista());
 			
 		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
 			EstableceDatosAdministrativos();
 			ingresarMesesCancelados();
+			setTipoCliente("Administrativo");
+			setServicioSeleccionado("A la vista ");
 			setMuestra(MuestraAdministrativoALaVista());
 		}else {
 			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
@@ -242,9 +254,20 @@ public String MuestraAdministrativoALaVista() {
 }
 ////////////////////////////////////////////////////////////////////////////
 
-public String Muestraualquiera(String dato)
+public String MuestraCualquiera()
 {
-	return dato;
+	String respuesta="";
+	
+	if(getServicioSeleccionado().equalsIgnoreCase("Anual")) {
+		if(getTipoCliente().equals("Docente")) {
+			respuesta=MuestraDocenteAnual();
+		}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {
+			respuesta=MuestraPensionadoAnual();
+		}else if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
+			respuesta=MuestraAdministrativoAnual();
+		}
+	};
+	return respuesta;
 }
 public double getSaldo() {
 	return saldo;
@@ -306,7 +329,7 @@ public void Ingresar() {
 @Override
 public String Muestra() {
 	// TODO Auto-generated method stub
-	return getMuestra();
+	return MuestraCualquiera();
 }
 
 }
