@@ -118,8 +118,10 @@ public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINIS
 	
 	Muestra+=clienteAd.RespuestaAdministrativos() +"Tipo de credito especial: Ordniario\n"
 			+ "Monto solicitado: $"+getMontoCredito()+"\n"
-				+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
-					+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
+			+ "Puesto especifico: "+getPuestoEspecifico()+"\n"
+				+ "Ano de ingreso a labores: "+getAnoIngresoLabores()+"\n"
+					+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
+						+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
 	
 	return Muestra;
 	
