@@ -15,10 +15,6 @@ public Creditos() { //esta parte hay que distribuirla de forma diferente ya que 
 	
 	
 }
-
-
-
-
 public double getMontoCredito() {
 	return montoCredito;
 }

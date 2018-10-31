@@ -2,13 +2,19 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class EquipoComputo extends Creditos{
-String dispositivo, comercio;
+public class EquipoComputo extends Especial{
+String dispositivo, comercio, TipoCliente;
 
 public EquipoComputo() {
 	
 }
 
+public String getTipoCliente() {
+	return TipoCliente;
+}
+public void setTipoCliente(String tipoCliente) {
+	TipoCliente = tipoCliente;
+}
 public String getDispositivo() {
 	return dispositivo;
 }
@@ -29,12 +35,31 @@ public void estableceEquipoComputo() {
 	setDispositivo(JOptionPane.showInputDialog("Ingrese el nombre del dispositivo a adquirir"));
 	setComercio("Ingrese el nombre del comercio donde lo comprara");
 }
-
-
+public void TipoCliente() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFICO
+	
+	String tipoCliente="";
+	do {
+		
+		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
+		
+		if(tipoCliente.equalsIgnoreCase("Docente")) {
+			ingresaDocente();
+			setTipoCliente("Docente");
+			
+		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
+			ingresaAdministrativo();
+			setTipoCliente("Administrativo");
+		}else{
+			
+			JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+		}
+	} while (tipoCliente=="Selecciona"||tipoCliente==null);	
+}
 
 
 //INGRESA DE LOS DOS TIPOS DE CLIENTES PARA CREDITO ESPECIAL EQUIPOCOMPUTO//
-public void ingresaAdministrativoCreditoEquipoComputo() {
+public void ingresaAdministrativo() {
 	EstableceDatosAdministrativos();
 	do {
 		setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito(3600 000 maximo)")));	
@@ -48,9 +73,7 @@ public void ingresaAdministrativoCreditoEquipoComputo() {
 	estableceEquipoComputo();
 }
 
-
-
-public void ingresaDocenteCreditoEquipoComputo() {
+public void ingresaDocente() {
 	EstableceDatosDocente();
 	do {
 		setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito(3600 000 maximo)")));	
@@ -64,6 +87,7 @@ public void ingresaDocenteCreditoEquipoComputo() {
 	estableceEquipoComputo();
 }
 
+
 //CALCULO DE LA CUOTA DEL CREDITO ESPECIAL--ORNDINARIO Y ECOMPUNTO -- FUNCIONA PARA TODOS LOS TIPOS DE CLIENTES EN CREDITO ESPECIAL
 public double calculoCuotaEspecialOrdinario() {
 	double resultado =0;
@@ -71,23 +95,74 @@ public double calculoCuotaEspecialOrdinario() {
 	return resultado;
 }
 ///////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////
 
-@Override
-public String SoloDNI() {
-	// TODO Auto-generated method stub
-	return null;
-}
 
-@Override
-public void Ingresar() {
-	// TODO Auto-generated method stub
+public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
+	String Muestra="";
 	
+	Muestra+=clienteDo.RespuestaDocente() +"Tipo de credito especial: Computo\n"
+			+ "Monto solicitado: $"+getMontoCredito()+"\n"
+					+ "Equipo a Adquirir: "+getDispositivo()+"\n"
+						+ "Comercio de compra: "+getComercio()+"\n"
+							+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
+								+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
+	
+	return Muestra;
 }
 
-@Override
-public String Muestra() {
-	// TODO Auto-generated method stub
-	return null;
+public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINISTRATIVO
+	
+	String Muestra="";
+	
+	Muestra+=clienteAd.RespuestaAdministrativos() +"Tipo de credito especial: Computo\n"
+			+ "Monto solicitado: $"+getMontoCredito()+"\n"
+					+ "Equipo a Adquirir: "+getDispositivo()+"\n"
+						+ "Comercio de compra: "+getComercio()+"\n"
+							+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
+								+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
+	
+	return Muestra;
+	
+}//FIN DE MUESTRAS ESPECIFICOS
+////////////MUESTRAS GENERICOS/////////////////////////////////
+public String MuestraCualquiera() {//PARA MOSTRAR CUALQUIER TIPO DE CLIENTE
+String Muestra="";
+
+if(getTipoCliente().equals("Docente")) {//SI ES DOCENTE
+Muestra=MuestraDocente();//SE MUESTRAN SOLO LOS DATOS DE DOCENTE
+}else if(getTipoCliente().equalsIgnoreCase("Administrativo")) {//SI ES ADMINISTRATIVO
+Muestra=MuestraAdministrativo();//SE MUESTRAN SOLO LOS DATOS DE ADMINISTRATIVO
 }
+
+return Muestra;
+}
+
+public String MuestraSoloDNI() {//PARA MOSTRAR CUALQUIER DNI
+String Muestra="";
+
+if(getTipoCliente().equals("Docente")) {
+Muestra=clienteDo.getDni();
+}else if(getTipoCliente().equalsIgnoreCase("Administrativo")) {
+Muestra=clienteAd.getDni();
+}
+return Muestra;
+}//FIN DE MUESTRAS GENERICOS
+
+
+//////////////METODOS ABSTRACTOS//////////////////
+@Override
+public String Muestra() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
+// TODO Auto-generated method stub
+return MuestraCualquiera();
+}
+public void Ingresar() {// PARA INGRESAR LOS DATOS DE ESTA CLASE
+// TODO Auto-generated method stub
+TipoCliente();
+									
+}												
+public String SoloDNI() {//PARA TRAER SOLO EL DNI
+// TODO Auto-generated method stub			
+return MuestraSoloDNI();					
+}												
+////////////////////////////////////////////////////
 }

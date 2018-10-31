@@ -81,7 +81,7 @@ public double CalculoDocente() {//CALCULO ESPECIFICO DE DOCENTE
 
 public double CalculoPensionado() {//CALCULO ESPECIFICO DE PENSIONADO
 	double cuota=0;
-	cuota=(clienteDo.getSalario()*getPorcentajeCliente())+(clienteDo.getSalario()*getPorcentajePatrono());
+	cuota=(clientePe.getSalario()*getPorcentajeCliente())+(clientePe.getSalario()*getPorcentajePatrono());
 	cuota=cuota*getMesesCancelados();
 	setSaldo(cuota);
 	return getSaldo();
@@ -89,7 +89,7 @@ public double CalculoPensionado() {//CALCULO ESPECIFICO DE PENSIONADO
 
 public double CalculoAdministrativo() {//CALCULO ESPECIFICO DE ADMINISTRATIVO
 	double cuota=0;
-	cuota=(clienteDo.getSalario()*getPorcentajeCliente())+(clienteDo.getSalario()*getPorcentajePatrono());
+	cuota=(clienteAd.getSalario()*getPorcentajeCliente())+(clienteAd.getSalario()*getPorcentajePatrono());
 	cuota=cuota*getMesesCancelados();
 	setSaldo(cuota);
 	return getSaldo();

@@ -11,7 +11,6 @@ public class Anual extends PlanesAhorro{
 public Anual() {
 }	
 
-
 ///////////SETS Y GETS DE ESTA CLASE///////////////////////////
 public int getCod() {
 		return Cod;
@@ -99,7 +98,7 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String Muestra="";
 	
 	Muestra+=clienteDo.RespuestaDocente() +"Tipo de plan de ahorro: Anual\n"
-			+ "Porcentaj e sobre salario: "+getPorcentajeCliente()+"%\n"
+			+ "Porcentaje sobre salario: "+getPorcentajeCliente()+"%\n"
 					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
 							+ "Total de ahorro: $"+CalculoDocente()+"\n\n";
 	
