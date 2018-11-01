@@ -96,12 +96,12 @@ public double CalculoAdministrativo() {//CALCULO ESPECIFICO DE ADMINISTRATIVO
 /////////////// MOSTRAR DATOS DE CADA TIPO DE CLIENTE DE ESTA CLASE///////////
 public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String Muestra="";
-	int ahorro = 0;
-	ahorro=(int) CalculoDocente();
+	//int ahorro = 0;
+	//ahorro=(int) CalculoDocente();
 	Muestra+=MuestraDatosDocentes() +"Tipo de plan de ahorro: Anual\n"
 			+ "Porcentaje sobre salario: "+getPorcentajeCliente()+"%\n"
 					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-							+ "Total de ahorro: $"+ahorro+"\n\n";
+							+ "Total de ahorro: $"+String.format("%.3f", CalculoDocente())+"\n\n";
 	
 	return Muestra;
 }
