@@ -95,10 +95,10 @@ public void ingresaAdministrativoCreditoCorriente() {//Le hace falta lo que comp
 		do {
 			try {
 				
-				setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
+				setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca ¢" + String.format("%.0f",getHipoteca())+")" )));
 				if(getMontoHipoteca()<getHipoteca()) {
 					
-					JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
+					JOptionPane.showMessageDialog(null, " Lo minimo de hipoteca a ingresar es ¢" +String.format("%.0f", getHipoteca()));
 				}
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
@@ -110,8 +110,8 @@ public void ingresaAdministrativoCreditoCorriente() {//Le hace falta lo que comp
 public String muestraDatosAdministrativosCorriente() {
 	String mensaje = "";
 	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: ¢" +String.format("%.0f", getMontoCredito())+ "\n"
-	+ "Interes: " +String.format("%.0f",getInteres()) + "\n"
-	+ "Plazo: " + getPlazo() + "meses.\n"
+	+ "Interes: " +String.format("%.0f",getInteres()) + "%\n"
+	+ "Plazo: " + getPlazo() + " meses.\n"
 	+ "Cuota a pagar: ¢" + String.format("%.0f",getCuotaPagar());
 			
 	return mensaje;
@@ -142,10 +142,10 @@ public void ingresaDocenteCreditoCorriente() {
 		do {
 			try {
 				
-				setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
+				setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca ¢" + String.format("%.0f",getHipoteca())+")" )));
 				if(getMontoHipoteca()<getHipoteca()) {
 					
-					JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
+					JOptionPane.showMessageDialog(null, " Lo minimo de hipoteca a ingresar es ¢" +String.format("%.0f", getHipoteca()));
 				}
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
@@ -159,8 +159,8 @@ public void ingresaDocenteCreditoCorriente() {
 public String muestraDatosDocentesCorriente() {
 	String mensaje = "";
 	mensaje += MuestraDatosDocentes()+ "Monto del Credito: ¢" +String.format("%.0f", getMontoCredito())+ "\n"
-			+ "Interes: " +String.format("%.0f",getInteres()) + "\n"
-			+ "Plazo: " + getPlazo() + "meses.\n"
+			+ "Interes: " +String.format("%.0f",getInteres()) + "%\n"
+			+ "Plazo: " + getPlazo() + " meses.\n"
 			+ "Cuota a pagar: ¢" + String.format("%.0f",getCuotaPagar());
 			
 	return mensaje;
@@ -195,7 +195,7 @@ public void ingresaPensionadoCreditoCorriente() {
 				setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca ¢" + String.format("%.0f",getHipoteca())+")" )));
 				if(getMontoHipoteca()<getHipoteca()) {
 					
-					JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
+					JOptionPane.showMessageDialog(null, " Lo minimo de hipoteca a ingresar es ¢" +String.format("%.0f", getHipoteca()));
 				}
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
@@ -208,27 +208,12 @@ public void ingresaPensionadoCreditoCorriente() {
 public String muestraDatosPensionadosCorriente() {
 	String mensaje = "";
 	mensaje += MuestraDatosPensionados() + "Monto del Credito: ¢" +String.format("%.0f", getMontoCredito())+ "\n"
-			+ "Interes: " +String.format("%.0f",getInteres()) + "\n"
-			+ "Plazo: " + getPlazo() + "meses.\n"
+			+ "Interes: " +String.format("%.0f",getInteres()) + "%\n"
+			+ "Plazo: " + getPlazo() + " meses.\n"
 			+ "Cuota a pagar: ¢" + String.format("%.0f",getCuotaPagar());
 			
 	return mensaje;
 }
-
-///////////////////////////////////////////////////////////////////////
-
-
-
-
-// CALCULO DEL MONTO DEL "POSIBLE CREDITO" /////////////
-
-
-
-
-
-
-
-////////////////////////////////////////////////////////
 
 //Calculo del monto total  del credito CORRIENTE-- ADMINISTRATIVOS 
 public double calculoMontoCreditoAdministrativoCorriente() {

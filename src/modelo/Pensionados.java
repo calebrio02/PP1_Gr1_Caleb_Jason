@@ -55,7 +55,7 @@ public String RespuestaPensionado() {
 	
 	Respuesta+=RespuestaCliente()+"Tipo de Cliente: Pensionado\n"
 	+"Años jubilado: "+getAnosjubilado()+"\n"
-			+ "Area en la que se desempenaba: "+getTipoEmpleado()+"\n\n";
+			+ "Area en la que se desempeñaba: "+getTipoEmpleado()+"\n\n";
 	
 	return Respuesta;
 }
