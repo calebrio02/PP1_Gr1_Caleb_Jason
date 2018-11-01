@@ -63,7 +63,7 @@ public String RespuestaCliente()
 	Muestra+="DATOS DEL CLIENTE\n"
 			+ "Nombre: "+getNombre()+"\n"
 			+ "DNI: "+getDni()+"\n"
-			+ "Salario: "+getSalario()+"\n\n";
+			+ "Salario: ¢"+String.format("%.1f",getSalario())+"\n\n";
 	
 	return Muestra;
 	

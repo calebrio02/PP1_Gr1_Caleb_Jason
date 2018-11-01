@@ -39,12 +39,13 @@ public void IngresarAnual() {//METODO DE INGRESAR DE ESTA CLASE
 	ingresarMesesCancelados();
 }
 public void TipoClienteAnual() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFICO
-	
+
 	String tipoCliente="";
 	do {
 		
 		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
 				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
+
 		
 		if(tipoCliente.equalsIgnoreCase("Docente")) {
 			EstableceDatosDocente();
@@ -53,16 +54,16 @@ public void TipoClienteAnual() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPE
 		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
 			EstableceDatosPensionado();
 			setTipoCliente("Pensionado");
-
 			
 		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
 			EstableceDatosAdministrativos();
 			setTipoCliente("Administrativo");
-
 			
 		}else {
 			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
+
 		}
+
 	} while (tipoCliente=="Selecciona"||tipoCliente==null);
 }
 
@@ -73,7 +74,7 @@ public double CalculoDocente() {//CALCULO ESPECIFICO DE DOCENTE
 	cuota=(clienteDo.getSalario()*getPorcentajeCliente());
 	cuota=cuota*getMesesCancelados();
 	setSaldo(cuota);
-	return getSaldo();
+	return getSaldo()/100;
 }
 
 public double CalculoPensionado() {//CALCULO ESPECIFICO DE PENSIONADO
@@ -81,7 +82,7 @@ public double CalculoPensionado() {//CALCULO ESPECIFICO DE PENSIONADO
 	cuota=(clientePe.getSalario()*getPorcentajeCliente());
 	cuota=cuota*getMesesCancelados();
 	setSaldo(cuota);
-	return getSaldo();
+	return getSaldo()/100;
 }
 
 public double CalculoAdministrativo() {//CALCULO ESPECIFICO DE ADMINISTRATIVO
@@ -89,43 +90,37 @@ public double CalculoAdministrativo() {//CALCULO ESPECIFICO DE ADMINISTRATIVO
 	cuota=(clienteAd.getSalario()*getPorcentajeCliente());
 	cuota=cuota*getMesesCancelados();
 	setSaldo(cuota);
-	return getSaldo();														//
+	return getSaldo()/100;														//
 }//FIN DE LOS CALCULOS
 
 
 /////////////// MOSTRAR DATOS DE CADA TIPO DE CLIENTE DE ESTA CLASE///////////
 public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String Muestra="";
-	//int ahorro = 0;
-	//ahorro=(int) CalculoDocente();
 	Muestra+=MuestraDatosDocentes() +"Tipo de plan de ahorro: Anual\n"
-			+ "Porcentaje sobre salario: "+getPorcentajeCliente()+"%\n"
+			+ "Porcentaje sobre salario: "+String.format("%.0f",getPorcentajeCliente())+"%\n"
 					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-							+ "Total de ahorro: $"+String.format("%.3f", CalculoDocente())+"\n\n";
+							+ "Total de ahorro: $"+String.format("%.1f", CalculoDocente())+"\n\n";
 	
 	return Muestra;
 }
 
 public String MuestraPensionado() {// MUESTRA ESPECIFICO DE CLIENTE PENSIONADO
 	String Muestra="";
-	int ahorro = 0;
-	ahorro= (int) CalculoPensionado();
 	Muestra+=MuestraDatosPensionados()+"Tipo de plan de ahorro: Anual\n"
-			+ "Porcentaje sobre salario: "+getPorcentajeCliente()+"%\n"
-					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-							+ "Total de ahorro: $"+ahorro+"\n\n";
+			+ "Porcentaje sobre salario: "+String.format("%.0f",getPorcentajeCliente())+"%\n"
+				+ "Meses de ahorro: "+getMesesCancelados()+"\n"
+					+ "Total de ahorro: $"+String.format("%.1f", CalculoPensionado())+"\n\n";
 	
 	return Muestra;
 }
 
 public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINISTRATIVO
 	String Muestra="";
-	int ahorro = 0;
-	ahorro= (int) CalculoAdministrativo();
 	Muestra+=MuestraDatosAdministrativos()+"Tipo de plan de ahorro: Anual\n"
-			+ "Porcentaje sobre salario: "+getPorcentajeCliente()+"%\n"
-					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-							+ "Total de ahorro: $"+ahorro+"\n\n";
+			+ "Porcentaje sobre salario: "+String.format("%.0f",getPorcentajeCliente())+"%\n"
+				+ "Meses de ahorro: "+getMesesCancelados()+"\n"
+					+ "Total de ahorro: $"+String.format("%.1f", CalculoAdministrativo())+"\n\n";
 	
 	return Muestra;
 }//FIN DE MUESTRAS ESPECIFICOS
