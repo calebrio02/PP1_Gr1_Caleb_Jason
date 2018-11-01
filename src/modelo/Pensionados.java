@@ -10,9 +10,9 @@ public class Pensionados extends Clientes{
 public Pensionados() {}
 	
 public void IngresaPensionado() {
-	
+	int cambio=0;
 	ingresarCliente();
-	String anterior = (JOptionPane.showInputDialog(null, "Selecciona el area en la que se desempenaba", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+	String anterior = (JOptionPane.showInputDialog(null, "Selecciona el area en la que se desempeñaba", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
 			{ "Selecciona","Docente", "Administrativo"}, "Selecciona")).toString() ;
 	
 	if(anterior.equalsIgnoreCase("Docente")) {
@@ -21,8 +21,16 @@ public void IngresaPensionado() {
 	}else if(anterior.equalsIgnoreCase("Administrativo")) {
 		setTipoEmpleado("Administrativo");
 	}
-	
-	setAnosjubilado(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de años jubilado (a) de " + getNombre())));
+	do {
+		try {
+			setAnosjubilado(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de años jubilado (a) de " + getNombre())));
+			cambio=1;
+			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
+			cambio=0;
+		}
+	} while (cambio==0);
 
 }
 

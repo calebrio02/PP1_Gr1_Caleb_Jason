@@ -72,29 +72,47 @@ public void ingresaAdministrativoCreditoCorriente() {//Le hace falta lo que comp
 	EstableceDatosAdministrativos();
 	setMontoCredito(calculoMontoCreditoAdministrativoCorriente());
 	setInteres(22);
+	int cambio=0;
 	do {
-	setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Plazo(de 24 a 72 maximo)")));
-	if(getPlazo()<24||getPlazo()>72) {
-		JOptionPane.showMessageDialog(null, "Los plazos van desde los 24 a los 72 meses maximo");
-	}
+		do {
+			try {
+				setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Plazo (de 24 a 72 maximo)")));
+				cambio=1;
+				if(getPlazo()<24||getPlazo()>72) {
+					JOptionPane.showMessageDialog(null, "Los plazos van desde los 24 a los 72 meses maximo");
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
+				cambio=0;
+			}
+		} while (cambio==0);
 	}while(getPlazo()<24||getPlazo()>72);
+	
 	setCuotaPagar(calculoCoutaCorriente());
 	setHipoteca(calculoHipotecaCorriente());
+	
 	do {
-		setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
-		if(getMontoHipoteca()<getHipoteca()) {
-			
-		JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
-		}
+		do {
+			try {
+				
+				setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
+				if(getMontoHipoteca()<getHipoteca()) {
+					
+					JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
+			}
+		} while (cambio==0);
 		
 	}while(getMontoHipoteca()<getHipoteca());
 }
 public String muestraDatosAdministrativosCorriente() {
 	String mensaje = "";
-	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: " + getMontoCredito()+ "\n"
-	+ "Interes: " + getInteres() + "\n"
-	+ "Plazo: " + getPlazo() + "\n"
-	+ "Cuota a pagar: " + getCuotaPagar();
+	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: ¢" +String.format("%.0f", getMontoCredito())+ "\n"
+	+ "Interes: " +String.format("%.0f",getInteres()) + "\n"
+	+ "Plazo: " + getPlazo() + "meses.\n"
+	+ "Cuota a pagar: ¢" + String.format("%.0f",getCuotaPagar());
 			
 	return mensaje;
 }
@@ -103,20 +121,36 @@ public void ingresaDocenteCreditoCorriente() {
 	EstableceDatosDocente();
 	setMontoCredito(calculoMontoCreditoDocenteCorriente());
 	setInteres(22);
+	int cambio=0;
 	do {
-	setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Plazo(de 24 a 72 maximo)")));
-	if(getPlazo()<24||getPlazo()>72) {
-		JOptionPane.showMessageDialog(null, "Los plazos van desde los 24 a los 72 meses maximo");
-	}
+		do {
+			try {
+				setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Plazo (de 24 a 72 maximo)")));
+				cambio=1;
+				if(getPlazo()<24||getPlazo()>72) {
+					JOptionPane.showMessageDialog(null, "Los plazos van desde los 24 a los 72 meses maximo");
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
+				cambio=0;
+			}
+		} while (cambio==0);
 	}while(getPlazo()<24||getPlazo()>72);
 	setCuotaPagar(calculoCoutaCorriente());
 	setHipoteca(calculoHipotecaCorriente());
 	do {
-		setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
-		if(getMontoHipoteca()<getHipoteca()) {
-			
-		JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
-		}
+		do {
+			try {
+				
+				setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
+				if(getMontoHipoteca()<getHipoteca()) {
+					
+					JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
+			}
+		} while (cambio==0);
 		
 	}while(getMontoHipoteca()<getHipoteca());
 	
@@ -124,10 +158,10 @@ public void ingresaDocenteCreditoCorriente() {
 
 public String muestraDatosDocentesCorriente() {
 	String mensaje = "";
-	mensaje += MuestraDatosDocentes()+ "Monto del Credito: " + getMontoCredito() + "\n"
-	+ "Interes: " + getInteres() + "\n"
-	+ "Plazo: " + getPlazo() + "\n"
-	+ "Cuota a pagar: " + getCuotaPagar();
+	mensaje += MuestraDatosDocentes()+ "Monto del Credito: ¢" +String.format("%.0f", getMontoCredito())+ "\n"
+			+ "Interes: " +String.format("%.0f",getInteres()) + "\n"
+			+ "Plazo: " + getPlazo() + "meses.\n"
+			+ "Cuota a pagar: ¢" + String.format("%.0f",getCuotaPagar());
 			
 	return mensaje;
 }
@@ -137,30 +171,46 @@ public void ingresaPensionadoCreditoCorriente() {
 	EstableceDatosPensionado();
 	setMontoCredito(calculoMontoCreditoPensionadoCorriente());
 	setInteres(22);
+	int cambio=0;
 	do {
-	setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Plazo(de 24 a 72 maximo)")));
-	if(getPlazo()<24||getPlazo()>72) {
-		JOptionPane.showMessageDialog(null, "Los plazos van desde los 24 a los 72 meses maximo");
-	}
+		do {
+			try {
+				setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Plazo (de 24 a 72 maximo)")));
+				cambio=1;
+				if(getPlazo()<24||getPlazo()>72) {
+					JOptionPane.showMessageDialog(null, "Los plazos van desde los 24 a los 72 meses maximo");
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
+				cambio=0;
+			}
+		} while (cambio==0);
 	}while(getPlazo()<24||getPlazo()>72);
 	setCuotaPagar(calculoCoutaCorriente());
 	setHipoteca(calculoHipotecaCorriente());
 	do {
-		setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
-		if(getMontoHipoteca()<getHipoteca()) {
-			
-		JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
-		}
+		do {
+			try {
+				
+				setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca ¢" + String.format("%.0f",getHipoteca())+")" )));
+				if(getMontoHipoteca()<getHipoteca()) {
+					
+					JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Ingresa solo numeros");
+			}
+		} while (cambio==0);
 		
 	}while(getMontoHipoteca()<getHipoteca());
 }
 
 public String muestraDatosPensionadosCorriente() {
 	String mensaje = "";
-	mensaje += MuestraDatosPensionados() + "Monto del Credito: " + getMontoCredito() + "\n"
-	+ "Interes: " + getInteres() + "\n"
-	+ "Plazo: " + getPlazo() + "\n"
-	+ "Cuota a pagar: " + getCuotaPagar();
+	mensaje += MuestraDatosPensionados() + "Monto del Credito: ¢" +String.format("%.0f", getMontoCredito())+ "\n"
+			+ "Interes: " +String.format("%.0f",getInteres()) + "\n"
+			+ "Plazo: " + getPlazo() + "meses.\n"
+			+ "Cuota a pagar: ¢" + String.format("%.0f",getCuotaPagar());
 			
 	return mensaje;
 }
