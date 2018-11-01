@@ -142,7 +142,7 @@ public String muestraDatosDocenteVivienda() {
 			+ "Plazo: " + getPlazo() + " meses\n"
 			+ "Cuota a pagar: ¢" + getCuotaPagar() + "\n"
 			+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
-			+ "Tamano de la propiedad: " + getTamano() + "m²n" 
+			+ "Tamano de la propiedad: " + getTamano() + "m²\n" 
 			+ "Peritaje: ¢" + getPeritaje();
 			
 	return mensaje;
@@ -173,7 +173,7 @@ public String muestraDatosPensionadovivienda() {
 			+ "Plazo: " + getPlazo() + " meses\n"
 			+ "Cuota a pagar: ¢" + getCuotaPagar() + "\n"
 			+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
-			+ "Tamano de la propiedad: " + getTamano() + "m²n" 
+			+ "Tamano de la propiedad: " + getTamano() + "m²\n" 
 			+ "Peritaje: ¢" + getPeritaje();
 			
 	return mensaje;
