@@ -6,18 +6,13 @@ public class Anual extends PlanesAhorro{
 
 	double porcentajeCliente;
 	String TipoCliente;
-	int Cod=1;
+
 	
 public Anual() {
 }	
 
 ///////////SETS Y GETS DE ESTA CLASE///////////////////////////
-public int getCod() {
-		return Cod;
-}
-	public void setCod(int cod) {
-		Cod = cod;
-}
+
 public String getTipoCliente() {
 		return TipoCliente;
 }

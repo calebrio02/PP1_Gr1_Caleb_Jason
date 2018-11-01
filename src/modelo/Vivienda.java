@@ -10,6 +10,16 @@ double totalCredito;
 double totalPeritaje;
 
 
+
+public double getPeritaje() {
+	return peritaje;
+}
+
+public void setPeritaje(double peritaje) {
+	this.peritaje = peritaje;
+}
+
+
 public double getTotalPeritaje() {
 	return totalPeritaje;
 }

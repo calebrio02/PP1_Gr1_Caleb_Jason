@@ -4,16 +4,10 @@ import javax.swing.JOptionPane;
 
 public class EquipoComputo extends Especial{
 String dispositivo, comercio, TipoCliente;
-int Cod=1;
 
 public EquipoComputo() {	
 }
-public int getCod() {
-	return Cod;
-}
-public void setCod(int cod) {
-	Cod = cod;
-}
+
 public String getTipoCliente() {
 	return TipoCliente;
 }
@@ -66,12 +60,19 @@ public void TipoCliente() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFIC
 //INGRESA DE LOS DOS TIPOS DE CLIENTES PARA CREDITO ESPECIAL EQUIPOCOMPUTO//
 public void ingresaAdministrativo() {
 	EstableceDatosAdministrativos();
+	int cambio=0;
 	do {
-		setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito(3600 000 maximo)")));	
-		if(getMontoCredito()<0||getMontoCredito()>3600000) {
-			JOptionPane.showMessageDialog(null, "El monto debe ir de 0 a 3600000");
+		
+		try {
+			setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito (¢3 600 000 maximo)")));
+			cambio=1;
+			if(getMontoCredito()<0||getMontoCredito()>3600000) {
+				JOptionPane.showMessageDialog(null, "El monto debe ir de ¢0 a ¢3600000");
+			}			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Ingrese solo numeros");
 		}
-	}while(getMontoCredito()<0||getMontoCredito()>3600000);
+	}while(getMontoCredito()<0||getMontoCredito()>3600000||cambio==0);
 	setInteres(12);
 	setPlazo(60);
 	setCuotaPagar(calculoCuotaEspecialOrdinario());
@@ -80,12 +81,20 @@ public void ingresaAdministrativo() {
 
 public void ingresaDocente() {
 	EstableceDatosDocente();
+	int cambio=0;
+	
 	do {
-		setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito(3600 000 maximo)")));	
-		if(getMontoCredito()<0||getMontoCredito()>3600000) {
-			JOptionPane.showMessageDialog(null, "El monto debe ir de 0 a 3600000");
+		
+		try {
+			setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito (¢3 600 000 maximo)")));
+			cambio=1;
+			if(getMontoCredito()<0||getMontoCredito()>3600000) {
+				JOptionPane.showMessageDialog(null, "El monto debe ir de ¢0 a ¢3600000");
+			}			
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Ingrese solo numeros");
 		}
-	}while(getMontoCredito()<0||getMontoCredito()>3600000);
+	}while(getMontoCredito()<0||getMontoCredito()>3600000||cambio==0);
 	setInteres(12);
 	setPlazo(60);
 	setCuotaPagar(calculoCuotaEspecialOrdinario());
@@ -104,14 +113,13 @@ public double calculoCuotaEspecialOrdinario() {
 
 public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String Muestra="";
-	long montoSolicitado = (long) getMontoCredito();
 	Muestra+=MuestraDatosDocentes() +"Tipo de credito especial: Computo\n"
-			+ "Monto solicitado: $"+montoSolicitado+"\n"
+			+ "Monto solicitado: ¢"+String.format("%.0f",getMontoCredito())+"\n"
 					+ "Equipo a Adquirir: "+getDispositivo()+"\n"
 						+ "Comercio de compra: "+getComercio()+"\n"
-							+ "Plazo fijo: "+getPlazo()+" meses " +"\n" 
-								+ "Interes fijo: "+getInteres()+"%\n"
-								+ "Cuota a pagar: ï¿½"+getCuotaPagar()+"\n\n";
+							+ "Plazo fijo: "+getPlazo()+" meses." +"\n" 
+								+ "Interes fijo: "+String.format("%.0f",getInteres())+"%\n"
+								+ "Cuota a pagar: ¢"+String.format("%.0f",getCuotaPagar())+"\n\n";
 	
 	return Muestra;
 }
@@ -119,14 +127,13 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINISTRATIVO
 	
 	String Muestra="";
-	long montoSolicitado = (long) getMontoCredito();
 	Muestra+=MuestraDatosAdministrativos() +"Tipo de credito especial: Computo\n"
-			+ "Monto solicitado: $"+montoSolicitado+"\n"
-					+ "Equipo a Adquirir: "+getDispositivo()+"\n"
-						+ "Comercio de compra: "+getComercio()+"\n"
-							+ "Plazo fijo: "+getPlazo()+" meses " + "\n"
-									+ "Interes fijo: "+getInteres()+"%\n"
-								+ "Cuota a pagar: ï¿½"+getCuotaPagar()+"\n\n";
+			+ "Monto solicitado: ¢"+String.format("%.0f",getMontoCredito())+"\n"
+			+ "Equipo a Adquirir: "+getDispositivo()+"\n"
+				+ "Comercio de compra: "+getComercio()+"\n"
+					+ "Plazo fijo: "+getPlazo()+" meses." +"\n" 
+						+ "Interes fijo: "+String.format("%.0f",getInteres())+"%\n"
+						+ "Cuota a pagar: ¢"+String.format("%.0f",getCuotaPagar())+"\n\n";
 	
 	return Muestra;
 	

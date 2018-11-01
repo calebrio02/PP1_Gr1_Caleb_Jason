@@ -5,6 +5,17 @@ public abstract class Servicios {
 	Administrativos clienteAd = new Administrativos();
 	Docentes clienteDo = new Docentes();
 	Pensionados clientePe = new Pensionados();
+	int Cod=1;
+
+public int getCod() {
+		return Cod;
+	}
+
+
+	public void setCod(int cod) {
+		Cod = cod;
+	}
+
 
 public Administrativos getClienteAd() {
 		return clienteAd;

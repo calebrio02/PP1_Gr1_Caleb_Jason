@@ -3,11 +3,12 @@ package modelo;
 import javax.swing.JOptionPane;
 
 public class EspecialOrdinario extends Especial {
-int anoIngresoLabores;
+int anoIngresoLabores, Cod=1;
 String puestoEspecifico, TipoCliente;
 
 public EspecialOrdinario() {	
 }
+
 public String getTipoCliente() {
 	return TipoCliente;
 }
@@ -143,7 +144,7 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 					+ "Año de ingreso a labores: "+getAnoIngresoLabores()+"\n"
 						+ "Plazo fijo: "+getPlazo()+" meses." + "\n"
 						+"Interes fijo: "+String.format("%.0f",getInteres())+"%\n"
-							+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
+							+ "Cuota a pagar: ¢"+String.format("%.0f",getCuotaPagar())+"\n\n";
 	
 	return Muestra;
 }
@@ -157,7 +158,7 @@ public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINIS
 				+ "Año de ingreso a labores: "+getAnoIngresoLabores()+"\n"
 					+ "Plazo fijo: "+getPlazo()+" meses." + "\n"
 					+"Interes fijo: "+String.format("%.0f",getInteres())+"%\n"
-						+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
+						+ "Cuota a pagar: ¢"+String.format("%.0f",getCuotaPagar())+"\n\n";
 	
 	return Muestra;
 	

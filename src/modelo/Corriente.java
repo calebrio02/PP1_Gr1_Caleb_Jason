@@ -7,6 +7,7 @@ public class Corriente extends Creditos{
 	
 double hipoteca;
 double montoHipoteca;
+
 public double getMontoHipoteca() {
 	return montoHipoteca;
 }
