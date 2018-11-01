@@ -5,7 +5,17 @@ import javax.swing.JOptionPane;
 public class Corriente extends Creditos{
 	
 	
-double montoPCredito, hipoteca;
+double hipoteca;
+double montoHipoteca;
+public double getMontoHipoteca() {
+	return montoHipoteca;
+}
+
+
+public void setMontoHipoteca(double montoHipoteca) {
+	this.montoHipoteca = montoHipoteca;
+}
+
 String tipoCliente;
 
 
@@ -14,13 +24,6 @@ public Corriente() {
 	
 }
 
-public double getMontoPCredito() {
-	return montoPCredito;
-}
-
-public void setMontoPCredito(double montoPCredito) {
-	this.montoPCredito = montoPCredito;
-}
 
 public double getHipoteca() {
 	return hipoteca;
@@ -76,10 +79,19 @@ public void ingresaAdministrativoCreditoCorriente() {//Le hace falta lo que comp
 	}
 	}while(getPlazo()<24||getPlazo()>72);
 	setCuotaPagar(calculoCoutaCorriente());
+	setHipoteca(calculoHipotecaCorriente());
+	do {
+		setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
+		if(getMontoHipoteca()<getHipoteca()) {
+			
+		JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
+		}
+		
+	}while(getMontoHipoteca()<getHipoteca());
 }
 public String muestraDatosAdministrativosCorriente() {
 	String mensaje = "";
-	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: " + "\n"
+	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: " + getMontoCredito()+ "\n"
 	+ "Interes: " + getInteres() + "\n"
 	+ "Plazo: " + getPlazo() + "\n"
 	+ "Cuota a pagar: " + getCuotaPagar();
@@ -98,11 +110,21 @@ public void ingresaDocenteCreditoCorriente() {
 	}
 	}while(getPlazo()<24||getPlazo()>72);
 	setCuotaPagar(calculoCoutaCorriente());
+	setHipoteca(calculoHipotecaCorriente());
+	do {
+		setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
+		if(getMontoHipoteca()<getHipoteca()) {
+			
+		JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
+		}
+		
+	}while(getMontoHipoteca()<getHipoteca());
+	
 }
 
 public String muestraDatosDocentesCorriente() {
 	String mensaje = "";
-	mensaje += MuestraDatosDocentes()+ "Monto del Credito: " + "\n"
+	mensaje += MuestraDatosDocentes()+ "Monto del Credito: " + getMontoCredito() + "\n"
 	+ "Interes: " + getInteres() + "\n"
 	+ "Plazo: " + getPlazo() + "\n"
 	+ "Cuota a pagar: " + getCuotaPagar();
@@ -122,11 +144,20 @@ public void ingresaPensionadoCreditoCorriente() {
 	}
 	}while(getPlazo()<24||getPlazo()>72);
 	setCuotaPagar(calculoCoutaCorriente());
+	setHipoteca(calculoHipotecaCorriente());
+	do {
+		setMontoHipoteca(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto de la hipoteca (minimo de hipoteca " + getHipoteca()+")" )));
+		if(getMontoHipoteca()<getHipoteca()) {
+			
+		JOptionPane.showMessageDialog(null, " lo minimo de hipoteca a ingresar es " + getHipoteca());
+		}
+		
+	}while(getMontoHipoteca()<getHipoteca());
 }
 
 public String muestraDatosPensionadosCorriente() {
 	String mensaje = "";
-	mensaje += MuestraDatosPensionados() + "Monto del Credito: " + "\n"
+	mensaje += MuestraDatosPensionados() + "Monto del Credito: " + getMontoCredito() + "\n"
 	+ "Interes: " + getInteres() + "\n"
 	+ "Plazo: " + getPlazo() + "\n"
 	+ "Cuota a pagar: " + getCuotaPagar();
@@ -136,6 +167,18 @@ public String muestraDatosPensionadosCorriente() {
 
 ///////////////////////////////////////////////////////////////////////
 
+
+
+
+// CALCULO DEL MONTO DEL "POSIBLE CREDITO" /////////////
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////
 
 //Calculo del monto total  del credito CORRIENTE-- ADMINISTRATIVOS 
 public double calculoMontoCreditoAdministrativoCorriente() {
@@ -179,6 +222,20 @@ public double calculoCoutaCorriente() {
 	resultado = (getMontoCredito()+(getMontoCredito()*getInteres()/100))/getPlazo();
 	return resultado;
 }
+
+//CALCULO DE LA HIPOTECA DE CREDITO CORRIENTE-FUNCIONA PARA TODOS LOS TIPOS DE CLIENTES EN CREDITO CORRIENTE
+
+public double calculoHipotecaCorriente() {
+	double resultado=0;
+	double calculo = 0;
+	calculo = getMontoCredito()*0.20;
+	
+	resultado = getMontoCredito() - calculo;
+	
+	return resultado;
+}
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -38,7 +38,7 @@ public void setTipoCliente(String tipoCliente) {
 }//FIN DE SETS Y GETS///////////////////////////////////////
 
 
-public void IngresarAnual() {//METODO DE INGRESAR DE ESTA CLASE
+public void IngresarALaVista() {//METODO DE INGRESAR DE ESTA CLASE
 	
 	TipoClienteALaVista();
 	ingresarMesesCancelados();
@@ -101,7 +101,7 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	
 	String muestra="";
 	
-	muestra+=clienteDo.RespuestaDocente()+"Tipo de plan de ahorro: A la Vista\n"
+	muestra+=MuestraDatosDocentes()+"Tipo de plan de ahorro: A la Vista\n"
 			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
 					+ "Total de ahorros: $"+CalculoDocente();
 	return muestra;
@@ -111,7 +111,7 @@ public String MuestraPensionado() {// MUESTRA ESPECIFICO DE CLIENTE PENSIONADO
 	
 	String muestra="";
 	
-	muestra+=clientePe.RespuestaPensionado()+"Tipo de plan de ahorro: A la Vista\n"
+	muestra+=MuestraDatosPensionados()+"Tipo de plan de ahorro: A la Vista\n"
 			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
 					+ "Total de ahorros: $"+CalculoPensionado();
 	return muestra;
@@ -121,7 +121,7 @@ public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINIS
 	
 	String muestra="";
 	
-	muestra+=clienteAd.RespuestaAdministrativos()+"Tipo de plan de ahorro: A la Vista\n"
+	muestra+=MuestraDatosAdministrativos()+"Tipo de plan de ahorro: A la Vista\n"
 			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
 					+ "Total de ahorros: $"+CalculoAdministrativo();
 	return muestra;
@@ -165,7 +165,7 @@ public String Muestra() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
 }
 public void Ingresar() {// PARA INGRESAR LOS DATOS DE ESTA CLASE
 	// TODO Auto-generated method stub
-	IngresarAnual();
+	IngresarALaVista();
 												
 }												
 public String SoloDNI() {//PARA TRAER SOLO EL DNI

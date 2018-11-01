@@ -97,7 +97,7 @@ public double CalculoAdministrativo() {//CALCULO ESPECIFICO DE ADMINISTRATIVO
 public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String Muestra="";
 	
-	Muestra+=clienteDo.RespuestaDocente() +"Tipo de plan de ahorro: Anual\n"
+	Muestra+=MuestraDatosDocentes() +"Tipo de plan de ahorro: Anual\n"
 			+ "Porcentaje sobre salario: "+getPorcentajeCliente()+"%\n"
 					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
 							+ "Total de ahorro: $"+CalculoDocente()+"\n\n";
@@ -108,7 +108,7 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 public String MuestraPensionado() {// MUESTRA ESPECIFICO DE CLIENTE PENSIONADO
 	String Muestra="";
 	
-	Muestra+=clientePe.RespuestaPensionado()+"Tipo de plan de ahorro: Anual\n"
+	Muestra+=MuestraDatosPensionados()+"Tipo de plan de ahorro: Anual\n"
 			+ "Porcentaje sobre salario: "+getPorcentajeCliente()+"%\n"
 					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
 							+ "Total de ahorro: $"+CalculoPensionado()+"\n\n";
@@ -119,7 +119,7 @@ public String MuestraPensionado() {// MUESTRA ESPECIFICO DE CLIENTE PENSIONADO
 public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINISTRATIVO
 	String Muestra="";
 	
-	Muestra+=clienteAd.RespuestaAdministrativos()+"Tipo de plan de ahorro: Anual\n"
+	Muestra+=MuestraDatosAdministrativos()+"Tipo de plan de ahorro: Anual\n"
 			+ "Porcentaje sobre salario: "+getPorcentajeCliente()+"%\n"
 					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
 							+ "Total de ahorro: $"+CalculoAdministrativo()+"\n\n";
@@ -132,7 +132,7 @@ public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINIS
 public String MuestraCualquiera() {//PARA MOSTRAR CUALQUIER TIPO DE CLIENTE
 	String Muestra="";
 	
-		if(getTipoCliente().equals("Docente")) {//SI ES DOCENTE
+		if(getTipoCliente().equalsIgnoreCase("Docente")) {//SI ES DOCENTE
 			Muestra=MuestraDocente();//SE MUESTRAN SOLO LOS DATOS DE DOCENTE
 		}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {//SI ES PENSIONADO
 			Muestra=MuestraPensionado();//SE MUESTRAN SOLO LOS DATOS DE PENSIONADO
@@ -146,7 +146,7 @@ public String MuestraCualquiera() {//PARA MOSTRAR CUALQUIER TIPO DE CLIENTE
 public String MuestraSoloDNI() {//PARA MOSTRAR CUALQUIER DNI
 	String Muestra="";
 	
-	if(getTipoCliente().equals("Docente")) {
+	if(getTipoCliente().equalsIgnoreCase("Docente")) {
 		Muestra=clienteDo.getDni();
 	}else if(getTipoCliente().equalsIgnoreCase("Pensionado")) {
 		Muestra=clientePe.getDni();

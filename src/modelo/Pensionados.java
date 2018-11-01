@@ -12,8 +12,17 @@ public Pensionados() {}
 public void IngresaPensionado() {
 	
 	ingresarCliente();
-	setAnosjubilado(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de anos jubilado (a) de " + getNombre())));
+	String anterior = (JOptionPane.showInputDialog(null, "Selecciona el area en la que se desempenaba", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+			{ "Selecciona","Docente", "Administrativo"}, "Selecciona")).toString() ;
 	
+	if(anterior.equalsIgnoreCase("Docente")) {
+		setTipoEmpleado("Docente");
+		
+	}else if(anterior.equalsIgnoreCase("Administrativo")) {
+		setTipoEmpleado("Administrativo");
+	}
+	
+	setAnosjubilado(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de anos jubilado (a) de " + getNombre())));
 
 }
 
