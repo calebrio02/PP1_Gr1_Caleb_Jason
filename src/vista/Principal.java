@@ -1,4 +1,6 @@
 package vista;
+
+
 import javax.swing.JOptionPane;
 
 import controlador.ArrayObjetos;
@@ -18,7 +20,9 @@ public class Principal {
 		ALaVista av = new ALaVista();
 		
 		
-		c.Ingresar();
-		JOptionPane.showMessageDialog(null,c.Muestra());
+		v.Ingresar();
+		JOptionPane.showMessageDialog(null,v.Muestra());
+		System.exit(0);
+		
 	}
 }
