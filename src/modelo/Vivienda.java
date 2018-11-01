@@ -54,7 +54,7 @@ public void setPeritaje(double peritaje) {
 public void estableceVivienda() {
 	
   setDireccionPropiedad(JOptionPane.showInputDialog("Ingrese la direccion de la propiedad"));
-  setTamano(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el tamano de la propiedad")));
+  setTamano(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el tamano de la propiedad en m²")));
   setPeritaje(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el peritaje de la propiedad (valor de propiedad)")));
 }
 
@@ -85,14 +85,14 @@ public void EscogeIngresaCliente() {
 public void ingresaAdministrativoCreditoVivienda() {
 	EstableceDatosAdministrativos();
 	do {
-		setTotalCredito(Long.parseLong(JOptionPane.showInputDialog("Ingrese el monto del credito(de 20 000 000 a 81 000 000 )")));	
+		setTotalCredito(Long.parseLong(JOptionPane.showInputDialog("Ingrese el monto del credito (de ¢20 000 000 a ¢81 000 000 )")));	
 		if(getTotalCredito()<20000000||getTotalCredito()>81000000) {
-			JOptionPane.showMessageDialog(null, "El monto debe ir de 20 000 000 a 81 000 000");
+			JOptionPane.showMessageDialog(null, "El monto debe ir de ¢20 000 000 a ¢81 000 000");
 		}
 	}while(getTotalCredito()<20000000||getTotalCredito()>81000000);
 	setInteres(16);
 	do {
-		setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingresa el plazo(Debe estar entre 144 y 360 meses)")));
+		setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingresa el plazo (Debe estar entre 144 y 360 meses)")));
 			if(getPlazo()<144||getPlazo()>360) {
 				JOptionPane.showMessageDialog(null, "El plazo debe estar entre 144 y 360 meses");
 			}
@@ -105,12 +105,12 @@ public String muestraDatosAdministrativoVivienda() {
 	String mensaje = "";
 	
 	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: " + getTotalCredito() + "\n"
-	+ "Interes: " + getInteres() + "\n"
-	+ "Plazo: " + getPlazo() + "\n"
-	+ "Cuota a pagar: " + getCuotaPagar() + "\n"
+	+ "Interes: " + getInteres() +"%\n"
+	+ "Plazo: " + getPlazo() + " meses.\n"
+	+ "Cuota a pagar: ¢" + getCuotaPagar() + "\n"
 	+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
-	+ "Tamano de la propiedad: " + getTamano() + "\n" 
-	+ "Peritaje: " + getPeritaje();
+	+ "Tamano de la propiedad: " + getTamano() + "m²\n" 
+	+ "Peritaje: ¢" + getPeritaje();
 			
 	return mensaje;
 }
@@ -119,14 +119,14 @@ public String muestraDatosAdministrativoVivienda() {
 public void ingresaDocenteCreditoVivienda() {
 	EstableceDatosDocente();
 	do {
-		setTotalCredito(Long.parseLong(JOptionPane.showInputDialog("Ingrese el monto del credito(de 20 000 000 a 81 000 000 )")));	
+		setTotalCredito(Long.parseLong(JOptionPane.showInputDialog("Ingrese el monto del credito (de 20 000 000 a 81 000 000 )")));	
 		if(getTotalCredito()<20000000||getTotalCredito()>81000000) {
 			JOptionPane.showMessageDialog(null, "El monto debe ir de 20 000 000 a 81 000 000");
 		}
 	}while(getTotalCredito()<20000000||getTotalCredito()>81000000);
 	setInteres(16);
 	do {
-		setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingresa el plazo(Debe estar entre 144 y 360 meses)")));
+		setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingresa el plazo (Debe estar entre 144 y 360 meses)")));
 			if(getPlazo()<144||getPlazo()>360) {
 				JOptionPane.showMessageDialog(null, "El plazo debe estar entre 144 y 360 meses");
 			}
@@ -138,26 +138,26 @@ public void ingresaDocenteCreditoVivienda() {
 public String muestraDatosDocenteVivienda() {
 	String mensaje = "";
 	mensaje += MuestraDatosDocentes() + "Monto del Credito: " + getTotalCredito() + "\n"
-	+ "Interes: " + getInteres() + "\n"
-	+ "Plazo: " + getPlazo() + "\n"
-	+ "Cuota a pagar: " + getCuotaPagar() + "\n"
-	+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
-	+ "Tamano de la propiedad: " + getTamano() + "\n" 
-	+ "Peritaje: " + getPeritaje();
+			+ "Interes: " + getInteres() +"%\n"
+			+ "Plazo: " + getPlazo() + " meses\n"
+			+ "Cuota a pagar: ¢" + getCuotaPagar() + "\n"
+			+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
+			+ "Tamano de la propiedad: " + getTamano() + "m²n" 
+			+ "Peritaje: ¢" + getPeritaje();
 			
 	return mensaje;
 }
 public void ingresaPensionadoCreditoVivienda() {
 	EstableceDatosPensionado();
 	do {
-		setTotalCredito(Long.parseLong(JOptionPane.showInputDialog("Ingrese el monto del credito(de 20 000 000 a 81 000 000 )")));	
+		setTotalCredito(Long.parseLong(JOptionPane.showInputDialog("Ingrese el monto del credito (de 20 000 000 a 81 000 000 )")));	
 		if(getTotalCredito()<20000000||getTotalCredito()>81000000) {
 			JOptionPane.showMessageDialog(null, "El monto debe ir de 20 000 000 a 81 000 000");
 		}
 	}while(getTotalCredito()<20000000||getTotalCredito()>81000000);
 	setInteres(16);
 	do {
-		setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingresa el plazo(Debe estar entre 144 y 360 meses)")));
+		setPlazo(Integer.parseInt(JOptionPane.showInputDialog("Ingresa el plazo (Debe estar entre 144 y 360 meses)")));
 			if(getPlazo()<144||getPlazo()>360) {
 				JOptionPane.showMessageDialog(null, "El plazo debe estar entre 144 y 360 meses");
 			}
@@ -169,12 +169,12 @@ public void ingresaPensionadoCreditoVivienda() {
 public String muestraDatosPensionadovivienda() {
 	String mensaje = "";
 	mensaje += MuestraDatosPensionados()+ "Monto del Credito: " + getTotalCredito() +  "\n"
-	+ "Interes: " + getInteres() + "\n"
-	+ "Plazo: " + getPlazo() + "\n"
-	+ "Cuota a pagar: " + getCuotaPagar() + "\n"
-	+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
-	+ "Tamano de la propiedad: " + getTamano() + "\n" 
-	+ "Peritaje: " + getPeritaje();
+			+ "Interes: " + getInteres() +"%\n"
+			+ "Plazo: " + getPlazo() + " meses\n"
+			+ "Cuota a pagar: ¢" + getCuotaPagar() + "\n"
+			+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
+			+ "Tamano de la propiedad: " + getTamano() + "m²n" 
+			+ "Peritaje: ¢" + getPeritaje();
 			
 	return mensaje;
 }
@@ -184,9 +184,9 @@ public double calculoCuotaVivienda() {
 	double resultado=0;
 	double elDiez= 0;
 	resultado = (getTotalCredito()+(getTotalCredito()*getInteres()/100));
-	elDiez = resultado + ((resultado*0.10)/getPlazo());
+	elDiez = resultado + (resultado*0.10);
 	
-	return elDiez;
+	return elDiez/getPlazo();
 }
 public String muestraDni() {
 	String mensaje = "";
@@ -214,7 +214,7 @@ public String muestraCualquiera() {
 		mensaje = muestraDatosPensionadovivienda();
 	}
 	
-	return mensaje;
+	return "Tipo de credito: Vivienda \n\n"+mensaje;
 }
 
 @Override

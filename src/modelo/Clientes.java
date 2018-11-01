@@ -48,7 +48,7 @@ public void ingresarCliente() {
 	
 	do {
 		try {
-			setSalario(Double.parseDouble(JOptionPane.showInputDialog("Introduce el salario en $ correspondiente a " + getNombre()+".")));
+			setSalario(Double.parseDouble(JOptionPane.showInputDialog("Introduce el salario en ¢ correspondiente a " + getNombre()+".")));
 			cambio=1;
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Ingrese unicamente numeros");
