@@ -282,6 +282,6 @@ public void Ingresar() {
 @Override
 public String Muestra() {
 	// TODO Auto-generated method stub
-	return muestraCualquiera();
+	return "Tipo de credito: Corriente\n\n"+muestraCualquiera();
 }
 }

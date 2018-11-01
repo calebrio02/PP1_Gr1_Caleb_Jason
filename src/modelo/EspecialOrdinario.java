@@ -33,7 +33,7 @@ public void setPuestoEspecifico(String puestoEspecifico) {
 
 public void estableceEspecialOrdinario() {  //Corregir ano y desempena haha 
 	setAnoIngresoLabores(Integer.parseInt(JOptionPane.showInputDialog("Indique el ano de ingreso a laboral")));
-	setPuestoEspecifico("Escriba el nombre del puesto especifico que desempena");
+	setPuestoEspecifico(JOptionPane.showInputDialog("Escriba el nombre del puesto especifico que desempena"));
 }
 
 public void TipoCliente() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFICO
@@ -101,12 +101,13 @@ public double calculoCuotaEspecialOrdinario() {
 
 public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String Muestra="";
-	
+	long montoSolicitado = (long) getMontoCredito();
 	Muestra+=MuestraDatosDocentes() +"Tipo de credito especial: Ordinario\n"
-			+ "Monto solicitado: $"+getMontoCredito()+"\n"
+			+ "Monto solicitado: $"+montoSolicitado+"\n"
 				+ "Puesto especifico: "+getPuestoEspecifico()+"\n"
 					+ "Ano de ingreso a labores: "+getAnoIngresoLabores()+"\n"
-						+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
+						+ "Plazo fijo: "+getPlazo()+" meses " + "\n"
+						+"Interes fijo: "+getInteres()+"%\n"
 							+ "Cuota a pagar: �"+getCuotaPagar()+"\n\n";
 	
 	return Muestra;
@@ -115,12 +116,13 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINISTRATIVO
 	
 	String Muestra="";
-	
-	Muestra+=MuestraAdministrativo() +"Tipo de credito especial: Ordniario\n"
-			+ "Monto solicitado: $"+getMontoCredito()+"\n"
+	long montoSolicitado = (long) getMontoCredito();
+	Muestra+=MuestraDatosAdministrativos() +"Tipo de credito especial: Ordinario\n"
+			+ "Monto solicitado: $"+montoSolicitado+"\n"
 			+ "Puesto especifico: "+getPuestoEspecifico()+"\n"
 				+ "Ano de ingreso a labores: "+getAnoIngresoLabores()+"\n"
-					+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
+					+ "Plazo fijo: "+getPlazo()+" meses " + "\n" 
+					+ "Interes fijo: "+getInteres()+"%\n"
 						+ "Cuota a pagar: �"+getCuotaPagar()+"\n\n";
 	
 	return Muestra;

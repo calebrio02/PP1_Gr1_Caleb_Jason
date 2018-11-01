@@ -9,7 +9,18 @@ String direccionPropiedad;
 double tamano, peritaje;
 String tipoCliente;
 long totalCredito;
+long totalPeritaje;
 
+
+
+
+public long getTotalPeritaje() {
+	return totalPeritaje;
+}
+
+public void setTotalPeritaje(long totalPeritaje) {
+	this.totalPeritaje = totalPeritaje;
+}
 
 public long getTotalCredito() {
 	return totalCredito;
@@ -43,19 +54,18 @@ public void setTamano(double tamano) {
 	this.tamano = tamano;
 }
 
-public double getPeritaje() {
-	return peritaje;
-}
 
-public void setPeritaje(double peritaje) {
+
+public void setTotalPeritaje(double peritaje) {
 	this.peritaje = peritaje;
 }
 
 public void estableceVivienda() {
 	
-  setDireccionPropiedad(JOptionPane.showInputDialog("Ingrese la direccion de la propiedad"));
-  setTamano(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el tamano de la propiedad en m²")));
-  setPeritaje(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el peritaje de la propiedad (valor de propiedad)")));
+  setDireccionPropiedad(JOptionPane.showInputDialog("Ingrese la direccion de la "
+  		+ "propiedad"));
+  setTamano(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el tamano de la propiedad en mï¿½")));
+  setTotalPeritaje(Long.parseLong(JOptionPane.showInputDialog("Ingrese el peritaje de la propiedad (valor de propiedad)")));
 }
 
 
@@ -85,9 +95,9 @@ public void EscogeIngresaCliente() {
 public void ingresaAdministrativoCreditoVivienda() {
 	EstableceDatosAdministrativos();
 	do {
-		setTotalCredito(Long.parseLong(JOptionPane.showInputDialog("Ingrese el monto del credito (de ¢20 000 000 a ¢81 000 000 )")));	
+		setTotalCredito(Long.parseLong(JOptionPane.showInputDialog("Ingrese el monto del credito (de ï¿½20 000 000 a ï¿½81 000 000 )")));	
 		if(getTotalCredito()<20000000||getTotalCredito()>81000000) {
-			JOptionPane.showMessageDialog(null, "El monto debe ir de ¢20 000 000 a ¢81 000 000");
+			JOptionPane.showMessageDialog(null, "El monto debe ir de ï¿½20 000 000 a ï¿½81 000 000");
 		}
 	}while(getTotalCredito()<20000000||getTotalCredito()>81000000);
 	setInteres(16);
@@ -107,10 +117,10 @@ public String muestraDatosAdministrativoVivienda() {
 	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: " + getTotalCredito() + "\n"
 	+ "Interes: " + getInteres() +"%\n"
 	+ "Plazo: " + getPlazo() + " meses.\n"
-	+ "Cuota a pagar: ¢" + getCuotaPagar() + "\n"
+	+ "Cuota a pagar: ï¿½" + getCuotaPagar() + "\n"
 	+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
-	+ "Tamano de la propiedad: " + getTamano() + "m²\n" 
-	+ "Peritaje: ¢" + getPeritaje();
+	+ "Tamano de la propiedad: " + getTamano() + "mï¿½\n" 
+	+ "Peritaje: ï¿½" + getTotalPeritaje();
 			
 	return mensaje;
 }
@@ -140,10 +150,10 @@ public String muestraDatosDocenteVivienda() {
 	mensaje += MuestraDatosDocentes() + "Monto del Credito: " + getTotalCredito() + "\n"
 			+ "Interes: " + getInteres() +"%\n"
 			+ "Plazo: " + getPlazo() + " meses\n"
-			+ "Cuota a pagar: ¢" + getCuotaPagar() + "\n"
+			+ "Cuota a pagar: ï¿½" + getCuotaPagar() + "\n"
 			+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
-			+ "Tamano de la propiedad: " + getTamano() + "m²\n" 
-			+ "Peritaje: ¢" + getPeritaje();
+			+ "Tamano de la propiedad: " + getTamano() + "mï¿½\n" 
+			+ "Peritaje: ï¿½" + getTotalPeritaje();
 			
 	return mensaje;
 }
@@ -171,10 +181,10 @@ public String muestraDatosPensionadovivienda() {
 	mensaje += MuestraDatosPensionados()+ "Monto del Credito: " + getTotalCredito() +  "\n"
 			+ "Interes: " + getInteres() +"%\n"
 			+ "Plazo: " + getPlazo() + " meses\n"
-			+ "Cuota a pagar: ¢" + getCuotaPagar() + "\n"
+			+ "Cuota a pagar: ï¿½" + getCuotaPagar() + "\n"
 			+ "Direccion de la propiedad: " + getDireccionPropiedad()+ "\n"
-			+ "Tamano de la propiedad: " + getTamano() + "m²\n" 
-			+ "Peritaje: ¢" + getPeritaje();
+			+ "Tamano de la propiedad: " + getTamano() + "mï¿½\n" 
+			+ "Peritaje: ï¿½" +getTotalPeritaje();
 			
 	return mensaje;
 }

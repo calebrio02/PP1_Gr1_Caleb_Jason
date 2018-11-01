@@ -38,7 +38,7 @@ public void setComercio(String comercio) {
 
 public void estableceEquipoComputo() {
 	setDispositivo(JOptionPane.showInputDialog("Ingrese el nombre del dispositivo a adquirir"));
-	setComercio("Ingrese el nombre del comercio donde lo comprara");
+	setComercio(JOptionPane.showInputDialog("Ingrese el nombre del comercio donde lo comprara"));
 }
 public void TipoCliente() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFICO
 	
@@ -104,13 +104,14 @@ public double calculoCuotaEspecialOrdinario() {
 
 public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String Muestra="";
-	
-	Muestra+=clienteDo.RespuestaDocente() +"Tipo de credito especial: Computo\n"
-			+ "Monto solicitado: $"+getMontoCredito()+"\n"
+	long montoSolicitado = (long) getMontoCredito();
+	Muestra+=MuestraDatosDocentes() +"Tipo de credito especial: Computo\n"
+			+ "Monto solicitado: $"+montoSolicitado+"\n"
 					+ "Equipo a Adquirir: "+getDispositivo()+"\n"
 						+ "Comercio de compra: "+getComercio()+"\n"
-							+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
-								+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
+							+ "Plazo fijo: "+getPlazo()+" meses " +"\n" 
+								+ "Interes fijo: "+getInteres()+"%\n"
+								+ "Cuota a pagar: ï¿½"+getCuotaPagar()+"\n\n";
 	
 	return Muestra;
 }
@@ -118,13 +119,14 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINISTRATIVO
 	
 	String Muestra="";
-	
-	Muestra+=clienteAd.RespuestaAdministrativos() +"Tipo de credito especial: Computo\n"
-			+ "Monto solicitado: $"+getMontoCredito()+"\n"
+	long montoSolicitado = (long) getMontoCredito();
+	Muestra+=MuestraDatosAdministrativos() +"Tipo de credito especial: Computo\n"
+			+ "Monto solicitado: $"+montoSolicitado+"\n"
 					+ "Equipo a Adquirir: "+getDispositivo()+"\n"
 						+ "Comercio de compra: "+getComercio()+"\n"
-							+ "Plazo fijo: "+getPlazo()+"	Interes fijo: "+getInteres()+"%\n"
-								+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
+							+ "Plazo fijo: "+getPlazo()+" meses " + "\n"
+									+ "Interes fijo: "+getInteres()+"%\n"
+								+ "Cuota a pagar: ï¿½"+getCuotaPagar()+"\n\n";
 	
 	return Muestra;
 	
