@@ -102,7 +102,7 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String muestra="";	
 	muestra+=MuestraDatosDocentes()+"Tipo de plan de ahorro: A la Vista\n"
 			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-			+ "Total de ahorro: $"+String.format("%.1f", CalculoDocente())+"\n\n";
+			+ "Total de ahorro: ¢"+String.format("%.1f", CalculoDocente())+"\n\n";
 	return muestra;
 }
 
@@ -111,7 +111,7 @@ public String MuestraPensionado() {// MUESTRA ESPECIFICO DE CLIENTE PENSIONADO
 	String muestra="";
 	muestra+=MuestraDatosPensionados()+"Tipo de plan de ahorro: A la Vista\n"
 			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-					+ "Total de ahorros: $"+String.format("%.1f", CalculoPensionado());
+					+ "Total de ahorros: ¢"+String.format("%.1f", CalculoPensionado());
 	return muestra;
 }
 
@@ -120,7 +120,7 @@ public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINIS
 	String muestra="";
 	muestra+=MuestraDatosAdministrativos()+"Tipo de plan de ahorro: A la Vista\n"
 			+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-				+ "Total de ahorros: $"+String.format("%.1f", CalculoAdministrativo());
+				+ "Total de ahorros: ¢"+String.format("%.1f", CalculoAdministrativo());
 	return muestra;
 }//FIN DE MUESTRAS ESPECIFICOS
 

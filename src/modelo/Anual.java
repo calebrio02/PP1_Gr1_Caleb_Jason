@@ -100,7 +100,7 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	Muestra+=MuestraDatosDocentes() +"Tipo de plan de ahorro: Anual\n"
 			+ "Porcentaje sobre salario: "+String.format("%.0f",getPorcentajeCliente())+"%\n"
 					+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-							+ "Total de ahorro: $"+String.format("%.1f", CalculoDocente())+"\n\n";
+							+ "Total de ahorro: ¢"+String.format("%.1f", CalculoDocente())+"\n\n";
 	
 	return Muestra;
 }
@@ -110,7 +110,7 @@ public String MuestraPensionado() {// MUESTRA ESPECIFICO DE CLIENTE PENSIONADO
 	Muestra+=MuestraDatosPensionados()+"Tipo de plan de ahorro: Anual\n"
 			+ "Porcentaje sobre salario: "+String.format("%.0f",getPorcentajeCliente())+"%\n"
 				+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-					+ "Total de ahorro: $"+String.format("%.1f", CalculoPensionado())+"\n\n";
+					+ "Total de ahorro: ¢"+String.format("%.1f", CalculoPensionado())+"\n\n";
 	
 	return Muestra;
 }
@@ -120,7 +120,7 @@ public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINIS
 	Muestra+=MuestraDatosAdministrativos()+"Tipo de plan de ahorro: Anual\n"
 			+ "Porcentaje sobre salario: "+String.format("%.0f",getPorcentajeCliente())+"%\n"
 				+ "Meses de ahorro: "+getMesesCancelados()+"\n"
-					+ "Total de ahorro: $"+String.format("%.1f", CalculoAdministrativo())+"\n\n";
+					+ "Total de ahorro: ¢"+String.format("%.1f", CalculoAdministrativo())+"\n\n";
 	
 	return Muestra;
 }//FIN DE MUESTRAS ESPECIFICOS

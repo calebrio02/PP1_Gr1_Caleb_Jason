@@ -22,7 +22,7 @@ public void IngresaPensionado() {
 		setTipoEmpleado("Administrativo");
 	}
 	
-	setAnosjubilado(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de anos jubilado (a) de " + getNombre())));
+	setAnosjubilado(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de años jubilado (a) de " + getNombre())));
 
 }
 
@@ -46,7 +46,7 @@ public String RespuestaPensionado() {
 	String Respuesta="";
 	
 	Respuesta+=RespuestaCliente()+"Tipo de Cliente: Pensionado\n"
-	+"Anos jubilado: "+getAnosjubilado()+"\n"
+	+"Años jubilado: "+getAnosjubilado()+"\n"
 			+ "Area en la que se desempenaba: "+getTipoEmpleado()+"\n\n";
 	
 	return Respuesta;

@@ -18,7 +18,7 @@ public class Principal {
 		ALaVista av = new ALaVista();
 		
 		
-		a.Ingresar();
-		JOptionPane.showMessageDialog(null,a.Muestra());
+		av.Ingresar();
+		JOptionPane.showMessageDialog(null,av.Muestra());
 	}
 }
