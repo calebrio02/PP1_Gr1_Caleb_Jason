@@ -32,8 +32,29 @@ public void setPuestoEspecifico(String puestoEspecifico) {
 
 
 public void estableceEspecialOrdinario() {  //Corregir ano y desempena haha 
-	setAnoIngresoLabores(Integer.parseInt(JOptionPane.showInputDialog("Indique el ano de ingreso a laboral")));
-	setPuestoEspecifico(JOptionPane.showInputDialog("Escriba el nombre del puesto especifico que desempena"));
+	int cambio=0;
+	
+	do {
+		try {
+			setAnoIngresoLabores(Integer.parseInt(JOptionPane.showInputDialog("Indique el año de ingreso a laboral")));
+			cambio=1;
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Ingrese solo numeros");
+			cambio=0;
+		}
+		
+	} while (cambio==0);
+	
+	
+	do {
+		try {
+			setPuestoEspecifico(JOptionPane.showInputDialog("Escriba el nombre del puesto especifico que desempeña"));
+			cambio=1;
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Ingrese solo numeros");
+			cambio=0;
+		}
+	} while (cambio==0);
 }
 
 public void TipoCliente() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFICO
@@ -62,12 +83,19 @@ public void TipoCliente() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFIC
 
 public void ingresaAdministrativo() {
 	EstableceDatosAdministrativos();
+	int cambio=0;
 	do {
-		setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito(20 000 000 maximo)")));	
-		if(getMontoCredito()<0||getMontoCredito()>20000000) {
-			JOptionPane.showMessageDialog(null, "El monto debe ir de 0 a 20000000");
+		try {
+			setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito (¢20 000 000 maximo)")));	
+			if(getMontoCredito()<0||getMontoCredito()>20000000) {
+				JOptionPane.showMessageDialog(null, "El monto debe ir de ¢0 a ¢20 000 000");
+			}
+			cambio=1;
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Ingrese solo numeros");
+			cambio=0;
 		}
-	}while(getMontoCredito()<0||getMontoCredito()>20000000);
+	}while(getMontoCredito()<0||getMontoCredito()>20000000||cambio==0);
 	setInteres(24);
 	setPlazo(72);
 	setCuotaPagar(calculoCuotaEspecialOrdinario());
@@ -77,12 +105,19 @@ public void ingresaAdministrativo() {
 
 public void ingresaDocente() {
 	EstableceDatosDocente();
+	int cambio=0;
 	do {
-		setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito(20 000 000 maximo)")));	
-		if(getMontoCredito()<0||getMontoCredito()>20000000) {
-			JOptionPane.showMessageDialog(null, "El monto debe ir de 0 a 20000000");
+		try {
+			setMontoCredito(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el monto del credito (¢20 000 000 maximo)")));	
+			if(getMontoCredito()<0||getMontoCredito()>20000000) {
+				JOptionPane.showMessageDialog(null, "El monto debe ir de ¢0 a ¢20 000 000");
+			}
+			cambio=1;
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Ingrese solo numeros");
+			cambio=0;
 		}
-	}while(getMontoCredito()<0||getMontoCredito()>20000000);
+	}while(getMontoCredito()<0||getMontoCredito()>20000000||cambio==0);
 	setInteres(24);
 	setPlazo(72);
 	setCuotaPagar(calculoCuotaEspecialOrdinario());
@@ -101,14 +136,14 @@ public double calculoCuotaEspecialOrdinario() {
 
 public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 	String Muestra="";
-	long montoSolicitado = (long) getMontoCredito();
+
 	Muestra+=MuestraDatosDocentes() +"Tipo de credito especial: Ordinario\n"
-			+ "Monto solicitado: $"+montoSolicitado+"\n"
+			+ "Monto solicitado: $"+String.format("%.0f",getMontoCredito())+"\n"
 				+ "Puesto especifico: "+getPuestoEspecifico()+"\n"
-					+ "Ano de ingreso a labores: "+getAnoIngresoLabores()+"\n"
-						+ "Plazo fijo: "+getPlazo()+" meses " + "\n"
-						+"Interes fijo: "+getInteres()+"%\n"
-							+ "Cuota a pagar: ï¿½"+getCuotaPagar()+"\n\n";
+					+ "Año de ingreso a labores: "+getAnoIngresoLabores()+"\n"
+						+ "Plazo fijo: "+getPlazo()+" meses." + "\n"
+						+"Interes fijo: "+String.format("%.0f",getInteres())+"%\n"
+							+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
 	
 	return Muestra;
 }
@@ -116,14 +151,13 @@ public String MuestraDocente() {//MUESTRA ESPECIFICO DE CLIENTE DOCENTE
 public String MuestraAdministrativo() {// MUESTRA ESPECIFICO DE CLIENTE  ADMINISTRATIVO
 	
 	String Muestra="";
-	long montoSolicitado = (long) getMontoCredito();
 	Muestra+=MuestraDatosAdministrativos() +"Tipo de credito especial: Ordinario\n"
-			+ "Monto solicitado: $"+montoSolicitado+"\n"
+			+ "Monto solicitado: $"+String.format("%.0f",getMontoCredito())+"\n"
 			+ "Puesto especifico: "+getPuestoEspecifico()+"\n"
-				+ "Ano de ingreso a labores: "+getAnoIngresoLabores()+"\n"
-					+ "Plazo fijo: "+getPlazo()+" meses " + "\n" 
-					+ "Interes fijo: "+getInteres()+"%\n"
-						+ "Cuota a pagar: ï¿½"+getCuotaPagar()+"\n\n";
+				+ "Año de ingreso a labores: "+getAnoIngresoLabores()+"\n"
+					+ "Plazo fijo: "+getPlazo()+" meses." + "\n"
+					+"Interes fijo: "+String.format("%.0f",getInteres())+"%\n"
+						+ "Cuota a pagar: ¢"+getCuotaPagar()+"\n\n";
 	
 	return Muestra;
 	
