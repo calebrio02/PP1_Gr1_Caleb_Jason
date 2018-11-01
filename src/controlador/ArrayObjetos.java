@@ -179,7 +179,7 @@ public void Mostrar() {//metodo para recorrer el arreglo de objetos y mostrar to
 	for (int i = 0; i < ContUser; i++) {
 		
 		
-		JOptionPane.showMessageDialog(null, s[i].Muestra());
+		JOptionPane.showMessageDialog(null,"Codigo de usuario: "+getCod()+"\n\n"+ s[i].Muestra());
 	}
 	}
 }
