@@ -20,24 +20,20 @@ public class ArrayObjetos {
 	EquipoComputo ec = new EquipoComputo();
 	Anual a = new Anual();
 	ALaVista av = new ALaVista();	
-	public int ContUser=0, Cod=1;
+	public int ContUser=0, Cod=0;
 
 public ArrayObjetos() {//Constructor de la clase que contiene el menu de interaccion que a su vez llama a los diferentes metodos para manipular el arreglo
-	int e;
-	
-		
-			
-		
+	int e2;
 		for(;;) {
 			try {
 			
-			e= Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opcion\n"
+			e2= Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opcion\n"
 														  + "1-Ingresar\n"
 														  + "2-Mostrar\n"
 														  + "3-Buscar\n"
 														  + "4-Eliminar\n"
 														  + "5-Salir"));
-		switch (e) {
+		switch (e2) {
 		case 1:Ingresar();
 			break;
 		case 2:Mostrar();  //cuidado aca
@@ -51,9 +47,9 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 			System.exit(0);//opcion para terminar el programa
 			break;
 		default:
-		JOptionPane.showMessageDialog(null, "Opci�n inv�lida");
+		JOptionPane.showMessageDialog(null, "Opcion invalida");
 		}
-			} catch (Exception e1) {
+			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Ingrese unicamente numeros.");
 				
 			}
@@ -149,16 +145,16 @@ String tipoAhorro="";
 	do{
 		
 		tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el tipo de Plan de Ahorro", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Especial Ordinario", "Equipo Computo"}, "Selecciona")).toString() ;
+				{ "Selecciona","Anual", "A la Vista"}, "Selecciona")).toString() ;
 		
-			if(tipoAhorro.equalsIgnoreCase("Especial Ordinario")) {
+			if(tipoAhorro.equalsIgnoreCase("Anual")) {
 				a.setCod(Cod);
 				a.Ingresar();
 				s[ContUser]=a;
 				Cod++;
 				ContUser++;			
 		}else 
-			if(tipoAhorro.equalsIgnoreCase("Equipo Computo")) {
+			if(tipoAhorro.equalsIgnoreCase("A la Vista")) {
 				av.setCod(Cod);
 				av.Ingresar();
 				s[ContUser]=av;
