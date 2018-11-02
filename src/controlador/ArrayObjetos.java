@@ -20,7 +20,7 @@ public class ArrayObjetos {
 	EquipoComputo ec = new EquipoComputo();
 	Anual a = new Anual();
 	ALaVista av = new ALaVista();	
-	public int ContUser=0, Cod=0;
+	public int ContUser=0, Cod=1;
 
 public ArrayObjetos() {//Constructor de la clase que contiene el menu de interaccion que a su vez llama a los diferentes metodos para manipular el arreglo
 	int e2;
@@ -69,10 +69,91 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 			{ "Selecciona","Creditos", "Planes Ahorro"}, "Selecciona")).toString() ;
 	
 		if(tipoServicio.equalsIgnoreCase("Creditos")) {
-		tipoCredito();
+			String tipoCredito="";
+			do {
+			tipoCredito = (JOptionPane.showInputDialog(null, "Selecciona el tipo de credito", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+					{ "Selecciona","Corriente", "Vivienda","Especiales"}, "Selecciona")).toString() ;
+			
+				if(tipoCredito.equalsIgnoreCase("Corriente")) {
+					c.setCod(Cod);
+					c.Ingresar();
+					s[ContUser]=c;
+					Cod++;
+					ContUser++;
+			}else 
+				if(tipoCredito.equalsIgnoreCase("Vivienda")) {
+					v.setCod(Cod);
+					v.Ingresar();
+					s[ContUser]=v;
+					Cod++;
+					ContUser++;
+			}else
+				
+				
+				
+				
+				if(tipoCredito.equalsIgnoreCase("Especiales")) {
+					String tipoEspecial="";
+					
+					do{
+						
+						tipoEspecial = (JOptionPane.showInputDialog(null, "Selecciona el tipo credito Especial", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+								{ "Selecciona","Especial Ordinario", "Equipo Computo"}, "Selecciona")).toString() ;
+						
+							if(tipoEspecial.equalsIgnoreCase("Especial Ordinario")) {
+								eo.setCod(Cod);
+								eo.Ingresar();
+								s[ContUser]=eo;
+								Cod++;
+								ContUser++;			
+						}else 
+							if(tipoEspecial.equalsIgnoreCase("Equipo Computo")) {
+								ec.setCod(Cod);
+								ec.Ingresar();
+								s[ContUser]=ec;
+								Cod++;
+								ContUser++;
+						}else {
+						
+							JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+						}
+					} while (tipoEspecial=="Selecciona"||tipoEspecial==null);
+			}else{
+			
+				JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
+			}
+		} while (tipoCredito=="Selecciona"||tipoCredito==null);
 	}else 
+		
+		
+		
+		
 		if(tipoServicio.equalsIgnoreCase("Planes Ahorro")) {
-		tipoAhorro();
+			String tipoAhorro="";
+			
+			do{
+				
+				tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el tipo de Plan de Ahorro", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+						{ "Selecciona","Anual", "A la Vista"}, "Selecciona")).toString() ;
+				
+					if(tipoAhorro.equalsIgnoreCase("Anual")) {
+						a.setCod(Cod);
+						a.Ingresar();
+						s[ContUser]=a;
+						Cod++;
+						ContUser++;			
+				}else 
+					if(tipoAhorro.equalsIgnoreCase("A la Vista")) {
+						av.setCod(Cod);
+						av.Ingresar();
+						s[ContUser]=av;
+						Cod++;
+						ContUser++;
+				}else {
+				
+					JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+				}
+			} while (tipoAhorro=="Selecciona"||tipoAhorro==null);
 	}else  {
 	
 		JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
@@ -83,7 +164,7 @@ ContUser ++;
 }
 
 
-public void tipoCredito() {
+/*public void tipoCredito() {
 	String tipoCredito="";
 	do {
 	tipoCredito = (JOptionPane.showInputDialog(null, "Selecciona el tipo de credito", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
@@ -110,8 +191,9 @@ public void tipoCredito() {
 		JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
 	}
 } while (tipoCredito=="Selecciona"||tipoCredito==null);
-}
-public void tipoEspecial() {
+ContUser++;
+}*/
+/*public void tipoEspecial() {
 	
 	String tipoEspecial="";
 	
@@ -138,8 +220,9 @@ public void tipoEspecial() {
 			JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
 		}
 	} while (tipoEspecial=="Selecciona"||tipoEspecial==null);
-}
-public void tipoAhorro() {
+	ContUser++;
+}*/
+/*public void tipoAhorro() {
 String tipoAhorro="";
 	
 	do{
@@ -165,7 +248,8 @@ String tipoAhorro="";
 			JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
 		}
 	} while (tipoAhorro=="Selecciona"||tipoAhorro==null);
-}
+	ContUser++;
+}*/
 
 
 
@@ -175,7 +259,8 @@ public void Mostrar() {//metodo para recorrer el arreglo de objetos y mostrar to
 	for (int i = 0; i < ContUser; i++) {
 		
 		
-		JOptionPane.showMessageDialog(null,"Codigo de usuario: "+getCod()+"\n\n"+ s[i].Muestra());
+		JOptionPane.showMessageDialog(null, s[i].Muestra());
+		//"Codigo de usuario: "+s[i].getCod()+"\n\n"+
 	}
 	}
 }
