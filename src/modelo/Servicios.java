@@ -5,15 +5,17 @@ public abstract class Servicios {
 	Administrativos clienteAd = new Administrativos();
 	Docentes clienteDo = new Docentes();
 	Pensionados clientePe = new Pensionados();
-	int Cod=1;
+	private int cod;
 
+	
+	
 public int getCod() {
-		return Cod;
+		return cod;
 	}
 
 
-	public void setCod(int cod) {
-		Cod = cod;
+public void setCod(int cod) {
+		this.cod = cod;
 	}
 
 
@@ -68,5 +70,7 @@ public abstract String SoloDNI();//metodo abstracto para mostrar el total que de
 public abstract void Ingresar();//metodo abstracto para ingresar datos
 
 public abstract String Muestra() ;//metodo abstracto para mostrar solo el nombre del cliente
+
+public abstract String toString();
 
 }

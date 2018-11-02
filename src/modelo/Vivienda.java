@@ -8,6 +8,8 @@ double tamano, peritaje;
 String tipoCliente;
 double totalCredito;
 double totalPeritaje;
+int cod;
+
 
 
 
@@ -319,7 +321,7 @@ public void Ingresar() {
 }
 
 @Override
-public String Muestra() {
+public String toString() {
 	// TODO Auto-generated method stub
 	return muestraCualquiera();
 }

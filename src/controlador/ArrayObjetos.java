@@ -1,3 +1,4 @@
+
 package controlador;
 
 import javax.swing.JOptionPane;
@@ -20,7 +21,7 @@ public class ArrayObjetos {
 	EquipoComputo ec = new EquipoComputo();
 	Anual a = new Anual();
 	ALaVista av = new ALaVista();	
-	public int ContUser=0, Cod=1;
+	private int ContUser=0, Cod=1;
 
 public ArrayObjetos() {//Constructor de la clase que contiene el menu de interaccion que a su vez llama a los diferentes metodos para manipular el arreglo
 	
@@ -74,14 +75,14 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 					{ "Selecciona","Corriente", "Vivienda","Especiales"}, "Selecciona")).toString() ;
 			
 				if(tipoCredito.equalsIgnoreCase("Corriente")) {
-					c.setCod(Cod);
+					//c.setCod(Cod);
 					c.Ingresar();
 					s[ContUser]=c;
 					//Cod++;
 					//ContUser++;
 			}else 
 				if(tipoCredito.equalsIgnoreCase("Vivienda")) {
-					v.setCod(Cod);
+					//v.setCod(Cod);
 					v.Ingresar();
 					s[ContUser]=v;
 					//Cod++;
@@ -259,7 +260,7 @@ public void Mostrar() {//metodo para recorrer el arreglo de objetos y mostrar to
 	for (int i = 0; i < ContUser; i++) {
 		
 		
-		JOptionPane.showMessageDialog(null, s[i].Muestra());
+		JOptionPane.showMessageDialog(null, s[i].toString());
 		//"Codigo de usuario: "+s[i].getCod()+"\n\n"+
 	}
 	
@@ -293,7 +294,7 @@ public void Buscar(){//metodo para buscar y mostrar a un solo cliente
 			if (s[i].getCod()==b) {
 				
 				t = "";
-				t +=s[i].Muestra();//uso del metodo toString para mostrar todos los datos del cliente a buscar
+				t +=s[i].toString();//uso del metodo toString para mostrar todos los datos del cliente a buscar
 			break;
 			}
 			
@@ -367,12 +368,6 @@ public void Eliminar() {//metodo para eliminar a un cliente que se encuentre den
 	}
 }
 
-
-
-public int getContUser() {
-	return ContUser;
-}
-
 public Servicios[] getS() {
 	return s;
 }
@@ -429,14 +424,4 @@ public void setAv(ALaVista av) {
 	this.av = av;
 }
 
-public void setContUser(int contUser) {
-	ContUser = contUser;
-}
-
-public int getCod() {
-	return Cod;
-}
-public void setCod(int cod) {
-	Cod = cod;
-}
 }

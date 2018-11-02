@@ -7,6 +7,12 @@ public class Corriente extends Creditos{
 	
 double hipoteca;
 double montoHipoteca;
+int cod;
+String tipoCliente;
+
+
+
+
 
 public double getMontoHipoteca() {
 	return montoHipoteca;
@@ -17,7 +23,6 @@ public void setMontoHipoteca(double montoHipoteca) {
 	this.montoHipoteca = montoHipoteca;
 }
 
-String tipoCliente;
 
 
 
@@ -316,7 +321,7 @@ public void Ingresar() {
 }
 
 @Override
-public String Muestra() {
+public String toString() {
 	// TODO Auto-generated method stub
 	return "Tipo de credito: Corriente\n\n"+muestraCualquiera();
 }

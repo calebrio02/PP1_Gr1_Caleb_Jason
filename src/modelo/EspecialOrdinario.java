@@ -3,11 +3,12 @@ package modelo;
 import javax.swing.JOptionPane;
 
 public class EspecialOrdinario extends Especial {
-int anoIngresoLabores, Cod=1;
+int anoIngresoLabores, cod=1;
 String puestoEspecifico, TipoCliente;
 
 public EspecialOrdinario() {	
 }
+
 
 public String getTipoCliente() {
 	return TipoCliente;
@@ -192,7 +193,7 @@ return Muestra;
 
 //////////////METODOS ABSTRACTOS//////////////////
 @Override
-public String Muestra() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
+public String toString() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
 // TODO Auto-generated method stub
 return MuestraCualquiera();
 }

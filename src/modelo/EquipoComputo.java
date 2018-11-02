@@ -4,9 +4,12 @@ import javax.swing.JOptionPane;
 
 public class EquipoComputo extends Especial{
 String dispositivo, comercio, TipoCliente;
+int cod;
 
 public EquipoComputo() {	
 }
+
+
 
 public String getTipoCliente() {
 	return TipoCliente;
@@ -167,7 +170,7 @@ return Muestra;
 
 //////////////METODOS ABSTRACTOS//////////////////
 @Override
-public String Muestra() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
+public String toString() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
 // TODO Auto-generated method stub
 return MuestraCualquiera();
 }

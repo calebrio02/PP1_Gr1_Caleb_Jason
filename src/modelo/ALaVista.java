@@ -5,6 +5,7 @@ public class ALaVista extends PlanesAhorro{
 
 	double porcentajeCliente=0.07, porcentajePatrono=0.025;
 	String TipoCliente;
+	 int cod;
 
 	
 public ALaVista() {
@@ -15,6 +16,7 @@ public ALaVista() {
 public double getPorcentajeCliente() {
 	return porcentajeCliente;
 }
+
 public void setPorcentajeCliente(double porcentajeCliente) {
 	this.porcentajeCliente = porcentajeCliente;
 }
@@ -151,12 +153,13 @@ public String MuestraSoloDNI() {//PARA MOSTRAR CUALQUIER DNI
 
 ////////////// METODOS ABSTRACTOS//////////////////
 @Override
-public String Muestra() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
+public String toString() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
 	// TODO Auto-generated method stub
 	return MuestraCualquiera();
 }
 public void Ingresar() {// PARA INGRESAR LOS DATOS DE ESTA CLASE
 	// TODO Auto-generated method stub
+	setTipoCliente("");
 	IngresarALaVista();
 												
 }												

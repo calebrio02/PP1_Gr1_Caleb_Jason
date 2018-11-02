@@ -6,7 +6,7 @@ public class Anual extends PlanesAhorro{
 
 	double porcentajeCliente;
 	String TipoCliente;
-
+	int cod;
 	
 public Anual() {
 }	
@@ -16,6 +16,8 @@ public Anual() {
 public String getTipoCliente() {
 		return TipoCliente;
 }
+
+
 	public void setTipoCliente(String tipoCliente) {
 		TipoCliente = tipoCliente;
 }
@@ -152,12 +154,13 @@ public String MuestraSoloDNI() {//PARA MOSTRAR CUALQUIER DNI
 
 //////////////METODOS ABSTRACTOS//////////////////
 @Override
-public String Muestra() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
+public String toString() {// PARA MOSTRAR LOS DATOS DE ESTA CLASE
 	// TODO Auto-generated method stub
 	return MuestraCualquiera();
 }
 public void Ingresar() {// PARA INGRESAR LOS DATOS DE ESTA CLASE
 	// TODO Auto-generated method stub
+	setTipoCliente("");
 	IngresarAnual();
  
 }
