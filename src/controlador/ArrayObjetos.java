@@ -75,14 +75,14 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 					{ "Selecciona","Corriente", "Vivienda","Especiales"}, "Selecciona")).toString() ;
 			
 				if(tipoCredito.equalsIgnoreCase("Corriente")) {
-					//c.setCod(Cod);
+					c.setCod(Cod);
 					c.Ingresar();
 					s[ContUser]=c;
 					//Cod++;
 					//ContUser++;
 			}else 
 				if(tipoCredito.equalsIgnoreCase("Vivienda")) {
-					//v.setCod(Cod);
+					v.setCod(Cod);
 					v.Ingresar();
 					s[ContUser]=v;
 					//Cod++;
