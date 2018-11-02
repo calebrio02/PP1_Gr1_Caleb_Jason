@@ -62,7 +62,11 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 
 public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 	String tipoServicio = "";
-	
+	 c = new Corriente(); v = new Vivienda();
+	 eo = new EspecialOrdinario();
+	 ec = new EquipoComputo();
+	 a = new Anual();
+	 av = new ALaVista();
 		do{
 	
 	tipoServicio = (JOptionPane.showInputDialog(null, "Selecciona el tipo de servicio", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
