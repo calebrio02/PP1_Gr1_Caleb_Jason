@@ -23,7 +23,9 @@ public class ArrayObjetos {
 	public int ContUser=0, Cod=1;
 
 public ArrayObjetos() {//Constructor de la clase que contiene el menu de interaccion que a su vez llama a los diferentes metodos para manipular el arreglo
-	int e2;
+	
+	
+	int e2 =0;
 		for(;;) {
 			try {
 			
@@ -36,7 +38,7 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 		switch (e2) {
 		case 1:Ingresar();
 			break;
-		case 2:Mostrar();  //cuidado aca
+		case 2:Mostrar();  
 			break;
 		case 3:Buscar();
 			break;
@@ -59,10 +61,7 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 
 public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 	String tipoServicio = "";
-	if(ContUser==s.length){//estrucutura de control para inidicar si el arreglo esta lleno o no sino, se ejecuta el ingresar normalmente
-		JOptionPane.showMessageDialog(null,"El maximo de Usuarios que puedes agregar es de " + s.length, null,JOptionPane.WARNING_MESSAGE);
-        JOptionPane.showMessageDialog(null, "Si deseas agregar, debes eliminar alguno de los usuarios ya guardados.");
-	}else 
+	
 		do{
 	
 	tipoServicio = (JOptionPane.showInputDialog(null, "Selecciona el tipo de servicio", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
@@ -78,15 +77,15 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 					c.setCod(Cod);
 					c.Ingresar();
 					s[ContUser]=c;
-					Cod++;
-					ContUser++;
+					//Cod++;
+					//ContUser++;
 			}else 
 				if(tipoCredito.equalsIgnoreCase("Vivienda")) {
 					v.setCod(Cod);
 					v.Ingresar();
 					s[ContUser]=v;
-					Cod++;
-					ContUser++;
+					//Cod++;
+					//ContUser++;
 			}else
 				
 				
@@ -104,15 +103,15 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 								eo.setCod(Cod);
 								eo.Ingresar();
 								s[ContUser]=eo;
-								Cod++;
-								ContUser++;			
+								//Cod++;
+								//ContUser++;			
 						}else 
 							if(tipoEspecial.equalsIgnoreCase("Equipo Computo")) {
 								ec.setCod(Cod);
 								ec.Ingresar();
 								s[ContUser]=ec;
-								Cod++;
-								ContUser++;
+								//Cod++;
+								//ContUser++;
 						}else {
 						
 							JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
@@ -140,15 +139,15 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 						a.setCod(Cod);
 						a.Ingresar();
 						s[ContUser]=a;
-						Cod++;
-						ContUser++;			
+						//Cod++;
+						//ContUser++;			
 				}else 
 					if(tipoAhorro.equalsIgnoreCase("A la Vista")) {
 						av.setCod(Cod);
 						av.Ingresar();
 						s[ContUser]=av;
-						Cod++;
-						ContUser++;
+						//Cod++;
+						//ContUser++;
 				}else {
 				
 					JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
@@ -159,8 +158,9 @@ public void Ingresar() {//metodo para escoger alguno de los 3 paquetees
 		JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
 	}
 } while (tipoServicio=="Selecciona"||tipoServicio==null);
-	
+Cod++;
 ContUser ++;
+
 }
 
 
@@ -254,7 +254,7 @@ String tipoAhorro="";
 
 
 public void Mostrar() {//metodo para recorrer el arreglo de objetos y mostrar todos los clientes que se encuentren ingresados hasta el momento
-	if(!s[0].equals(null)){
+	
 	
 	for (int i = 0; i < ContUser; i++) {
 		
@@ -262,7 +262,7 @@ public void Mostrar() {//metodo para recorrer el arreglo de objetos y mostrar to
 		JOptionPane.showMessageDialog(null, s[i].Muestra());
 		//"Codigo de usuario: "+s[i].getCod()+"\n\n"+
 	}
-	}
+	
 }
 
 
