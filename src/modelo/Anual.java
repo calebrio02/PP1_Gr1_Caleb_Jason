@@ -38,30 +38,37 @@ public void IngresarAnual() {//METODO DE INGRESAR DE ESTA CLASE
 public void TipoClienteAnual() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFICO
 
 	String tipoCliente="";
+	int cambio=1;
 	do {
-		
-		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
-
-		
-		if(tipoCliente.equalsIgnoreCase("Docente")) {
-			EstableceDatosDocente();
-			setTipoCliente("Docente");
+		try {
+			tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+					{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
 			
-		}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
-			EstableceDatosPensionado();
-			setTipoCliente("Pensionado");
 			
-		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
-			EstableceDatosAdministrativos();
-			setTipoCliente("Administrativo");
+			if(tipoCliente.equalsIgnoreCase("Docente")) {
+				EstableceDatosDocente();
+				setTipoCliente("Docente");
+				
+			}else if(tipoCliente.equalsIgnoreCase("Pensionado")) {
+				EstableceDatosPensionado();
+				setTipoCliente("Pensionado");
+				
+			}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
+				EstableceDatosAdministrativos();
+				setTipoCliente("Administrativo");
+				
+			}else {
+				JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
+				
+			}
 			
-		}else {
-			JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
-
+		} catch (Exception e) {
+			// TODO: handle exception
+			JOptionPane.showMessageDialog(null, "Escoge una opcion");
+			cambio=0;
 		}
 
-	} while (tipoCliente=="Selecciona"||tipoCliente==null);
+	} while (tipoCliente=="Selecciona"||cambio==0);
 }
 
 

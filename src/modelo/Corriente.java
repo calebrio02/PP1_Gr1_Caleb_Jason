@@ -31,21 +31,32 @@ public String getTipoCliente() {
 
 public void EscogeIngresaCliente() {
 	//METODO PARA ESOCGER E INGRESAR LOS DATOS ESPECIFICOS DEL TIPO DE CLIENTE QUE SE ESCOJA
-
+	String elCliente="";
+	int cambio=1;
 	
-	String elCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-			{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
-	
-	if(elCliente.equalsIgnoreCase("Docente")) {
-		setTipoCliente("Docente");
-		ingresaDocenteCreditoCorriente();
-	}else if(elCliente.equalsIgnoreCase("Pensionado")) {
-		setTipoCliente("Pensionado"); 
-		ingresaPensionadoCreditoCorriente();
-	}else if(elCliente.equalsIgnoreCase("Administrativo")) {
-		setTipoCliente("Administrativo");
-		ingresaAdministrativoCreditoCorriente();
-	}
+	do {
+		try {
+			
+			elCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+					{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
+			
+			if(elCliente.equalsIgnoreCase("Docente")) {
+				setTipoCliente("Docente");
+				ingresaDocenteCreditoCorriente();
+			}else if(elCliente.equalsIgnoreCase("Pensionado")) {
+				setTipoCliente("Pensionado"); 
+				ingresaPensionadoCreditoCorriente();
+			}else if(elCliente.equalsIgnoreCase("Administrativo")) {
+				setTipoCliente("Administrativo");
+				ingresaAdministrativoCreditoCorriente();
+			}else {
+				JOptionPane.showMessageDialog(null, "Debes escoger una opcion");
+			}
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Escoge una opcion");
+			cambio=0;
+		}
+	} while (cambio==0||elCliente.equals("Selecciona"));
 	
 
 }

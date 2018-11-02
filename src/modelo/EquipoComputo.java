@@ -36,25 +36,29 @@ public void estableceEquipoComputo() {
 	setComercio(JOptionPane.showInputDialog("Ingrese el nombre del comercio donde lo comprara"));
 }
 public void TipoCliente() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFICO
-	
+	int cambio=1;
 	String tipoCliente="";
 	do {
-		
-		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Docente", "Administrativo"}, "Selecciona")).toString() ;
-		
-		if(tipoCliente.equalsIgnoreCase("Docente")) {
-			ingresaDocente();
-			setTipoCliente("Docente");
+		try {
+			tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+					{ "Selecciona","Docente", "Administrativo"}, "Selecciona")).toString() ;
 			
-		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
-			ingresaAdministrativo();
-			setTipoCliente("Administrativo");
-		}else{
-			
-			JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
-		}
-	} while (tipoCliente=="Selecciona"||tipoCliente==null);	
+			if(tipoCliente.equalsIgnoreCase("Docente")) {
+				ingresaDocente();
+				setTipoCliente("Docente");
+				
+			}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
+				ingresaAdministrativo();
+				setTipoCliente("Administrativo");
+			}else{
+				
+				JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+			}
+	} catch (Exception e) {
+		JOptionPane.showMessageDialog(null, "Debes escoger una opcion");
+		cambio=0;
+	}
+	} while (tipoCliente=="Selecciona"||tipoCliente==null||cambio==0);	
 }
 
 

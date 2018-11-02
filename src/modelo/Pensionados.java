@@ -10,17 +10,27 @@ public Pensionados() {}
 //INGRESA ESPECIFICO DE LA CLASE DE ESTE TIPO DE CLIENTE	
 public void IngresaPensionado() {
 // SE IMPLEMENTAN CONDICIONES Y ESTRUCUTURAS DE CONTROL PARA EVITAR DATOS ERRONEOS
-	int cambio=0;
+	int cambio=1;
+	String anterior="";
 	ingresarCliente();
-	String anterior = (JOptionPane.showInputDialog(null, "Selecciona el area en la que se desempeñaba", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-			{ "Selecciona","Docente", "Administrativo"}, "Selecciona")).toString() ;
 	
-	if(anterior.equalsIgnoreCase("Docente")) {
-		setTipoEmpleado("Docente");
+	do {
+		try {
+		anterior = (JOptionPane.showInputDialog(null, "Selecciona el area en la que se desempeñaba", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+				{ "Selecciona","Docente", "Administrativo"}, "Selecciona")).toString() ;
 		
-	}else if(anterior.equalsIgnoreCase("Administrativo")) {
-		setTipoEmpleado("Administrativo");
+		if(anterior.equalsIgnoreCase("Docente")) {
+			setTipoEmpleado("Docente");
+			
+		}else if(anterior.equalsIgnoreCase("Administrativo")) {
+			setTipoEmpleado("Administrativo");
+		}
+		
+	} catch (Exception e) {
+		JOptionPane.showMessageDialog(null, "Debes escoger una opcion");
+		cambio=0;
 	}
+	} while (anterior.equals("Seleccionar")||cambio==0);
 	do {
 		try {
 			setAnosjubilado(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de años jubilado (a) de " + getNombre())));

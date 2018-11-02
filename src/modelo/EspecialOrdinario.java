@@ -60,23 +60,30 @@ public void estableceEspecialOrdinario() {  //Corregir ano y desempena haha
 public void TipoCliente() {//METOD PARA SELECCIONAR EL TIPO DE CLIENTE ESPECIFICO
 	
 	String tipoCliente="";
+	int cambio=1;
 	do {
-		
-		tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Docente", "Administrativo"}, "Selecciona")).toString() ;
-		
-		if(tipoCliente.equalsIgnoreCase("Docente")) {
-			ingresaDocente();
-			setTipoCliente("Docente");
+		try {
 			
-		}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
-			ingresaAdministrativo();
-			setTipoCliente("Administrativo");
-		}else{
+			tipoCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+					{ "Selecciona","Docente", "Administrativo"}, "Selecciona")).toString() ;
 			
-			JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+			if(tipoCliente.equalsIgnoreCase("Docente")) {
+				ingresaDocente();
+				setTipoCliente("Docente");
+				
+			}else if(tipoCliente.equalsIgnoreCase("Administrativo")) {
+				ingresaAdministrativo();
+				setTipoCliente("Administrativo");
+			}else{
+				
+				JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			JOptionPane.showMessageDialog(null, "Debes escoger una opcion");
+			cambio=0;
 		}
-	} while (tipoCliente=="Selecciona"||tipoCliente==null);	
+	} while (tipoCliente=="Selecciona"||cambio==0);	
 }
 //INGRESA DE LOS DOS TIPOS DE CLIENTES PARA CREDITO ESPECIAL ORDINARIO//
 

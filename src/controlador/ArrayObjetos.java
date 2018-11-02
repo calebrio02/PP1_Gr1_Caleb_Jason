@@ -66,104 +66,129 @@ public void Ingresar() {//metodo para escoger las distintas opciones
 	 ec = new EquipoComputo();
 	 a = new Anual();
 	 av = new ALaVista();
+	 int cambio=1;
 		do{
-	
-	tipoServicio = (JOptionPane.showInputDialog(null, "Selecciona el tipo de servicio", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-			{ "Selecciona","Creditos", "Planes Ahorro"}, "Selecciona")).toString() ;
-	//menu de seleccion multiple para escoger los dos tipo de paquetes financieros
-	
-		if(tipoServicio.equalsIgnoreCase("Creditos")) {//si el usuario seleecciona "creditos en el menu se entra a esta condicion"
-			String tipoCredito="";
-			do {
-			tipoCredito = (JOptionPane.showInputDialog(null, "Selecciona el tipo de credito", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-					{ "Selecciona","Corriente", "Vivienda","Especiales"}, "Selecciona")).toString() ;
-			//si el usuario selecciono anteriormente "creditos" se le pregunta cual de los tipos de creditos desea
-			
-				if(tipoCredito.equalsIgnoreCase("Corriente")) {// si escogio "corriente se entra en esta condicion"
-					c.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unico
-					c.Ingresar();// se llama al metodo ingresar abstracto
-					s[ContUser]=c;// se guarda el objeto en la posicion que tenga ContUser al momento
-
-			}else 
-				if(tipoCredito.equalsIgnoreCase("Vivienda")) {// si escogio "vivienda" se entra en esta condicion"
-					v.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
-					v.Ingresar();// se llama al metodo ingresar abstracto
-					s[ContUser]=v;// se guarda el objeto en la posicion que tenga ContUser al momento
-
-			}else
+			try {
 				
+				tipoServicio = (JOptionPane.showInputDialog(null, "Selecciona el tipo de servicio", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+						{ "Selecciona","Creditos", "Planes Ahorro"}, "Selecciona")).toString() ;
+				//menu de seleccion multiple para escoger los dos tipo de paquetes financieros
 				
-				
-				
-				if(tipoCredito.equalsIgnoreCase("Especiales")) {// si escogio "Especiales se entra en esta condicion"
-					String tipoEspecial="";
+				if(tipoServicio.equalsIgnoreCase("Creditos")) {//si el usuario seleecciona "creditos en el menu se entra a esta condicion"
+					String tipoCredito="";
 					
-					do{
+					do {
+						try {
+					
+						tipoCredito = (JOptionPane.showInputDialog(null, "Selecciona el tipo de credito", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+								{ "Selecciona","Corriente", "Vivienda","Especiales"}, "Selecciona")).toString() ;
+						//si el usuario selecciono anteriormente "creditos" se le pregunta cual de los tipos de creditos desea
 						
-						tipoEspecial = (JOptionPane.showInputDialog(null, "Selecciona el tipo credito Especial", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-								{ "Selecciona","Especial Ordinario", "Equipo Computo"}, "Selecciona")).toString() ;
-						//se le pegunta al cliente cual tipo de credito especial desea
-						
-							if(tipoEspecial.equalsIgnoreCase("Especial Ordinario")) {
-								//si el usuario selecciona especial ordinario se entra en esta condicion
-								eo.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
-								eo.Ingresar();// se llama al metodo ingresar abstracto
-								s[ContUser]=eo;// se guarda el objeto en la posicion que tenga ContUser al momento
-			
+						if(tipoCredito.equalsIgnoreCase("Corriente")) {// si escogio "corriente se entra en esta condicion"
+							c.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unico
+							c.Ingresar();// se llama al metodo ingresar abstracto
+							s[ContUser]=c;// se guarda el objeto en la posicion que tenga ContUser al momento
+							
 						}else 
-							if(tipoEspecial.equalsIgnoreCase("Equipo Computo")) {
-								//si el usuario selecciona especial ordinario se entra en esta condicion
+							if(tipoCredito.equalsIgnoreCase("Vivienda")) {// si escogio "vivienda" se entra en esta condicion"
+								v.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
+								v.Ingresar();// se llama al metodo ingresar abstracto
+								s[ContUser]=v;// se guarda el objeto en la posicion que tenga ContUser al momento
 								
-								ec.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
-								ec.Ingresar();// se llama al metodo ingresar abstracto
-								s[ContUser]=ec;// se guarda el objeto en la posicion que tenga ContUser al momento
-
-						}else {
-						
-							JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+							}else
+								
+								
+								
+								
+								if(tipoCredito.equalsIgnoreCase("Especiales")) {// si escogio "Especiales se entra en esta condicion"
+									String tipoEspecial="";
+									
+									do{
+										try {
+											
+											tipoEspecial = (JOptionPane.showInputDialog(null, "Selecciona el tipo credito Especial", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+													{ "Selecciona","Especial Ordinario", "Equipo Computo"}, "Selecciona")).toString() ;
+											//se le pegunta al cliente cual tipo de credito especial desea
+											
+											if(tipoEspecial.equalsIgnoreCase("Especial Ordinario")) {
+												//si el usuario selecciona especial ordinario se entra en esta condicion
+												eo.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
+												eo.Ingresar();// se llama al metodo ingresar abstracto
+												s[ContUser]=eo;// se guarda el objeto en la posicion que tenga ContUser al momento
+												
+											}else 
+												if(tipoEspecial.equalsIgnoreCase("Equipo Computo")) {
+													//si el usuario selecciona especial ordinario se entra en esta condicion
+													
+													ec.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
+													ec.Ingresar();// se llama al metodo ingresar abstracto
+													s[ContUser]=ec;// se guarda el objeto en la posicion que tenga ContUser al momento
+													
+												}else {
+													
+													JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+												}
+										} catch (Exception e) {
+											JOptionPane.showMessageDialog(null, "Debes escoger una opcion");
+											cambio=0;
+										}
+										
+									} while (tipoEspecial=="Selecciona"||tipoEspecial==null||cambio==0);
+									// con esta condicion se controla que el usuario escoja alguna de las opciones disponibles
+								}else{
+									
+									JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
+								}
+						} catch (Exception e) {
+							JOptionPane.showMessageDialog(null, "Debes escoger una opcion");
+							cambio=0;
 						}
-					} while (tipoEspecial=="Selecciona"||tipoEspecial==null);
-					// con esta condicion se controla que el usuario escoja alguna de las opciones disponibles
-			}else{
-			
-				JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
-			}
-		} while (tipoCredito=="Selecciona"||tipoCredito==null);
-	}else 
-		
-		
-		
-		
-		if(tipoServicio.equalsIgnoreCase("Planes Ahorro")) {//si el usuario seleecciona planes de ahorro en el menu se entra a esta condicion"
-			String tipoAhorro="";
-			
-			do{
-				
-				tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el tipo de Plan de Ahorro", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-						{ "Selecciona","Anual", "A la Vista"}, "Selecciona")).toString() ;
-					// se le pregunta al usuario que tipo de plan de ahorro desea
-				
-					if(tipoAhorro.equalsIgnoreCase("Anual")) {//si escoge anual se entra en esta condicion	
-						a.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
-						a.Ingresar();// se llama al metodo ingresar abstracto
-						s[ContUser]=a;// se guarda el objeto en la posicion que tenga ContUser al momento
-			
+					} while (tipoCredito=="Selecciona"||tipoCredito==null||cambio==0);
 				}else 
-					if(tipoAhorro.equalsIgnoreCase("A la Vista")) {
-						av.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
-						av.Ingresar();// se llama al metodo ingresar abstracto
-						s[ContUser]=av;// se guarda el objeto en la posicion que tenga ContUser al momento
-
-				}else {
-				
-					JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
-				}
-			} while (tipoAhorro=="Selecciona"||tipoAhorro==null);
-	}else  {
-	
-		JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
-	}
-} while (tipoServicio=="Selecciona"||tipoServicio==null);
+					
+					
+					
+					
+					if(tipoServicio.equalsIgnoreCase("Planes Ahorro")) {//si el usuario seleecciona planes de ahorro en el menu se entra a esta condicion"
+						String tipoAhorro="";
+						
+						do{
+							try {
+								
+								tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el tipo de Plan de Ahorro", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
+										{ "Selecciona","Anual", "A la Vista"}, "Selecciona")).toString() ;
+								// se le pregunta al usuario que tipo de plan de ahorro desea
+								
+								if(tipoAhorro.equalsIgnoreCase("Anual")) {//si escoge anual se entra en esta condicion	
+									a.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
+									a.Ingresar();// se llama al metodo ingresar abstracto
+									s[ContUser]=a;// se guarda el objeto en la posicion que tenga ContUser al momento
+									
+								}else 
+									if(tipoAhorro.equalsIgnoreCase("A la Vista")) {
+										av.setCod(Cod);//se le da el valor de la variable cod para darle un codigo unic
+										av.Ingresar();// se llama al metodo ingresar abstracto
+										s[ContUser]=av;// se guarda el objeto en la posicion que tenga ContUser al momento
+										
+									}else {
+										
+										JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+									}
+							} catch (Exception e) {
+								JOptionPane.showMessageDialog(null, "Debes escoger una opcion");
+								cambio=0;
+							}
+						} while (tipoAhorro=="Selecciona"||tipoAhorro==null||cambio==0);
+					}else  {
+						
+						JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
+					}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Debes escoger una opcion");
+				cambio=0;
+			}
+		}while (tipoServicio=="Selecciona"||tipoServicio==null||cambio==0);
+		
 Cod++;//cod aumenta de valor
 ContUser ++;//cont user aumenta de valor
 
