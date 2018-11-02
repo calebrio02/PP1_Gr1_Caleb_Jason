@@ -2,15 +2,14 @@ package modelo;
 
 import javax.swing.JOptionPane;
 
-public class Vivienda extends Creditos  {
+public class Vivienda extends Creditos  {//clase vivienda que hereda de creditos
+	
 String direccionPropiedad;
 double tamano, peritaje;
 String tipoCliente;
 double totalCredito;
 double totalPeritaje;
 int cod;
-
-
 
 
 public double getPeritaje() {
@@ -63,11 +62,12 @@ public void setTamano(double tamano) {
 }
 
 
-public void estableceVivienda() {
+public void estableceVivienda() {// ingresa especifico de esta clase 
 	int cambio=0;
   setDireccionPropiedad(JOptionPane.showInputDialog("Ingrese la direccion de la "
   		+ "propiedad"));
-  
+//se preguntan especificamente los datos que se necesitan. 
+//Asimismo se dan diferentes estrucuturas de control para que el usuario no ingrese un dato indebido y se caiga el prgrama
   	do {
 		try {
 			setTamano(Double.parseDouble(JOptionPane.showInputDialog("Ingrese el tamano de la propiedad en m²")));
@@ -93,7 +93,7 @@ public void estableceVivienda() {
 
 public void EscogeIngresaCliente() {
 	
-
+//estrucutura de control para luego solo mostrar los datos del cliente especifico y no confundirlos con otros
 	
 	String elCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
 			{ "Selecciona","Docente", "Pensionado", "Administrativo"}, "Selecciona")).toString() ;
@@ -151,10 +151,10 @@ public void ingresaAdministrativoCreditoVivienda() {
 	setCuotaPagar(calculoCuotaVivienda());
 	estableceVivienda();
 }
-
+//MUESTRA DE LOS CLIENTES DE CREDITO VIVIENDA
 public String muestraDatosAdministrativoVivienda() {
 	String mensaje = "";
-	
+	//SE LES DA UN FORMATO ESPECIAL A ALGUNOS DE LOS VALORES CON NUMEROS GRANDES
 	mensaje += MuestraDatosAdministrativos() + "Monto del Credito: ¢" + String.format("%.0f", getTotalCredito()) + "\n"
 	+ "Interes: " +String.format("%.0f",getInteres()) +"%\n"
 	+ "Plazo: " + getPlazo() + " meses.\n"
@@ -269,7 +269,7 @@ public String muestraDatosPensionadovivienda() {
 	return mensaje;
 }
 
-
+//CALCULO GENERICO PARA TODOS LOS CLIENTES DE VIVIENDA
 public double calculoCuotaVivienda() {
 	double resultado=0;
 	double elDiez= 0;
@@ -278,6 +278,7 @@ public double calculoCuotaVivienda() {
 	
 	return elDiez/getPlazo();
 }
+//METODO PARA SOLO LLAMAR AL DNI
 public String muestraDni() {
 	String mensaje = "";
 	
@@ -292,7 +293,7 @@ public String muestraDni() {
 }
 
 
-
+//METODO ESPECIAL PAAR SOLO IMPRIMIR LOS DATOS DE UN TIPO DE CLIENTE
 public String muestraCualquiera() {
 	
 	String mensaje = "";

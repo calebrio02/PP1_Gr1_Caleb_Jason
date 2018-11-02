@@ -28,8 +28,8 @@ public void setSalario(double salario) {
 }
 
 
-public void ingresarCliente() {
-	
+public void ingresarCliente() {//INGRESA GENERICO PARA CUALQUIER CLIENTE
+	//SE ESTABLECEN CONDICIONES Y ESTRUCUTURAS DE CONTROL PARA INGRESAR DATOS SIN ERRORES
 	int cambio=0;
 			
 	setNombre(JOptionPane.showInputDialog("Introduce el nombre"));
@@ -57,6 +57,7 @@ public void ingresarCliente() {
 	} while (cambio==0);
 	
 }
+//MUESTRA GENERICO PARA LOS CLIENTES
 public String RespuestaCliente()
 {	String Muestra="";
 	
@@ -68,10 +69,4 @@ public String RespuestaCliente()
 	return Muestra;
 	
 	}
-public void MuestraCliente() {
-
-	JOptionPane.showMessageDialog(null, RespuestaCliente());
-
-}
-
 }

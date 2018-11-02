@@ -6,7 +6,6 @@ public class Administrativos extends Clientes {
 
 	String puesto, lugarTrabajo;
 	
-	
 	 public Administrativos() {
 	 }
 	 

@@ -4,12 +4,10 @@ import javax.swing.JOptionPane;
 
 public class EquipoComputo extends Especial{
 String dispositivo, comercio, TipoCliente;
-int cod;
+
 
 public EquipoComputo() {	
 }
-
-
 
 public String getTipoCliente() {
 	return TipoCliente;
@@ -32,7 +30,7 @@ public String getComercio() {
 public void setComercio(String comercio) {
 	this.comercio = comercio;
 }
-
+//INGRESA ESPECIFICO DE LA CLASE DE TIPO EQUPO COMPUTO
 public void estableceEquipoComputo() {
 	setDispositivo(JOptionPane.showInputDialog("Ingrese el nombre del dispositivo a adquirir"));
 	setComercio(JOptionPane.showInputDialog("Ingrese el nombre del comercio donde lo comprara"));

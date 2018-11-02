@@ -3,56 +3,34 @@ package modelo;
 import javax.swing.JOptionPane;
 
 public class Corriente extends Creditos{
-	
-	
+		
 double hipoteca;
 double montoHipoteca;
-int cod;
 String tipoCliente;
-
-
-
-
 
 public double getMontoHipoteca() {
 	return montoHipoteca;
 }
-
-
 public void setMontoHipoteca(double montoHipoteca) {
 	this.montoHipoteca = montoHipoteca;
 }
-
-
-
-
 public Corriente() {
-	
 }
-
-
 public double getHipoteca() {
 	return hipoteca;
 }
-
 public void setHipoteca(double hipoteca) {
 	this.hipoteca = hipoteca;
 }
-
 public void setTipoCliente(String tipoCliente) {
 	this.tipoCliente = tipoCliente;
 }
-
-
-
 public String getTipoCliente() {
 	return tipoCliente;
 }
 
-
-
 public void EscogeIngresaCliente() {
-	
+	//METODO PARA ESOCGER E INGRESAR LOS DATOS ESPECIFICOS DEL TIPO DE CLIENTE QUE SE ESCOJA
 
 	
 	String elCliente = (JOptionPane.showInputDialog(null, "Selecciona el tipo de cliente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
@@ -72,8 +50,8 @@ public void EscogeIngresaCliente() {
 
 }
 
-//INGRESA DE LOS TRES TIPOS DE CLIENTES PARA CREDITO CORRIENTE//
-public void ingresaAdministrativoCreditoCorriente() {//Le hace falta lo que compete a hipoteca
+//INGRESA Y MUESTRA DE LOS TRES TIPOS DE CLIENTES PARA CREDITO CORRIENTE//
+public void ingresaAdministrativoCreditoCorriente() {
 	
 	EstableceDatosAdministrativos();
 	setMontoCredito(calculoMontoCreditoAdministrativoCorriente());
@@ -278,7 +256,7 @@ public double calculoHipotecaCorriente() {
 
 
 
-
+//MUESTRAS GENERICOS
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 public String muestraDni() {
 	String mensaje = "";

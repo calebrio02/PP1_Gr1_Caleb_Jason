@@ -43,11 +43,9 @@ public String Muestra() {
 	return null;
 }
 
-
 @Override
 public String toString() {
 	// TODO Auto-generated method stub
 	return null;
 }
-
 }//FIN DE ESTA CLASE

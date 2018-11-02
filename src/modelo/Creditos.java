@@ -1,19 +1,11 @@
 package modelo;
-import modelo.*;
-import javax.swing.JOptionPane;
-import javax.tools.ToolProvider;
 
 public class Creditos extends Servicios{
-	
-
 	
 double montoCredito, cuotaPagar, interes;
 int plazo;
 
-public Creditos() { //esta parte hay que distribuirla de forma diferente ya que todos los creditos tienen un monto especifico
-	//no se puede crear un ingresar en el constructor de la misma manera que lo hice en Cliente. hay que pensarla haha
-	
-	
+public Creditos() {
 }
 public double getMontoCredito() {
 	return montoCredito;
@@ -47,11 +39,7 @@ public void setPlazo(int plazo) {
 	this.plazo = plazo;
 }
 
-
-
-
-
-
+// IMPLEMENTACION DE LOS DIFERENTES METODOS ABSTRACTOS
 @Override
 public String toString() {
 	// TODO Auto-generated method stub
@@ -78,9 +66,4 @@ public String Muestra() {
 	// TODO Auto-generated method stub
 	return null;
 }
-
-
-
-
-
 }

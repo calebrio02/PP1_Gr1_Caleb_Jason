@@ -3,13 +3,13 @@ package modelo;
 import javax.swing.JOptionPane;
 
 public class Pensionados extends Clientes{
-
 	int anosjubilado;
 	String tipoPensionado;
 	
 public Pensionados() {}
-	
+//INGRESA ESPECIFICO DE LA CLASE DE ESTE TIPO DE CLIENTE	
 public void IngresaPensionado() {
+// SE IMPLEMENTAN CONDICIONES Y ESTRUCUTURAS DE CONTROL PARA EVITAR DATOS ERRONEOS
 	int cambio=0;
 	ingresarCliente();
 	String anterior = (JOptionPane.showInputDialog(null, "Selecciona el area en la que se desempeñaba", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
@@ -48,8 +48,7 @@ public void setTipoEmpleado(String tipoEmpleado) {
 		this.tipoPensionado = tipoEmpleado;
 	}
 	
-	
-	
+//METODO DE MUESTRA ESPECIFICO DE ESTA CLASE	
 public String RespuestaPensionado() {
 	String Respuesta="";
 	
@@ -58,9 +57,5 @@ public String RespuestaPensionado() {
 			+ "Area en la que se desempeñaba: "+getTipoEmpleado()+"\n\n";
 	
 	return Respuesta;
-}
-public void RespuestaPensioando() {
-	
-	JOptionPane.showMessageDialog(null, RespuestaPensionado());
 }
 }

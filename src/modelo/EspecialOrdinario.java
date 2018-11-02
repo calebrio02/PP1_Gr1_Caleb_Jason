@@ -8,8 +8,6 @@ String puestoEspecifico, TipoCliente;
 
 public EspecialOrdinario() {	
 }
-
-
 public String getTipoCliente() {
 	return TipoCliente;
 }

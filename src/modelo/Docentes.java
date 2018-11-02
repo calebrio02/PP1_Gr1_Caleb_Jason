@@ -25,7 +25,7 @@ public String getLugartrabajo() {
 public void setLugartrabajo(String lugartrabajo) {
 	this.lugartrabajo = lugartrabajo;
 }
-
+//INGRESA GENERICO DEL CLIENTE DE TIPO DOCENTE
 public void IngresaDocente () {
 	
 	ingresarCliente();
@@ -83,7 +83,7 @@ public void escogeEstado() {//Metodos para evitar que el usuario escriba,ya que 
 	} while (estadoDocente=="Selecciona"||estadoDocente==null);
 		
 }
-
+//METODO DE MUESTRA ESPECIFICO DE ESTA CLASE
 public String RespuestaDocente() {
 	
 	String Respuesta="";
@@ -96,8 +96,4 @@ public String RespuestaDocente() {
 	return Respuesta;
 }
 
-public void MuestraDocente() {
-	
-	JOptionPane.showMessageDialog(null, RespuestaDocente());
-}
 }

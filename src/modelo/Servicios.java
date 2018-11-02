@@ -1,14 +1,14 @@
 package modelo;
 
-public abstract class Servicios {
+public abstract class Servicios {//CALSE ABSTRACTA 
+	///////////////////////////////////////////////////
+	Administrativos clienteAd = new Administrativos();//
+	Docentes clienteDo = new Docentes();//////////////// 
+	Pensionados clientePe = new Pensionados();/////////
+////SE CREAN OBJETOS DE TIPO CLIENTE PARA QUE A PARTIR DE AQUI LA JERARQUIA BAJA TENGA ACCESO A ESOS DATOS
 	
-	Administrativos clienteAd = new Administrativos();
-	Docentes clienteDo = new Docentes();
-	Pensionados clientePe = new Pensionados();
-	private int cod;
+	private int cod;//VARIABLE NECESARIA PARA ASIGNAR CODIGOS A LOS OBJETOS QUE SERAN AGREGADOS POSTERIORMENTE AL ARREGLO
 
-	
-	
 public int getCod() {
 		return cod;
 	}
@@ -65,12 +65,12 @@ public String MuestraDatosPensionados() {
 	return clientePe.RespuestaPensionado();
 }
 
-public abstract String SoloDNI();//metodo abstracto para mostrar el total que debe pagar el cliente de todos los servicios 
+public abstract String SoloDNI();//metodo abstracto para mostrar SOLO EL DNI
 
 public abstract void Ingresar();//metodo abstracto para ingresar datos
 
-public abstract String Muestra() ;//metodo abstracto para mostrar solo el nombre del cliente
+public abstract String Muestra() ;
 
-public abstract String toString();
+public abstract String toString();//METODO ABSTRACTO PARA MOSTRAR CUALQUIER TIPO DE DATO
 
 }
