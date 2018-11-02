@@ -34,7 +34,7 @@ public ArrayObjetos() {//Constructor de la clase que contiene el menu de interac
 														  + "1-Ingresar\n"
 														  + "2-Mostrar\n"
 														  + "3-Buscar\n"
-														  + "4-Eliminar\n"
+													  + "4-Eliminar\n"
 														  + "5-Salir"));
 		switch (e2) {
 		case 1:Ingresar();
@@ -168,96 +168,6 @@ ContUser ++;
 
 }
 
-
-/*public void tipoCredito() {
-	String tipoCredito="";
-	do {
-	tipoCredito = (JOptionPane.showInputDialog(null, "Selecciona el tipo de credito", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-			{ "Selecciona","Corriente", "Vivienda","Especiales"}, "Selecciona")).toString() ;
-	
-		if(tipoCredito.equalsIgnoreCase("Corriente")) {
-			c.setCod(Cod);
-			c.Ingresar();
-			s[ContUser]=c;
-			Cod++;
-			ContUser++;
-	}else 
-		if(tipoCredito.equalsIgnoreCase("Vivienda")) {
-			v.setCod(Cod);
-			v.Ingresar();
-			s[ContUser]=v;
-			Cod++;
-			ContUser++;
-	}else 
-		if(tipoCredito.equalsIgnoreCase("Especiales")) {
-			tipoEspecial();
-	}else{
-	
-		JOptionPane.showMessageDialog(null,"Escoge una de las tres opciones");
-	}
-} while (tipoCredito=="Selecciona"||tipoCredito==null);
-ContUser++;
-}*/
-/*public void tipoEspecial() {
-	
-	String tipoEspecial="";
-	
-	do{
-		
-		tipoEspecial = (JOptionPane.showInputDialog(null, "Selecciona el tipo credito Especial", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Especial Ordinario", "Equipo Computo"}, "Selecciona")).toString() ;
-		
-			if(tipoEspecial.equalsIgnoreCase("Especial Ordinario")) {
-				eo.setCod(Cod);
-				eo.Ingresar();
-				s[ContUser]=eo;
-				Cod++;
-				ContUser++;			
-		}else 
-			if(tipoEspecial.equalsIgnoreCase("Equipo Computo")) {
-				ec.setCod(Cod);
-				ec.Ingresar();
-				s[ContUser]=ec;
-				Cod++;
-				ContUser++;
-		}else {
-		
-			JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
-		}
-	} while (tipoEspecial=="Selecciona"||tipoEspecial==null);
-	ContUser++;
-}*/
-/*public void tipoAhorro() {
-String tipoAhorro="";
-	
-	do{
-		
-		tipoAhorro = (JOptionPane.showInputDialog(null, "Selecciona el tipo de Plan de Ahorro", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
-				{ "Selecciona","Anual", "A la Vista"}, "Selecciona")).toString() ;
-		
-			if(tipoAhorro.equalsIgnoreCase("Anual")) {
-				a.setCod(Cod);
-				a.Ingresar();
-				s[ContUser]=a;
-				Cod++;
-				ContUser++;			
-		}else 
-			if(tipoAhorro.equalsIgnoreCase("A la Vista")) {
-				av.setCod(Cod);
-				av.Ingresar();
-				s[ContUser]=av;
-				Cod++;
-				ContUser++;
-		}else {
-		
-			JOptionPane.showMessageDialog(null,"Escoge una de las dos opciones");
-		}
-	} while (tipoAhorro=="Selecciona"||tipoAhorro==null);
-	ContUser++;
-}*/
-
-
-
 public void Mostrar() {//metodo para recorrer el arreglo de objetos y mostrar todos los clientes que se encuentren ingresados hasta el momento
 	
 	
@@ -269,8 +179,6 @@ public void Mostrar() {//metodo para recorrer el arreglo de objetos y mostrar to
 	}
 	
 }
-
-
 
 public void Buscar(){//metodo para buscar y mostrar a un solo cliente
 	
@@ -356,7 +264,7 @@ public void Eliminar() {//metodo para eliminar a un cliente que se encuentre den
 		}
 	s = null; Cod--; ContUser--;
 	
-	s = new Servicios [3];
+	s = new Servicios [100];
 	
 	for (int i=0; i<Borra.length;i++) {
 		
