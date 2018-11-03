@@ -47,6 +47,7 @@ public void escogeCategoria() {   //Metodos para evitar que el usuario escriba,y
 			
 			tipoDocente = (JOptionPane.showInputDialog(null, "Selecciona la categoria de docente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
 					{ "Selecciona","Adjunto", "Asociado", "Catedratico"}, "Selecciona")).toString() ;
+			cambio=1;
 			
 			if(tipoDocente.equalsIgnoreCase("Adjunto")) {
 				setCategoria("Adjunto");
@@ -78,6 +79,7 @@ public void escogeEstado() {//Metodos para evitar que el usuario escriba,ya que 
 		try {
 			estadoDocente = (JOptionPane.showInputDialog(null, "Selecciona el estado del docente", null, JOptionPane.PLAIN_MESSAGE,null, new Object[]
 					{ "Selecciona","Propiedad", "Interino"}, "Selecciona")).toString() ;
+			cambio=1;
 			
 			if(estadoDocente.equalsIgnoreCase("Propiedad")) {
 				setEstado("Propiedad");
